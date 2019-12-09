@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22583737239EAEEB00A9FD1B /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583736239EAEEB00A9FD1B /* FeedView.swift */; };
+		22583739239EB9E600A9FD1B /* LoginCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583738239EB9E600A9FD1B /* LoginCheck.swift */; };
+		2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258373A239ECC1D00A9FD1B /* FBLoginButton.swift */; };
 		228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066A239D8CBB001C0D7A /* AppDelegate.swift */; };
 		228F066D239D8CBB001C0D7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066C239D8CBB001C0D7A /* SceneDelegate.swift */; };
 		228F066F239D8CBB001C0D7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066E239D8CBB001C0D7A /* ContentView.swift */; };
@@ -41,6 +44,9 @@
 /* Begin PBXFileReference section */
 		00D7A0623AB88B75C407B09B /* Pods_talentoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talentoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22583735239D99EF00A9FD1B /* talento.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = talento.entitlements; sourceTree = "<group>"; };
+		22583736239EAEEB00A9FD1B /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		22583738239EB9E600A9FD1B /* LoginCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCheck.swift; sourceTree = "<group>"; };
+		2258373A239ECC1D00A9FD1B /* FBLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginButton.swift; sourceTree = "<group>"; };
 		228F0667239D8CBB001C0D7A /* talento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = talento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228F066A239D8CBB001C0D7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		228F066C239D8CBB001C0D7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +110,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2258373C239ECC9100A9FD1B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				22583738239EB9E600A9FD1B /* LoginCheck.swift */,
+				2258373A239ECC1D00A9FD1B /* FBLoginButton.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		228F065E239D8CBB001C0D7A = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +148,8 @@
 				228F066A239D8CBB001C0D7A /* AppDelegate.swift */,
 				228F066C239D8CBB001C0D7A /* SceneDelegate.swift */,
 				228F066E239D8CBB001C0D7A /* ContentView.swift */,
+				22583736239EAEEB00A9FD1B /* FeedView.swift */,
+				2258373C239ECC9100A9FD1B /* Login */,
 				228F0670239D8CBE001C0D7A /* Assets.xcassets */,
 				228F0675239D8CBE001C0D7A /* LaunchScreen.storyboard */,
 				228F0678239D8CBE001C0D7A /* Info.plist */,
@@ -457,8 +474,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22583737239EAEEB00A9FD1B /* FeedView.swift in Sources */,
+				2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */,
 				228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */,
 				228F066D239D8CBB001C0D7A /* SceneDelegate.swift in Sources */,
+				22583739239EB9E600A9FD1B /* LoginCheck.swift in Sources */,
 				228F066F239D8CBB001C0D7A /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
