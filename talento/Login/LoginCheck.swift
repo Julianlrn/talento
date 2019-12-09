@@ -14,6 +14,7 @@ import FBSDKLoginKit
 
 class LoginCheck: ObservableObject{
     @Published var loggedIn: Bool = AccessToken.current != nil
+    @Published var loading: Bool = false
     
     func logIn(){
         loggedIn = true

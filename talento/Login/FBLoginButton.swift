@@ -31,6 +31,10 @@ struct login : UIViewRepresentable{
     
     class Coordinator : NSObject,LoginButtonDelegate{
         
+        func loginButtonWillLogin(_ loginButton: FBLoginButton) -> Bool {
+             (UIApplication.shared.connectedScenes.first!.delegate! as! SceneDelegate).loginCheck.loading = true
+            return true
+        }
         
         func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
             
@@ -53,6 +57,7 @@ struct login : UIViewRepresentable{
                     }
                 
                     print("success")
+                    (UIApplication.shared.connectedScenes.first!.delegate! as! SceneDelegate).loginCheck.loading = false
                     (UIApplication.shared.connectedScenes.first!.delegate! as! SceneDelegate).loginCheck.logIn()
                     
                    

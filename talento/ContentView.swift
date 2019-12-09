@@ -17,7 +17,10 @@ struct ContentView: View {
     @EnvironmentObject var loginStatus:LoginCheck
     
     var body: some View {
-        if loginStatus.loggedIn == false {
+        if loginStatus.loading == true {
+            return AnyView(Text("Loading"))
+        }
+        else if loginStatus.loggedIn == false {
             return AnyView(login().frame(width: 100, height: 50))
         }
             return AnyView(FeedView())
