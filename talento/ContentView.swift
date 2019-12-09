@@ -12,6 +12,8 @@ import Firebase
 import FirebaseUI
 
 
+
+
 struct ContentView: View {
     var body: some View {
         login().frame(width: 100, height: 50)
@@ -58,7 +60,7 @@ struct login : UIViewRepresentable{
                 
                 Auth.auth().signIn(with: credential) { (res, er) in
                     
-                    if er != nil{
+                    if error != nil{
                     
                         print((error?.localizedDescription)!)
                         return

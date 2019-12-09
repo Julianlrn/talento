@@ -361,6 +361,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - FBSDKShareKit
   - Firebase/Analytics
+  - Firebase/Auth
   - FirebaseUI
 
 SPEC REPOS:
@@ -428,6 +429,6 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
 
-PODFILE CHECKSUM: de4ce1faaec3c86f4efb0387f34e24ac51fce985
+PODFILE CHECKSUM: 8c4ae01ce080541fdfc3541bec970a5fbf270407
 
 COCOAPODS: 1.8.4
