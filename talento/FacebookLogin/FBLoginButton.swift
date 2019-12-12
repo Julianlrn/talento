@@ -5,6 +5,7 @@
 //  Created by Julian Lorenz on 09.12.19.
 //  Copyright © 2019 JulianLorenz. All rights reserved.
 //
+//AnyView(login().frame(width: 100, height: 50))
 
 import Foundation
 import SwiftUI
@@ -13,7 +14,7 @@ import Firebase
 import FirebaseUI
 
 struct login : UIViewRepresentable{
-
+ 
     func makeCoordinator() -> login.Coordinator {
         return login.Coordinator()
     }

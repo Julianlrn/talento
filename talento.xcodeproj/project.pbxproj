@@ -3,13 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		22583737239EAEEB00A9FD1B /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583736239EAEEB00A9FD1B /* FeedView.swift */; };
 		22583739239EB9E600A9FD1B /* LoginCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583738239EB9E600A9FD1B /* LoginCheck.swift */; };
 		2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258373A239ECC1D00A9FD1B /* FBLoginButton.swift */; };
+		2266C36A23A29BE700E6216A /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266C36923A29BE700E6216A /* ChallengesView.swift */; };
+		2266C36C23A29BF400E6216A /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266C36B23A29BF400E6216A /* ActivityView.swift */; };
+		2266C36E23A29C0100E6216A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266C36D23A29C0100E6216A /* ProfileView.swift */; };
+		227C134E23A2A06D00D36384 /* ChallengeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C134D23A2A06D00D36384 /* ChallengeDetailView.swift */; };
+		227C135323A2A49300D36384 /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 227C135223A2A49300D36384 /* SlidingTabView */; };
+		227C135523A2AB8D00D36384 /* ProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C135423A2AB8D00D36384 /* ProfileDetailView.swift */; };
 		228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066A239D8CBB001C0D7A /* AppDelegate.swift */; };
 		228F066D239D8CBB001C0D7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066C239D8CBB001C0D7A /* SceneDelegate.swift */; };
 		228F066F239D8CBB001C0D7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066E239D8CBB001C0D7A /* ContentView.swift */; };
@@ -47,6 +53,11 @@
 		22583736239EAEEB00A9FD1B /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		22583738239EB9E600A9FD1B /* LoginCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCheck.swift; sourceTree = "<group>"; };
 		2258373A239ECC1D00A9FD1B /* FBLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginButton.swift; sourceTree = "<group>"; };
+		2266C36923A29BE700E6216A /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
+		2266C36B23A29BF400E6216A /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		2266C36D23A29C0100E6216A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		227C134D23A2A06D00D36384 /* ChallengeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailView.swift; sourceTree = "<group>"; };
+		227C135423A2AB8D00D36384 /* ProfileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailView.swift; sourceTree = "<group>"; };
 		228F0667239D8CBB001C0D7A /* talento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = talento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228F066A239D8CBB001C0D7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		228F066C239D8CBB001C0D7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227C135323A2A49300D36384 /* SlidingTabView in Frameworks */,
 				D0464F79937DBD5D0D74A7ED /* Pods_talento.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,13 +122,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2258373C239ECC9100A9FD1B /* Login */ = {
+		2258373C239ECC9100A9FD1B /* FacebookLogin */ = {
 			isa = PBXGroup;
 			children = (
-				22583738239EB9E600A9FD1B /* LoginCheck.swift */,
 				2258373A239ECC1D00A9FD1B /* FBLoginButton.swift */,
+				22583738239EB9E600A9FD1B /* LoginCheck.swift */,
 			);
-			path = Login;
+			path = FacebookLogin;
+			sourceTree = "<group>";
+		};
+		2266C36F23A29C8200E6216A /* TabBarViews */ = {
+			isa = PBXGroup;
+			children = (
+				22583736239EAEEB00A9FD1B /* FeedView.swift */,
+				2266C36923A29BE700E6216A /* ChallengesView.swift */,
+				2266C36B23A29BF400E6216A /* ActivityView.swift */,
+				2266C36D23A29C0100E6216A /* ProfileView.swift */,
+			);
+			path = TabBarViews;
+			sourceTree = "<group>";
+		};
+		227C135023A2A07A00D36384 /* DetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				227C134D23A2A06D00D36384 /* ChallengeDetailView.swift */,
+				227C135423A2AB8D00D36384 /* ProfileDetailView.swift */,
+			);
+			path = DetailViews;
 			sourceTree = "<group>";
 		};
 		228F065E239D8CBB001C0D7A = {
@@ -148,8 +180,9 @@
 				228F066A239D8CBB001C0D7A /* AppDelegate.swift */,
 				228F066C239D8CBB001C0D7A /* SceneDelegate.swift */,
 				228F066E239D8CBB001C0D7A /* ContentView.swift */,
-				22583736239EAEEB00A9FD1B /* FeedView.swift */,
-				2258373C239ECC9100A9FD1B /* Login */,
+				227C135023A2A07A00D36384 /* DetailViews */,
+				2266C36F23A29C8200E6216A /* TabBarViews */,
+				2258373C239ECC9100A9FD1B /* FacebookLogin */,
 				228F0670239D8CBE001C0D7A /* Assets.xcassets */,
 				228F0675239D8CBE001C0D7A /* LaunchScreen.storyboard */,
 				228F0678239D8CBE001C0D7A /* Info.plist */,
@@ -217,6 +250,9 @@
 			dependencies = (
 			);
 			name = talento;
+			packageProductDependencies = (
+				227C135223A2A49300D36384 /* SlidingTabView */,
+			);
 			productName = talento;
 			productReference = 228F0667239D8CBB001C0D7A /* talento.app */;
 			productType = "com.apple.product-type.application";
@@ -293,6 +329,9 @@
 				Base,
 			);
 			mainGroup = 228F065E239D8CBB001C0D7A;
+			packageReferences = (
+				227C135123A2A49300D36384 /* XCRemoteSwiftPackageReference "SlidingTabView" */,
+			);
 			productRefGroup = 228F0668239D8CBB001C0D7A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -475,9 +514,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				22583737239EAEEB00A9FD1B /* FeedView.swift in Sources */,
+				2266C36E23A29C0100E6216A /* ProfileView.swift in Sources */,
 				2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */,
+				227C135523A2AB8D00D36384 /* ProfileDetailView.swift in Sources */,
 				228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */,
+				227C134E23A2A06D00D36384 /* ChallengeDetailView.swift in Sources */,
+				2266C36A23A29BE700E6216A /* ChallengesView.swift in Sources */,
 				228F066D239D8CBB001C0D7A /* SceneDelegate.swift in Sources */,
+				2266C36C23A29BF400E6216A /* ActivityView.swift in Sources */,
 				22583739239EB9E600A9FD1B /* LoginCheck.swift in Sources */,
 				228F066F239D8CBB001C0D7A /* ContentView.swift in Sources */,
 			);
@@ -812,6 +856,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		227C135123A2A49300D36384 /* XCRemoteSwiftPackageReference "SlidingTabView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/QuynhNguyen/SlidingTabView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		227C135223A2A49300D36384 /* SlidingTabView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227C135123A2A49300D36384 /* XCRemoteSwiftPackageReference "SlidingTabView" */;
+			productName = SlidingTabView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 228F065F239D8CBB001C0D7A /* Project object */;
 }

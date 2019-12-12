@@ -1,11 +1,12 @@
 //
-//  FeedView.swift
+//  ProfileView.swift
 //  talento
 //
-//  Created by Julian Lorenz on 08.12.19.
+//  Created by Julian Lorenz on 12.12.19.
 //  Copyright © 2019 JulianLorenz. All rights reserved.
 //
 
+import Foundation
 import SwiftUI
 import FBSDKLoginKit
 import Firebase
@@ -14,11 +15,13 @@ import FirebaseUI
 
 
 
-struct FeedView: View {
+struct ProfileView: View {
     
     var body: some View {
         VStack {
-            Text("Hello")
+            Text("Profile!")
+            
+           
             //AnyView(login().frame(width: 100, height: 50))
         }
 
@@ -26,12 +29,10 @@ struct FeedView: View {
    
 }
 
-struct FeedView_Previews: PreviewProvider {
+struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedView()
+        ProfileView()
     }
 }
 
-
-    
 
