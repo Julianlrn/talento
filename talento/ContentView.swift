@@ -27,28 +27,21 @@ struct ContentView: View {
         
         VStack {
             
-            ZStack {
-                
-                if self.index == 0 {
-                    Color.red.edgesIgnoringSafeArea(.top)
-                }
-                else if self.index == 1 {
-                    Color.blue.edgesIgnoringSafeArea(.top)
-                }
-                else if self.index == 2 {
-                    Color.green.edgesIgnoringSafeArea(.top)
-                }
-                else if self.index == 3 {
-                    Color.yellow.edgesIgnoringSafeArea(.top)
-                }
-                else {
-                    Color.white.edgesIgnoringSafeArea(.top)
-                }
+            if self.index == 0 {
+                FeedView()
+            }
+            else if self.index == 1 {
+                ChallengeView()
+            }
+            else if self.index == 2 {
+                ActivityView()
+            }
+            else if self.index == 3 {
+                ProfileView()
             }
             
             TabBar(index : $index)
-            
-        }.animation(.spring())
+        }.edgesIgnoringSafeArea(.bottom)
     }
 }
 
@@ -67,14 +60,12 @@ struct TabBar : View {
         HStack(spacing: 16) {
             
             HStack {
-                
                 Image(systemName: self.index == 0 ? "house.fill" : "house")
                     .resizable()
                     .frame(width: 26, height: 24)
                     .foregroundColor(self.index == 0 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24))
             }.padding(.vertical, 12)
             .padding(.horizontal, 28)
-            .clipShape(Capsule())
             .onTapGesture {
                 self.index = 0
             }
@@ -87,7 +78,6 @@ struct TabBar : View {
                     .foregroundColor(self.index == 1 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24))
             }.padding(.vertical, 12)
             .padding(.horizontal, 28)
-            .clipShape(Capsule())
             .onTapGesture {
                 self.index = 1
             }
@@ -100,7 +90,6 @@ struct TabBar : View {
                     .foregroundColor(self.index == 2 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24))
             }.padding(.vertical, 12)
             .padding(.horizontal, 28)
-            .clipShape(Capsule())
             .onTapGesture {
                 self.index = 2
             }
@@ -113,14 +102,16 @@ struct TabBar : View {
                     .foregroundColor(self.index == 3 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24))
             }.padding(.vertical, 12)
             .padding(.horizontal, 28)
-            .clipShape(Capsule())
             .onTapGesture {
                 self.index = 3
             }
 
-        }.padding(.top, 8)
+        }.padding(.top, 12)
+        .padding(.bottom, 32)
         .frame(width: UIScreen.main.bounds.width)
         .background(Color.white)
-        .animation(.default)
+        .cornerRadius(16)
+        .shadow(color: Color.gray, radius: 10, x: 0, y: 0)
+
     }
 }

@@ -16,17 +16,14 @@ import FirebaseUI
 
 
 struct ChallengeView: View {
-    
     var body: some View {
-        VStack {
-            Text("Challenge!")
-            
-           
-            
+        NavigationView {
+            VStack {
+                
+                Text("Welcome to Challenges!")
+            }.navigationBarTitle("Challenges")
         }
-
     }
-   
 }
 
 struct ChallengeView_Previews: PreviewProvider {

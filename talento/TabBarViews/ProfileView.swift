@@ -17,16 +17,14 @@ import FirebaseUI
 
 struct ProfileView: View {
     
-    var body: some View {
-        VStack {
-            Text("Profile!")
-            
-           
-            //AnyView(login().frame(width: 100, height: 50))
+        var body: some View {
+            NavigationView {
+                VStack {
+                    
+                    Text("Welcome to Profile!")
+                }.navigationBarTitle("Profile")
+            }
         }
-
-    }
-   
 }
 
 struct ProfileView_Previews: PreviewProvider {

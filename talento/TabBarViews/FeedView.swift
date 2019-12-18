@@ -17,13 +17,13 @@ import FirebaseUI
 struct FeedView: View {
     
     var body: some View {
-        NavigationView{
-            VStack{
-                NavigationLink(destination:ChallengeDetailView()){
-                Text("Eintrag")
+        NavigationView {
+            VStack {
+                NavigationLink(destination:ChallengeDetailView()) {
+                    
+                    Text("Eintrag")
                 }
             }.navigationBarTitle("Feed")
-            .edgesIgnoringSafeArea(.all)
         }
 
     }
