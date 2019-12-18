@@ -64,13 +64,16 @@ struct TabBar : View {
     
     var body: some View {
         
-        HStack(spacing: 15) {
+        HStack(spacing: 16) {
             
             HStack {
                 
-                Image(systemName: "house").resizable().frame(width: 26, height: 24)
-                Text(self.index == 0 ? "Feed" : "").fontWeight(.light).font(.system(size: 14))
-            }.padding(15)
+                Image(systemName: self.index == 0 ? "house.fill" : "house")
+                    .resizable()
+                    .frame(width: 26, height: 24)
+                    .foregroundColor(self.index == 0 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24))
+            }.padding(.vertical, 12)
+            .padding(.horizontal, 28)
             .clipShape(Capsule())
             .onTapGesture {
                 self.index = 0
@@ -78,10 +81,12 @@ struct TabBar : View {
             
             HStack {
                 
-                Image(systemName: "bolt")
-                    .resizable().frame(width: 15, height: 24)
-                Text(self.index == 1 ? "Challenges" : "").fontWeight(.light).font(.system(size: 14))
-            }.padding(15)
+                Image(systemName: self.index == 1 ? "bolt.fill" : "bolt")
+                    .resizable()
+                    .frame(width: 15, height: 24)
+                    .foregroundColor(self.index == 1 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24))
+            }.padding(.vertical, 12)
+            .padding(.horizontal, 28)
             .clipShape(Capsule())
             .onTapGesture {
                 self.index = 1
@@ -89,9 +94,12 @@ struct TabBar : View {
             
             HStack {
                 
-                Image(systemName: "suit.heart").resizable().frame(width: 25, height: 24)
-                Text(self.index == 2 ? "Activity" : "").fontWeight(.light).font(.system(size: 14))
-            }.padding(15)
+                Image(systemName: self.index == 2 ? "suit.heart.fill" : "suit.heart")
+                    .resizable()
+                    .frame(width: 25, height: 24)
+                    .foregroundColor(self.index == 2 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24))
+            }.padding(.vertical, 12)
+            .padding(.horizontal, 28)
             .clipShape(Capsule())
             .onTapGesture {
                 self.index = 2
@@ -99,9 +107,12 @@ struct TabBar : View {
             
             HStack {
                 
-                Image(systemName: "person").resizable().frame(width: 24, height: 24)
-                Text(self.index == 3 ? "Profile" : "").fontWeight(.light).font(.system(size: 14))
-            }.padding(15)
+                Image(systemName: self.index == 3 ? "person.fill" : "person")
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .foregroundColor(self.index == 3 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24))
+            }.padding(.vertical, 12)
+            .padding(.horizontal, 28)
             .clipShape(Capsule())
             .onTapGesture {
                 self.index = 3
