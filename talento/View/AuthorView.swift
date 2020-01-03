@@ -37,5 +37,6 @@ struct AuthorView: View {
 struct AuthorView_Previews: PreviewProvider {
     static var previews: some View {
         AuthorView()
+            .previewLayout(.sizeThatFits)
     }
 }

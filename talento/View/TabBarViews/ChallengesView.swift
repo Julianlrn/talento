@@ -14,19 +14,27 @@ import FirebaseUI
 
 
 struct ChallengeView: View {
+    
+    var challenges: [Challenge] = challengesData
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                
-                Text("Welcome to Challenges!")
-            }.navigationBarTitle("Challenges")
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: .leading) {
+                Text("Challenges")
+                    .font(.system(size: 32, weight: .bold))
+                    .padding(.top, 16)
+                ForEach(challenges) { item in
+                    ChallengeCardView(challenge: item)
+                }
+            }
+            .padding(.horizontal, 16)
         }
     }
 }
 
 struct ChallengeView_Previews: PreviewProvider {
     static var previews: some View {
-        ChallengeView()
+        ChallengeView(challenges: challengesData)
     }
 }
 
