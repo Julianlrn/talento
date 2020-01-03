@@ -12,9 +12,6 @@ import FBSDKLoginKit
 import Firebase
 import FirebaseUI
 
-
-
-
 struct ProfileView: View {
     
         var body: some View {

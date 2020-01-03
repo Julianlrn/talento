@@ -14,12 +14,16 @@ struct FeedView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack(spacing: 24) {
+            VStack(alignment: .leading) {
+                Text("Feed")
+                    .font(.system(size: 32, weight: .bold))
+                    .padding(.top, 16)
                 ForEach(challenges) { item in
+                    AuthorView()
                     ChallengeCardView(challenge: item)
                 }
             }
-            .padding(.bottom, 32)
+            .padding(.horizontal, 16)
         }
     }
 }

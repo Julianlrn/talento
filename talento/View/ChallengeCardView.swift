@@ -16,14 +16,14 @@ struct ChallengeCardView: View {
     
     var body: some View {
         VStack {
-            //Card Image
+            //MARK: - IMAGE
             Image(challenge.image)
             .resizable()
             .scaledToFit()
             .overlay(
                 HStack {
                     Spacer()
-                    //Hot Marker
+                    //MARK: - HOT
                     VStack {
                         Text("HOT")
                             .font(.system(size: 12))
@@ -41,15 +41,17 @@ struct ChallengeCardView: View {
                 }
             )
             
+            //MARK: - CONTENT
             VStack(alignment: .leading, spacing: 24) {
                 
-                //PARTICIPANTS
+                //MARK: - PARTICIPANTS
                 Text("Participants: \(challenge.participants)")
+                    .font(.system(size: 16))
                 
-                //TITLE
+                //MARK: - TITLE
                 Text(challenge.title)
-                    .font(.system(.title))
-                //PROPERTIES
+                    .font(.system(size: 20, weight: .bold))
+                //MARK: - PROPERTIES
                 HStack {
                     HStack {
                         Image(systemName: "globe")
@@ -71,9 +73,8 @@ struct ChallengeCardView: View {
         }
         .background(Color.white)
         .cornerRadius(16)
-        .shadow(color: Color.gray, radius: 24, x: 0, y: 12)
-        .padding(.leading, 16)
-        .padding(.trailing, 16)
+        .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24), radius: 24, x: 0, y: 12)
+        .padding(.bottom, 32)
     }
 }
 

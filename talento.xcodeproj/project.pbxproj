@@ -30,6 +30,8 @@
 		ED68C98A7615F4D2CB08FBCF /* Pods_talentoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D7A0623AB88B75C407B09B /* Pods_talentoTests.framework */; };
 		F35AACCF23BFA86D005942EC /* ChallengeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AACCE23BFA86D005942EC /* ChallengeModel.swift */; };
 		F35AACD323BFABBF005942EC /* ChallengeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AACD223BFABBF005942EC /* ChallengeData.swift */; };
+		F35AACD523BFD937005942EC /* ChallengeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AACD423BFD937005942EC /* ChallengeDetailView.swift */; };
+		F35AACD723BFD9DA005942EC /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AACD623BFD9DA005942EC /* AuthorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		F25E808EE14980D0C9B8FB9F /* Pods_talento_talentoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talento_talentoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F35AACCE23BFA86D005942EC /* ChallengeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeModel.swift; sourceTree = "<group>"; };
 		F35AACD223BFABBF005942EC /* ChallengeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeData.swift; sourceTree = "<group>"; };
+		F35AACD423BFD937005942EC /* ChallengeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailView.swift; sourceTree = "<group>"; };
+		F35AACD623BFD9DA005942EC /* AuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +153,7 @@
 		227C135023A2A07A00D36384 /* DetailViews */ = {
 			isa = PBXGroup;
 			children = (
-				227C134D23A2A06D00D36384 /* ChallengeCardView.swift */,
+				F35AACD423BFD937005942EC /* ChallengeDetailView.swift */,
 				227C135423A2AB8D00D36384 /* ProfileDetailView.swift */,
 			);
 			path = DetailViews;
@@ -186,11 +190,11 @@
 				2258373C239ECC9100A9FD1B /* FacebookLogin */,
 				228F066A239D8CBB001C0D7A /* AppDelegate.swift */,
 				228F066C239D8CBB001C0D7A /* SceneDelegate.swift */,
-				22583735239D99EF00A9FD1B /* talento.entitlements */,
 				228F0670239D8CBE001C0D7A /* Assets.xcassets */,
 				228F0675239D8CBE001C0D7A /* LaunchScreen.storyboard */,
 				228F0678239D8CBE001C0D7A /* Info.plist */,
 				228F069A239D90D6001C0D7A /* GoogleService-Info.plist */,
+				22583735239D99EF00A9FD1B /* talento.entitlements */,
 				228F0672239D8CBE001C0D7A /* Preview Content */,
 			);
 			path = talento;
@@ -255,6 +259,8 @@
 			isa = PBXGroup;
 			children = (
 				228F066E239D8CBB001C0D7A /* ContentView.swift */,
+				F35AACD623BFD9DA005942EC /* AuthorView.swift */,
+				227C134D23A2A06D00D36384 /* ChallengeCardView.swift */,
 				227C135023A2A07A00D36384 /* DetailViews */,
 				2266C36F23A29C8200E6216A /* TabBarViews */,
 			);
@@ -543,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F35AACD723BFD9DA005942EC /* AuthorView.swift in Sources */,
 				22583737239EAEEB00A9FD1B /* FeedView.swift in Sources */,
 				2266C36E23A29C0100E6216A /* ProfileView.swift in Sources */,
 				2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */,
@@ -550,6 +557,7 @@
 				F35AACD323BFABBF005942EC /* ChallengeData.swift in Sources */,
 				227C135523A2AB8D00D36384 /* ProfileDetailView.swift in Sources */,
 				228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */,
+				F35AACD523BFD937005942EC /* ChallengeDetailView.swift in Sources */,
 				227C134E23A2A06D00D36384 /* ChallengeCardView.swift in Sources */,
 				2266C36A23A29BE700E6216A /* ChallengesView.swift in Sources */,
 				228F066D239D8CBB001C0D7A /* SceneDelegate.swift in Sources */,
