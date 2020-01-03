@@ -71,7 +71,6 @@ struct TabBar : View {
             }
             
             HStack {
-                
                 Image(systemName: self.index == 1 ? "bolt.fill" : "bolt")
                     .resizable()
                     .frame(width: 15, height: 24)
@@ -83,7 +82,6 @@ struct TabBar : View {
             }
             
             HStack {
-                
                 Image(systemName: self.index == 2 ? "suit.heart.fill" : "suit.heart")
                     .resizable()
                     .frame(width: 25, height: 24)
@@ -95,7 +93,6 @@ struct TabBar : View {
             }
             
             HStack {
-                
                 Image(systemName: self.index == 3 ? "person.fill" : "person")
                     .resizable()
                     .frame(width: 24, height: 24)
@@ -111,7 +108,5 @@ struct TabBar : View {
         .frame(width: UIScreen.main.bounds.width)
         .background(Color.white)
         .cornerRadius(16)
-        .shadow(color: Color.gray, radius: 10, x: 0, y: 0)
-
     }
 }

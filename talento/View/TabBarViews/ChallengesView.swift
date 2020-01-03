@@ -13,8 +13,6 @@ import Firebase
 import FirebaseUI
 
 
-
-
 struct ChallengeView: View {
     var body: some View {
         NavigationView {

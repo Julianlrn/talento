@@ -7,32 +7,26 @@
 //
 
 import SwiftUI
-import FBSDKLoginKit
-import Firebase
-import FirebaseUI
-
-
-
 
 struct FeedView: View {
     
+    var challenges: [Challenge] = challengesData
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                NavigationLink(destination:ChallengeDetailView()) {
-                    
-                    Text("Eintrag")
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(spacing: 24) {
+                ForEach(challenges) { item in
+                    ChallengeCardView(challenge: item)
                 }
-            }.navigationBarTitle("Feed")
+            }
+            .padding(.bottom, 32)
         }
-
     }
-   
 }
 
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedView()
+        FeedView(challenges: challengesData)
     }
 }
 
