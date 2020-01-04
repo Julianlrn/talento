@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct AuthorView: View {
+struct UserFeedView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -34,9 +34,9 @@ struct AuthorView: View {
     }
 }
 
-struct AuthorView_Previews: PreviewProvider {
+struct UserFeedView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthorView()
+        UserFeedView()
             .previewLayout(.sizeThatFits)
     }
 }

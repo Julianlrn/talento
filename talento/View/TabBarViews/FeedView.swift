@@ -19,7 +19,7 @@ struct FeedView: View {
                     .font(.system(size: 32, weight: .bold))
                     .padding(.top, 16)
                 ForEach(challenges) { item in
-                    AuthorView()
+                    UserFeedView()
                     ChallengeCardView(challenge: item)
                 }
             }

@@ -34,11 +34,15 @@ struct ContentView: View {
                 ChallengeView()
             }
             else if self.index == 2 {
-                ActivityView()
+                ChallengeCreateView()
             }
             else if self.index == 3 {
+                ActivityView()
+            }
+            else if self.index == 4 {
                 ProfileView()
             }
+
             
             TabBar(index : $index)
         }.edgesIgnoringSafeArea(.bottom)
@@ -65,7 +69,7 @@ struct TabBar : View {
                     .frame(width: 26, height: 24)
                     .foregroundColor(self.index == 0 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24))
             }.padding(.vertical, 12)
-            .padding(.horizontal, 28)
+            .padding(.horizontal, 16)
             .onTapGesture {
                 self.index = 0
             }
@@ -76,31 +80,42 @@ struct TabBar : View {
                     .frame(width: 15, height: 24)
                     .foregroundColor(self.index == 1 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24))
             }.padding(.vertical, 12)
-            .padding(.horizontal, 28)
+            .padding(.horizontal, 16)
             .onTapGesture {
                 self.index = 1
             }
             
             HStack {
-                Image(systemName: self.index == 2 ? "suit.heart.fill" : "suit.heart")
+                Image(systemName: self.index == 2 ? "paperplane.fill" : "paperplane")
                     .resizable()
-                    .frame(width: 25, height: 24)
+                    .frame(width: 26, height: 24)
                     .foregroundColor(self.index == 2 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24))
             }.padding(.vertical, 12)
-            .padding(.horizontal, 28)
+            .padding(.horizontal, 16)
             .onTapGesture {
                 self.index = 2
             }
             
             HStack {
-                Image(systemName: self.index == 3 ? "person.fill" : "person")
+                Image(systemName: self.index == 3 ? "suit.heart.fill" : "suit.heart")
                     .resizable()
-                    .frame(width: 24, height: 24)
+                    .frame(width: 25, height: 24)
                     .foregroundColor(self.index == 3 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24))
             }.padding(.vertical, 12)
-            .padding(.horizontal, 28)
+            .padding(.horizontal, 16)
             .onTapGesture {
                 self.index = 3
+            }
+            
+            HStack {
+                Image(systemName: self.index == 4 ? "person.fill" : "person")
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .foregroundColor(self.index == 4 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24))
+            }.padding(.vertical, 12)
+            .padding(.horizontal, 16)
+            .onTapGesture {
+                self.index = 4
             }
 
         }.padding(.top, 12)
