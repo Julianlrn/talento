@@ -143,8 +143,8 @@ class getChallengeData : ObservableObject{
             }
             for i in snap!.documentChanges{
                 let id = i.document.documentID
-                let name = i.document.get("name") as! String
-                let description = i.document.get("description") as! String
+                let name = i.document.get("title") as! String
+                let description = i.document.get("instructions") as! String
                 // let image = i.document.get("image") as! String
                 
                 self.datas.append(challengeDescription(id : id, name: name, description: description))
