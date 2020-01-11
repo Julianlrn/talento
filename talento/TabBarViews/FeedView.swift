@@ -21,9 +21,13 @@ struct FeedView: View {
             VStack{
                 NavigationLink(destination:ChallengeDetailView()){
                 Text("Eintrag")
+                
                 }
+                AnyView(login().frame(width: 100, height: 50))
             }.navigationBarTitle("Feed")
             .edgesIgnoringSafeArea(.all)
+            
+            
         }
 
     }

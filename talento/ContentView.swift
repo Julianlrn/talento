@@ -18,13 +18,14 @@ struct ContentView: View {
     
     var body: some View {
         
-        /*if loginStatus.loading == true {
+        if loginStatus.loading == true {
             return AnyView(Text("Loading"))
         }
         else if loginStatus.loggedIn == false {
             return AnyView(login().frame(width: 100, height: 50))
-        }*/
-            return AnyView(
+        }
+        else { print(loginStatus.loggedIn)
+                return AnyView(
                             TabView{
                                 FeedView().tabItem {
                                         Image(systemName: "house")
@@ -44,6 +45,7 @@ struct ContentView: View {
                                     }.tag(3)
                                 }
                             )
+        }
     }
    
 }

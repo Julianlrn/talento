@@ -16,16 +16,58 @@ import SlidingTabView
 
 
 struct ChallengeDetailView: View {
-    @State private var selectedTabIndex = 0
+   @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    var btnBack : some View { Button(action: {
+        self.presentationMode.wrappedValue.dismiss()
+        }) {
+            Image("BackButton") // set image here
+                .aspectRatio(contentMode: .fit)
+                .foregroundColor(.black)
+            }
+    }
+    
+    
+   
     
     var body: some View {
-        VStack(alignment:.leading){
-            SlidingTabView(selection: self.$selectedTabIndex, tabs: ["General", "Rating", "Ranking"])
-            (selectedTabIndex == 0 ? Text("General") : Text("Rating") ).padding()
-            Spacer()
-        }.padding(.top, 50)
-            .border(Color.white)
-       
+        VStack(){
+            Text("hallo")
+        }.border(Color.black)
+            //.navigationBarItems(leading: btnBack)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading:
+                HStack {
+                    btnBack
+                    Button(action: {
+                        print("General")
+                    }) {
+                            Text("General")
+                                .fontWeight(.semibold)
+                                .font(.title)
+                        .foregroundColor(.black)
+                    }
+                    Button(action: {
+                        print("Ranking")
+                    }) {
+                            Text("Ranking")
+                                .fontWeight(.semibold)
+                                .font(.title)
+                        .foregroundColor(.black)
+                    }
+                    
+                    Button(action: {
+                        print("Rate")
+                    }) {
+                            Text("Rate")
+                                .fontWeight(.semibold)
+                                .font(.title)
+                        .foregroundColor(.black)
+                    }
+                }
+                //.padding(.horizontal, 32)
+            )
+        
         
           //  .animation(.none)
 
