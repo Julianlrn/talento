@@ -13,11 +13,13 @@ struct ChallengeCardView: View {
     //MARK: - Properties
     
     var challenge: Challenge
+    @ObservedObject var imageLoader: ImageLoader
+    
     
     var body: some View {
         VStack {
             //MARK: - IMAGE
-            Image(challenge.image)
+            Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! :UIImage())
             .resizable()
             .scaledToFit()
             .overlay(
@@ -79,12 +81,6 @@ struct ChallengeCardView: View {
     }
 }
 
-struct ChallengeCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChallengeCardView(challenge: challengesData[0])
-            .previewLayout(.sizeThatFits)
-    }
-}
 
 
     

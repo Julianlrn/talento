@@ -24,7 +24,7 @@ struct ChallengeView: View {
                     .font(.system(size: 32, weight: .bold))
                     .padding(.top, 16)
                 ForEach(challenges) { item in
-                    ChallengeCardView(challenge: item)
+                    ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
                 }
             }
             .padding(.horizontal, 16)

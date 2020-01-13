@@ -20,7 +20,7 @@ struct FeedView: View {
                     .padding(.top, 16)
                 ForEach(challenges) { item in
                     UserFeedView()
-                    ChallengeCardView(challenge: item)
+                    ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
                 }
             }
             .padding(.horizontal, 16)

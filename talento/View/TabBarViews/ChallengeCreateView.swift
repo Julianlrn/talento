@@ -19,6 +19,22 @@ struct ChallengeCreateView: View {
     @State var isShowPicker: Bool = false
     @State var image: Image? = Image("placeholder")
     
+    func upload(){
+        let db = Firestore.firestore()
+        db.collection("challenges")
+            .document()
+            .setData(
+            ["title":self.name, "instructions":self.description, "image": "https://firebasestorage.googleapis.com/v0/b/talento1-1.appspot.com/o/Images%2Fmountain.jpg?alt=media&token=78316d65-33a9-4b0f-a739-5efdc8cb20e6"]) { (err) in
+                
+                if err != nil{
+                   
+                    print((err?.localizedDescription)!)
+                    return
+                }
+                
+        }
+    }
+    
     var body: some View {
         
         NavigationView {
@@ -44,25 +60,15 @@ struct ChallengeCreateView: View {
                                       Spacer()
                               
                 
+                
                 Button(action: {
-                    let db = Firestore.firestore()
-                    db.collection("challenges")
-                        .document()
-                        .setData(
-                        ["title":self.name, "instructions":self.description, "image": "https://firebasestorage.googleapis.com/v0/b/talento1-1.appspot.com/o/Images%2Fmountain.jpg?alt=media&token=78316d65-33a9-4b0f-a739-5efdc8cb20e6"]) { (err) in
-                            
-                            if err != nil{
-                               
-                                print((err?.localizedDescription)!)
-                                return
-                            }
-                            
-                    }
+                    
+                    self.upload()
+
                     
                 }) {
                     Text("Submit")
                 }
-              
                 List(challengeData.datas){i in
                     Text("Challenge: " + i.name + " Description: " +  i.description)
                     // Image(i.image)
@@ -73,6 +79,9 @@ struct ChallengeCreateView: View {
             .padding()
             .font(.title)
     }.navigationBarTitle("Create Challenge")
+        
+
+        
     }
 
 
@@ -98,6 +107,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
             image = Image(uiImage: uiImage)
             presentationMode.dismiss()
+            let imageData = uiImage.pngData()
 
         }
 
