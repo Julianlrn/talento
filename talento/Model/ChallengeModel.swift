@@ -12,6 +12,7 @@ struct Challenge: Identifiable {
     var id = UUID()
     var image: String
     var participants: Int
+    // var participants: Platzhalter -> Participant Array
     var title: String
     var visibility: String
     var time: Int

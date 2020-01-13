@@ -26,7 +26,7 @@ struct ContentView: View {
         */
         
         VStack {
-            
+
             if self.index == 0 {
                 FeedView()
             }
@@ -42,16 +42,10 @@ struct ContentView: View {
             else if self.index == 4 {
                 ProfileView()
             }
-
             
             TabBar(index : $index)
+            
         }.edgesIgnoringSafeArea(.bottom)
-    }
-}
-
-struct ContentView_Preview: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
 
@@ -123,5 +117,11 @@ struct TabBar : View {
         .frame(width: UIScreen.main.bounds.width)
         .background(Color.white)
         .cornerRadius(16)
+    }
+}
+
+struct ContentView_Preview: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }
