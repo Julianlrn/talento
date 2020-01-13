@@ -10,7 +10,7 @@ import SwiftUI
 
 struct FeedView: View {
     
-    var challenges: [Challenge] = challengesData
+    var challenges: [Challenge] = getChallengeData();
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {

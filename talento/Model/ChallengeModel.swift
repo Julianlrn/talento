@@ -10,12 +10,13 @@ import SwiftUI
 
 struct Challenge: Identifiable {
     var id = UUID()
+    var fbId: String
     var image: String
     var participants: Int
     var title: String
     var visibility: String
     var time: Int
-    var instructions: [String]
+    var instructions: String
     // var author: Platzhalter -> Author Object
     // var entries: Platzhalter -> Rating Object
     // var ranking: Platzhalter -> Ranking Object

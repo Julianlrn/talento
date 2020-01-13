@@ -26,6 +26,7 @@
 		228F068D239D8CBE001C0D7A /* talentoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F068C239D8CBE001C0D7A /* talentoUITests.swift */; };
 		228F069B239D90D6001C0D7A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 228F069A239D90D6001C0D7A /* GoogleService-Info.plist */; };
 		66F25D05A15511E4C4469CD4 /* Pods_talento_talentoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25E808EE14980D0C9B8FB9F /* Pods_talento_talentoUITests.framework */; };
+		B93A094023CCE56F00630678 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93A093F23CCE56E00630678 /* ImageLoader.swift */; };
 		D0464F79937DBD5D0D74A7ED /* Pods_talento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD79194C95BB7F620C0B23C /* Pods_talento.framework */; };
 		ED68C98A7615F4D2CB08FBCF /* Pods_talentoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D7A0623AB88B75C407B09B /* Pods_talentoTests.framework */; };
 		F30C3A9023C0EFDC00D663C9 /* ChallengeCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30C3A8F23C0EFDC00D663C9 /* ChallengeCreateView.swift */; };
@@ -82,6 +83,7 @@
 		6BD65366CB93C821FCCEAB32 /* Pods-talento.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento.release.xcconfig"; path = "Target Support Files/Pods-talento/Pods-talento.release.xcconfig"; sourceTree = "<group>"; };
 		A90D7CD39EDF29E768585197 /* Pods-talentoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talentoTests.release.xcconfig"; path = "Target Support Files/Pods-talentoTests/Pods-talentoTests.release.xcconfig"; sourceTree = "<group>"; };
 		A96A7E1978FE0653D24AF0AB /* Pods-talento.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento.debug.xcconfig"; path = "Target Support Files/Pods-talento/Pods-talento.debug.xcconfig"; sourceTree = "<group>"; };
+		B93A093F23CCE56E00630678 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = ../../../../Downloads/ImageLoader.swift; sourceTree = "<group>"; };
 		C043D2EB785BDD6A3E5A2CA6 /* Pods-talentoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talentoTests.debug.xcconfig"; path = "Target Support Files/Pods-talentoTests/Pods-talentoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DEF3124A38CAA398A595D333 /* Pods-talento-talentoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento-talentoUITests.release.xcconfig"; path = "Target Support Files/Pods-talento-talentoUITests/Pods-talento-talentoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EBD79194C95BB7F620C0B23C /* Pods_talento.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talento.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +263,7 @@
 		F35AACD123BFAB55005942EC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B93A093F23CCE56E00630678 /* ImageLoader.swift */,
 				228F066E239D8CBB001C0D7A /* ContentView.swift */,
 				F35AACD623BFD9DA005942EC /* UserFeedView.swift */,
 				227C134D23A2A06D00D36384 /* ChallengeCardView.swift */,
@@ -563,6 +566,7 @@
 				228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */,
 				F35AACD523BFD937005942EC /* ChallengeDetailView.swift in Sources */,
 				227C134E23A2A06D00D36384 /* ChallengeCardView.swift in Sources */,
+				B93A094023CCE56F00630678 /* ImageLoader.swift in Sources */,
 				2266C36A23A29BE700E6216A /* ChallengesView.swift in Sources */,
 				228F066D239D8CBB001C0D7A /* SceneDelegate.swift in Sources */,
 				2266C36C23A29BF400E6216A /* ActivityView.swift in Sources */,
@@ -736,14 +740,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = PRVDUT282L;
+				DEVELOPMENT_TEAM = A5T89PU53A;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.preissing.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -758,14 +762,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = PRVDUT282L;
+				DEVELOPMENT_TEAM = A5T89PU53A;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.preissing.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

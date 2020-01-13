@@ -15,7 +15,7 @@ import FirebaseUI
 
 struct ChallengeView: View {
     
-    var challenges: [Challenge] = challengesData
+    var challenges: [Challenge] = getChallengeData()
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -31,6 +31,7 @@ struct ChallengeView: View {
         }
     }
 }
+
 
 struct ChallengeView_Previews: PreviewProvider {
     static var previews: some View {

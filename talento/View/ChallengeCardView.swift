@@ -45,7 +45,8 @@ struct ChallengeCardView: View {
             VStack(alignment: .leading, spacing: 24) {
                 
                 //MARK: - PARTICIPANTS
-                Text("Participants: \(challenge.participants)")
+                // TODO: \(challenge.participants)
+                Text("Participants: 1234")
                     .font(.system(size: 16))
                 
                 //MARK: - TITLE
