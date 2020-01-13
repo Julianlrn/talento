@@ -14,15 +14,18 @@ import FirebaseUI
 
 struct ActivityView: View {
     
+   var challenges: [Challenge] = challengesData
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
-                HStack {
                     Text("Activity")
                         .font(.system(size: 32, weight: .bold))
                         .padding(.top, 16)
-                    Spacer()
-                }
+                    ForEach(challenges) { item in
+                        ActivityEntryView(challenge: item)
+                    }
+                
             }
             .padding(.horizontal, 16)
         }

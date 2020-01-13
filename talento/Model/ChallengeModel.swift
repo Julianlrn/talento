@@ -15,6 +15,7 @@ struct Challenge: Identifiable {
     var title: String
     var visibility: String
     var time: Int
+    var active: Bool
     var instructions: [String]
     // var author: Platzhalter -> Author Object
     // var entries: Platzhalter -> Rating Object

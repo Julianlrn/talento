@@ -3,18 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		22583737239EAEEB00A9FD1B /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583736239EAEEB00A9FD1B /* FeedView.swift */; };
 		22583739239EB9E600A9FD1B /* LoginCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583738239EB9E600A9FD1B /* LoginCheck.swift */; };
 		2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258373A239ECC1D00A9FD1B /* FBLoginButton.swift */; };
+		2262E05523CA25680090B2B8 /* ActivityEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2262E05423CA25680090B2B8 /* ActivityEntryView.swift */; };
 		2266C36A23A29BE700E6216A /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266C36923A29BE700E6216A /* ChallengesView.swift */; };
 		2266C36C23A29BF400E6216A /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266C36B23A29BF400E6216A /* ActivityView.swift */; };
 		2266C36E23A29C0100E6216A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266C36D23A29C0100E6216A /* ProfileView.swift */; };
 		227C134E23A2A06D00D36384 /* ChallengeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C134D23A2A06D00D36384 /* ChallengeCardView.swift */; };
-		227C135323A2A49300D36384 /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 227C135223A2A49300D36384 /* SlidingTabView */; };
 		227C135523A2AB8D00D36384 /* ProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C135423A2AB8D00D36384 /* ProfileDetailView.swift */; };
 		228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066A239D8CBB001C0D7A /* AppDelegate.swift */; };
 		228F066D239D8CBB001C0D7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066C239D8CBB001C0D7A /* SceneDelegate.swift */; };
@@ -58,6 +58,7 @@
 		22583736239EAEEB00A9FD1B /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		22583738239EB9E600A9FD1B /* LoginCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCheck.swift; sourceTree = "<group>"; };
 		2258373A239ECC1D00A9FD1B /* FBLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginButton.swift; sourceTree = "<group>"; };
+		2262E05423CA25680090B2B8 /* ActivityEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEntryView.swift; sourceTree = "<group>"; };
 		2266C36923A29BE700E6216A /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
 		2266C36B23A29BF400E6216A /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		2266C36D23A29C0100E6216A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -98,7 +99,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				227C135323A2A49300D36384 /* SlidingTabView in Frameworks */,
 				D0464F79937DBD5D0D74A7ED /* Pods_talento.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +139,16 @@
 				22583738239EB9E600A9FD1B /* LoginCheck.swift */,
 			);
 			path = FacebookLogin;
+			sourceTree = "<group>";
+		};
+		2262E05323CA24470090B2B8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F35AACD623BFD9DA005942EC /* UserFeedView.swift */,
+				227C134D23A2A06D00D36384 /* ChallengeCardView.swift */,
+				2262E05423CA25680090B2B8 /* ActivityEntryView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		2266C36F23A29C8200E6216A /* TabBarViews */ = {
@@ -262,8 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				228F066E239D8CBB001C0D7A /* ContentView.swift */,
-				F35AACD623BFD9DA005942EC /* UserFeedView.swift */,
-				227C134D23A2A06D00D36384 /* ChallengeCardView.swift */,
+				2262E05323CA24470090B2B8 /* Components */,
 				227C135023A2A07A00D36384 /* DetailViews */,
 				2266C36F23A29C8200E6216A /* TabBarViews */,
 			);
@@ -290,7 +299,6 @@
 			);
 			name = talento;
 			packageProductDependencies = (
-				227C135223A2A49300D36384 /* SlidingTabView */,
 			);
 			productName = talento;
 			productReference = 228F0667239D8CBB001C0D7A /* talento.app */;
@@ -369,7 +377,6 @@
 			);
 			mainGroup = 228F065E239D8CBB001C0D7A;
 			packageReferences = (
-				227C135123A2A49300D36384 /* XCRemoteSwiftPackageReference "SlidingTabView" */,
 			);
 			productRefGroup = 228F0668239D8CBB001C0D7A /* Products */;
 			projectDirPath = "";
@@ -555,6 +562,7 @@
 				F35AACD723BFD9DA005942EC /* UserFeedView.swift in Sources */,
 				22583737239EAEEB00A9FD1B /* FeedView.swift in Sources */,
 				2266C36E23A29C0100E6216A /* ProfileView.swift in Sources */,
+				2262E05523CA25680090B2B8 /* ActivityEntryView.swift in Sources */,
 				2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */,
 				F35AACCF23BFA86D005942EC /* ChallengeModel.swift in Sources */,
 				F35AACD323BFABBF005942EC /* ChallengeData.swift in Sources */,
@@ -736,14 +744,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = PRVDUT282L;
+				DEVELOPMENT_TEAM = 74ZL66WBK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lorenz.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -758,14 +766,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = PRVDUT282L;
+				DEVELOPMENT_TEAM = 74ZL66WBK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lorenz.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -900,25 +908,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		227C135123A2A49300D36384 /* XCRemoteSwiftPackageReference "SlidingTabView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/QuynhNguyen/SlidingTabView.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		227C135223A2A49300D36384 /* SlidingTabView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 227C135123A2A49300D36384 /* XCRemoteSwiftPackageReference "SlidingTabView" */;
-			productName = SlidingTabView;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 228F065F239D8CBB001C0D7A /* Project object */;
 }
