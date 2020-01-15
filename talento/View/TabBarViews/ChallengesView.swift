@@ -86,7 +86,7 @@ struct HotChallenges: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(challenges) { item in
-                    ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+                    ChallengeCardView(challenge: item)
                         .frame(width: 311)
                         .padding(.leading, 16)
                         .padding(.vertical, 48)
@@ -106,7 +106,7 @@ struct NewChallenges: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(challenges) { item in
-                    ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.Image))
+                    ChallengeCardView(challenge: item)
                         .frame(width: 311)
                         .padding(.leading, 16)
                         .padding(.vertical, 48)

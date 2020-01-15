@@ -14,8 +14,8 @@ struct ChallengeCreateView: View {
     
     @ObservedObject var challengeData = getChallengeData()
     // @ObservedObject var imageLoader:ImageLoader
-    @State private var instructions = ""
-    @State private var title = ""
+    @State private var description = ""
+    @State private var name = ""
     @State var isShowPicker: Bool = false
     @State var image: Image? = Image("placeholder")
     
@@ -24,7 +24,7 @@ struct ChallengeCreateView: View {
         db.collection("challenges")
             .document()
             .setData(
-            ["title":self.title, "instructions":self.instructions, "image": "https://firebasestorage.googleapis.com/v0/b/talento1-1.appspot.com/o/Images%2Fmountain.jpg?alt=media&token=78316d65-33a9-4b0f-a739-5efdc8cb20e6"]) { (err) in
+            ["title":self.name, "instructions":self.description, "image": "https://firebasestorage.googleapis.com/v0/b/talento1-1.appspot.com/o/Images%2Fmountain.jpg?alt=media&token=78316d65-33a9-4b0f-a739-5efdc8cb20e6"]) { (err) in
                 
                 if err != nil{
                    
@@ -40,10 +40,10 @@ struct ChallengeCreateView: View {
         NavigationView {
             VStack {
                 
-                TextField("Enter Challenge Description", text: $instructions)
+                TextField("Enter Challenge Description", text: $description)
                     .border(Color.black)
                 
-                TextField("Enter Challenge Name", text: $title)
+                TextField("Enter Challenge Name", text: $name)
                     .border(Color.black)
                 
                 // TODO: Image aus DB lesen und hochladen
@@ -70,7 +70,7 @@ struct ChallengeCreateView: View {
                     Text("Submit")
                 }
                 List(challengeData.datas){i in
-                    Text("Challenge: " + i.title + " Description: " +  i.instructions)
+                    Text("Challenge: " + i.name + " Description: " +  i.description)
                     // Image(i.image)
                     
                 }
@@ -157,10 +157,10 @@ class getChallengeData : ObservableObject{
             }
             for i in snap!.documentChanges{
                 let id = i.document.documentID
-                let title = i.document.get("title") as! String
-                let instructions = i.document.get("instructions") as! String
-                let image = i.document.get("image") as! String
-                self.datas.append(challengeDescription(id : id, title: title, instructions: instructions, image: image))
+                let name = i.document.get("title") as! String
+                let description = i.document.get("instructions") as! String
+                // let image = i.document.get("image") as! String 
+                self.datas.append(challengeDescription(id : id, name: name, description: description, image: image))
             }
         }
     }
@@ -169,8 +169,8 @@ class getChallengeData : ObservableObject{
 
 struct challengeDescription : Identifiable {
     var id : String
-    var title :String
-    var instructions : String
+    var name :String
+    var description : String
     var image : String
 }
 
