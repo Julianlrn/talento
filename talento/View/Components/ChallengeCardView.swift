@@ -15,13 +15,12 @@ struct ChallengeCardView: View {
     @State var fullscreen = false
     
     var challenge: Challenge
-    @ObservedObject var imageLoader: ImageLoader
     
     var body: some View {
         ZStack {
-            // VStack {
+            VStack {
                 //MARK: - IMAGE
-                Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! :UIImage())
+                Image(challenge.image)
                 .resizable()
                 .scaledToFit()
                 .overlay(
@@ -88,14 +87,14 @@ struct ChallengeCardView: View {
         }
         .edgesIgnoringSafeArea(.all)
     }
+}
 
-/* Göks wenn du des brauchst kannst dus dir einkommentieren zum testen 
 struct ChallengeCardView_Previews: PreviewProvider {
     static var previews: some View {
         ChallengeCardView(challenge: challengesData[0])
             //.previewLayout(.sizeThatFits)
     }
-} */ 
+}
 
 
     
