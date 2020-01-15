@@ -6,4 +6,4 @@
 //  Copyright © 2019 JulianLorenz. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
