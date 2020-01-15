@@ -10,7 +10,7 @@ import SwiftUI
 
 struct FeedView: View {
     
-    var challenges: [Challenge] = challengesData
+    var challenges: [Challenge] = getChallengeData();
     
     var body: some View {
         NavigationView {
@@ -21,6 +21,7 @@ struct FeedView: View {
                         ChallengeCardView(challenge: item)
                     }
                     .buttonStyle(PlainButtonStyle())
+                    //ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
                 }
                 .padding(.horizontal, 16)
             }.navigationBarTitle(Text("Feed"))
