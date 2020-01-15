@@ -12,8 +12,6 @@ struct ChallengeCardView: View {
     
     //MARK: - Properties
     
-    @State var fullscreen = false
-    
     var challenge: Challenge
     
     @ObservedObject var imageLoader: ImageLoader
@@ -76,27 +74,21 @@ struct ChallengeCardView: View {
                 .padding(.top, 12)
                 .padding(.bottom, 24)
             }
-            //.frame(height: self.fullscreen ? UIScreen.main.bounds.height : 380)
             .background(Color.white)
             .cornerRadius(16)
             .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24), radius: 24, x: 0, y: 12)
             .padding(.bottom, 24)
-            /*.onTapGesture {
-                if self.fullscreen {
-                    self.fullscreen.toggle()
-                } else { self.fullscreen.toggle() }
-            }*/
         }
         .edgesIgnoringSafeArea(.all)
     }
 }
 
 /*struct ChallengeCardView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        ChallengeCardView(challenge: challengesData[0])
-            //.previewLayout(.sizeThatFits)
     }
 }*/
+
 
 
     

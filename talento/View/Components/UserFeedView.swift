@@ -39,6 +39,6 @@ struct UserFeedView: View {
 struct UserFeedView_Previews: PreviewProvider {
     static var previews: some View {
         UserFeedView()
-        //    .previewLayout(.sizeThatFits)
+            .previewLayout(.sizeThatFits)
     }
 }
