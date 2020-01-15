@@ -15,9 +15,7 @@ import FirebaseUI
 
 struct ChallengeView: View {
     
-
     @State var tabIndex = 0
-    var challenges: [Challenge] = getChallengeData()
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -90,7 +88,6 @@ struct HotChallenges: View {
                         .frame(width: 311)
                         .padding(.leading, 16)
                         .padding(.vertical, 48)
-                    //ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
                 }
             }
         }
@@ -145,7 +142,6 @@ struct LocalChallenges: View {
         .padding(.horizontal, 16)
     }
 }
-
 
 struct ChallengeView_Previews: PreviewProvider {
     static var previews: some View {
