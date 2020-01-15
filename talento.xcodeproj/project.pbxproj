@@ -779,7 +779,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 74ZL66WBK4;
+				DEVELOPMENT_TEAM = PRVDUT282L;
 				INFOPLIST_FILE = talentoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -802,7 +802,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 74ZL66WBK4;
+				DEVELOPMENT_TEAM = PRVDUT282L;
 				INFOPLIST_FILE = talentoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -823,8 +823,9 @@
 			baseConfigurationReference = 46A0C27DA15A4AB0DB179472 /* Pods-talento-talentoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 74ZL66WBK4;
+				DEVELOPMENT_TEAM = PRVDUT282L;
 				INFOPLIST_FILE = talentoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -833,6 +834,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JulianLorenz.talentoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = talento;
@@ -844,8 +846,9 @@
 			baseConfigurationReference = DEF3124A38CAA398A595D333 /* Pods-talento-talentoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 74ZL66WBK4;
+				DEVELOPMENT_TEAM = PRVDUT282L;
 				INFOPLIST_FILE = talentoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -854,6 +857,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JulianLorenz.talentoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = talento;

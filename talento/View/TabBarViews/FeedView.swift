@@ -13,17 +13,17 @@ struct FeedView: View {
     var challenges: [Challenge] = challengesData
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .leading) {
-                Text("Feed")
-                    .font(.system(size: 32, weight: .bold))
-                    .padding(.top, 16)
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false) {
                 ForEach(challenges) { item in
                     UserFeedView()
-                    ChallengeCardView(challenge: item)
+                    NavigationLink(destination: ChallengeDetailView(challenge: item)) {
+                        ChallengeCardView(challenge: item)
+                    }
+                    .buttonStyle(PlainButtonStyle())
                 }
-            }
-            .padding(.horizontal, 16)
+                .padding(.horizontal, 16)
+            }.navigationBarTitle(Text("Feed"))
         }
     }
 }

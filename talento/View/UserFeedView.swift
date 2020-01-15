@@ -29,14 +29,16 @@ struct UserFeedView: View {
                         .font(.system(size: 14))
                         .foregroundColor(Color.gray)
                 }
+                Spacer()
             }
         }
+        .padding(.top, 16)
     }
 }
 
 struct UserFeedView_Previews: PreviewProvider {
     static var previews: some View {
         UserFeedView()
-            .previewLayout(.sizeThatFits)
+        //    .previewLayout(.sizeThatFits)
     }
 }

@@ -23,6 +23,7 @@ struct ChallengeView: View {
                 Text("Challenges")
                     .font(.system(size: 32, weight: .bold))
                     .padding(.top, 16)
+                    .padding(.leading, 16)
                 HStack(spacing: 16) {
                     HStack {
                         Text("Public")
@@ -46,32 +47,71 @@ struct ChallengeView: View {
                         self.tabIndex = 1
                     }
                 }
-                .padding(.top, 12)
-                .padding(.bottom, 12)
+                .padding(.top, 16)
+                .padding(.bottom, 16)
+                .padding(.leading, 16)
                 
                 if self.tabIndex == 0 {
-                    PublicChallenges()
+                    VStack(alignment: .leading) {
+                        Text("Hot")
+                            .font(.title)
+                            .padding(.leading, 16)
+                        HotChallenges()
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        Text("New")
+                            .font(.title)
+                            .padding(.leading, 16)
+                        NewChallenges()
+                    }
+                    .offset(y: -80)
                 }
                 else if self.tabIndex == 1 {
                     LocalChallenges()
                 }
             }
-            .padding(.horizontal, 16)
+            
         }
     }
 }
 
-struct PublicChallenges: View {
+struct HotChallenges: View {
     
     var challenges: [Challenge] = challengesData
     
     var body: some View {
-
-        ForEach(challenges) { item in
-            ChallengeCardView(challenge: item)
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(challenges) { item in
+                    ChallengeCardView(challenge: item)
+                        .frame(width: 311)
+                        .padding(.leading, 16)
+                        .padding(.vertical, 48)
+                }
+            }
         }
+        .offset(y: -48)
     }
+}
+
+struct NewChallenges: View {
     
+    var challenges: [Challenge] = challengesData
+    
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(challenges) { item in
+                    ChallengeCardView(challenge: item)
+                        .frame(width: 311)
+                        .padding(.leading, 16)
+                        .padding(.vertical, 48)
+                }
+            }
+        }
+        .offset(y: -48)
+    }
 }
 
 struct LocalChallenges: View {
@@ -93,11 +133,13 @@ struct LocalChallenges: View {
                 )
             }
             .padding(.top, 8)
-            .padding(.bottom, 16)
+            .padding(.bottom, 8)
+            
             ForEach(challenges) { item in
                 ChallengeCardView(challenge: item)
             }
         }
+        .padding(.horizontal, 16)
     }
 }
 
