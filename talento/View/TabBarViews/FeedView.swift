@@ -10,7 +10,7 @@ import SwiftUI
 
 struct FeedView: View {
     
-    var challenges: [Challenge] = challengesData
+    var challenges: [Challenge] = getChallengeData()
     
     var body: some View {
         NavigationView {
@@ -18,7 +18,7 @@ struct FeedView: View {
                 ForEach(challenges) { item in
                     UserFeedView()
                     NavigationLink(destination: ChallengeDetailView(challenge: item)) {
-                        ChallengeCardView(challenge: item)
+                       ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
@@ -28,11 +28,11 @@ struct FeedView: View {
     }
 }
 
-struct FeedView_Previews: PreviewProvider {
+/*struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedView(challenges: challengesData)
+        FeedView(challenges: challenges)
     }
-}
+}*/
 
 
     

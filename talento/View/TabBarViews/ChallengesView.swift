@@ -16,6 +16,7 @@ import FirebaseUI
 struct ChallengeView: View {
     
     @State var tabIndex = 0
+    //var challenges: [Challenge] = getChallengeData()
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -78,13 +79,13 @@ struct ChallengeView: View {
 
 struct HotChallenges: View {
     
-    var challenges: [Challenge] = challengesData
+    var challenges: [Challenge] = getChallengeData()
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(challenges) { item in
-                    ChallengeCardView(challenge: item)
+                    ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
                         .frame(width: 311)
                         .padding(.leading, 16)
                         .padding(.vertical, 48)
@@ -97,13 +98,13 @@ struct HotChallenges: View {
 
 struct NewChallenges: View {
     
-    var challenges: [Challenge] = challengesData
+    var challenges: [Challenge] = getChallengeData()
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(challenges) { item in
-                    ChallengeCardView(challenge: item)
+                    ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
                         .frame(width: 311)
                         .padding(.leading, 16)
                         .padding(.vertical, 48)
@@ -116,7 +117,7 @@ struct NewChallenges: View {
 
 struct LocalChallenges: View {
     
-    var challenges: [Challenge] = challengesData
+    var challenges: [Challenge] = getChallengeData()
     
     var body: some View {
         
@@ -136,7 +137,7 @@ struct LocalChallenges: View {
             .padding(.bottom, 8)
             
             ForEach(challenges) { item in
-                ChallengeCardView(challenge: item)
+                ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
             }
         }
         .padding(.horizontal, 16)

@@ -13,10 +13,28 @@ import FirebaseUI
 struct ChallengeCreateView: View {
     
     @ObservedObject var challengeData = getChallengeData()
+   // @ObservedObject var imageLoader: ImageLoader
     @State private var description = ""
     @State private var name = ""
     @State var isShowPicker: Bool = false
     @State var image: Image? = Image("placeholder")
+    
+    func upload(){
+        let db = Firestore.firestore()
+        db.collection("challenges")
+            .document()
+            .setData(
+            ["title":self.name, "instructions":self.description, "image": "https://firebasestorage.googleapis.com/v0/b/talento1-1.appspot.com/o/Images%2Fmountain.jpg?alt=media&token=78316d65-33a9-4b0f-a739-5efdc8cb20e6"]) { (err) in
+                
+                if err != nil{
+                   
+                    print((err?.localizedDescription)!)
+                    return
+                }
+                
+        }
+    }
+    
     
     var body: some View {
         
@@ -43,19 +61,7 @@ struct ChallengeCreateView: View {
                               
                 
                 Button(action: {
-                    let db = Firestore.firestore()
-                    db.collection("challenges")
-                        .document()
-                        .setData(
-                        ["name":self.name, "description":self.description]) { (err) in
-                            
-                            if err != nil{
-                               
-                                print((err?.localizedDescription)!)
-                                return
-                            }
-                            
-                    }
+                    self.upload()
                     
                 }) {
                     Text("Submit")
@@ -95,6 +101,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
             image = Image(uiImage: uiImage)
             presentationMode.dismiss()
+            let imageData = uiImage.pngData()
 
         }
 
@@ -122,13 +129,7 @@ struct ImagePicker: UIViewControllerRepresentable {
 }
 
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            ContentView()
-        }
-    }
-}
+
 
 class getChallengeData : ObservableObject{
     @Published var datas = [challengeDescription]()
@@ -145,9 +146,9 @@ class getChallengeData : ObservableObject{
                 let id = i.document.documentID
                 let name = i.document.get("title") as! String
                 let description = i.document.get("instructions") as! String
-                // let image = i.document.get("image") as! String
+                 let image = i.document.get("image") as! String
                 
-                self.datas.append(challengeDescription(id : id, name: name, description: description))
+                self.datas.append(challengeDescription(id : id, name: name, description: description, image:image))
             }
         }
     }
@@ -158,12 +159,8 @@ struct challengeDescription : Identifiable {
     var id : String
     var name :String
     var description : String
-    // var image : String
+    var image : String
 }
 
-struct ChallengeCreateView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChallengeCreateView()
-    }
 }
-}
+

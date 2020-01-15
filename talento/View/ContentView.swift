@@ -120,8 +120,9 @@ struct TabBar : View {
     }
 }
 
-struct ContentView_Preview: PreviewProvider {
+/*struct ContentView_Preview: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+*/

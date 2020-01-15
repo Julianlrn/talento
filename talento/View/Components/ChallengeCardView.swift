@@ -16,11 +16,13 @@ struct ChallengeCardView: View {
     
     var challenge: Challenge
     
+    @ObservedObject var imageLoader: ImageLoader
+    
     var body: some View {
         ZStack {
             VStack {
                 //MARK: - IMAGE
-                Image(challenge.image)
+                Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! :UIImage())
                 .resizable()
                 .scaledToFit()
                 .overlay(
@@ -48,7 +50,7 @@ struct ChallengeCardView: View {
                 VStack(alignment: .leading, spacing: 24) {
                     
                     //MARK: - PARTICIPANTS
-                    Text("Participants: \(challenge.participants)")
+                    Text("Participants: 123")
                         .font(.system(size: 16))
                     
                     //MARK: - TITLE
@@ -89,12 +91,12 @@ struct ChallengeCardView: View {
     }
 }
 
-struct ChallengeCardView_Previews: PreviewProvider {
+/*struct ChallengeCardView_Previews: PreviewProvider {
     static var previews: some View {
         ChallengeCardView(challenge: challengesData[0])
             //.previewLayout(.sizeThatFits)
     }
-}
+}*/
 
 
     
