@@ -16,6 +16,8 @@ struct ChallengeDetailView: View {
     
     var challenge: Challenge
     
+    @ObservedObject var imageLoader: ImageLoader
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack(alignment: .leading) {
@@ -35,7 +37,7 @@ struct ChallengeDetailView: View {
                 
                 VStack {
                     //MARK: - IMAGE
-                    Image(challenge.image)
+                    Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! :UIImage())
                     .resizable()
                     .scaledToFit()
                     .overlay(
@@ -103,9 +105,9 @@ struct ChallengeDetailView: View {
     }
 }
 
-struct ChallengeDetailView_Previews: PreviewProvider {
+/*struct ChallengeDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ChallengeDetailView(challenge: challengesData[0])
             //.previewLayout(.sizeThatFits)
     }
-}
+}*/

@@ -17,7 +17,7 @@ struct FeedView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 ForEach(challenges) { item in
                     UserFeedView()
-                    NavigationLink(destination: ChallengeDetailView(challenge: item)) {
+                    NavigationLink(destination: ChallengeDetailView(challenge: item, imageLoader: ImageLoader(urlString: item.image))) {
                        ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
                     }
                     .buttonStyle(PlainButtonStyle())
