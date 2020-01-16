@@ -13,10 +13,14 @@ import Firebase
 import FirebaseUI
 
 struct ProfileView: View {
+    
+    @State var tabIndex = 0
+    
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
-                Image("profile")
+                Image("Profile")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 300)
@@ -34,13 +38,133 @@ struct ProfileView: View {
                                     .font(.system(size: 24, weight: .light))
                                     .foregroundColor(Color.white)
                             }
+                            //View for TalentPoints, Followers and Preferences Button
+                            HStack (){
+                                HStack(spacing: 16) {
+                                    VStack(spacing: 4){
+                                        Text("2700")
+                                            .font(.system(size: 20))
+                                            .foregroundColor(Color.black)
+                                        Text("TALENT POINTS")
+                                            .font(.system(size: 8))
+                                            .foregroundColor(Color.black)
+                                    }
+                                    
+                                    VStack(spacing: 4){
+                                        Text("2700")
+                                            .font(.system(size: 20))
+                                            .foregroundColor(Color.black)
+                                        Text("FOLLOWER")
+                                            .font(.system(size: 8))
+                                            .foregroundColor(Color.black)
+                                    }
+                                    
+                                    Text("3 hours ago")
+                                        .font(.system(size: 16))
+                                        .foregroundColor(Color.black)
+
+                                    }
+                              //Spacer()
+                             }
+                            .padding(16)
+                            //.padding(.horizontal, 16)
+                            //.frame(minWidth: 343)
+                            .background(Color.white)
+                            .cornerRadius(16)
+                            .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24), radius: 24, x: 0, y: 12)
+
                         }
-                        .padding(.top, 150)
+                        .padding(.top, 198)
                         .padding(.trailing, 120)
+                        .padding(.horizontal, 16)
+                  
+                        
                     )
+                
+                
+                //Buttons to Switch between Achievements, Active Challenges and History Challenges
+                HStack(spacing: 16) {
+                    HStack {
+                            Text("Achievements")
+                                .foregroundColor(self.tabIndex == 0 ? Color.init(red:1.00, green:1.00, blue:1.00) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.32))
+                            }
+                            .padding(16)
+                            .background(self.tabIndex == 0 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.06))
+                            .cornerRadius(16)
+                            .onTapGesture {
+                                self.tabIndex = 0
+                            }
+                                   
+                    HStack {
+                            Text("Active")
+                                .foregroundColor(self.tabIndex == 1 ? Color.init(red:1.00, green:1.00, blue:1.00) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.32))
+                            }
+                            .padding(16)
+                            .background(self.tabIndex == 1 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.06))
+                                   .cornerRadius(16)
+                            .onTapGesture {
+                                self.tabIndex = 1
+                            }
+                                    
+                    HStack {
+                        Text("History")
+                                .foregroundColor(self.tabIndex == 2 ? Color.init(red:1.00, green:1.00, blue:1.00) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.32))
+                            }
+                            .padding(16)
+                            .background(self.tabIndex == 2 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.06))
+                            .cornerRadius(16)
+                            .onTapGesture {
+                                self.tabIndex = 2
+                            }
+                }
+                .padding(.top, 64)
+                .padding(.bottom, 16)
+                .padding(.leading, 16)
+                
+                if self.tabIndex == 0 {
+                     ActiveChallenges()
+                }
+                else if self.tabIndex == 1 {
+                      ActiveChallenges()
+                }
+                else if self.tabIndex == 2 {
+                   HistoryChallenges()
+                }
+                            
             }
         }
         .edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct ActiveChallenges: View {
+    
+    var challenges: [Challenge] = getChallengeData()
+    
+    var body: some View {
+        
+        VStack(alignment: .leading){
+            ForEach(challenges) { item in
+                ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+            }
+        }
+        .padding(.horizontal, 16)
+    }
+}
+
+
+struct HistoryChallenges: View {
+    
+    var challenges: [Challenge] = getChallengeData()
+    
+    var body: some View {
+        
+        VStack(alignment: .leading){
+            ForEach(challenges) { item in
+                ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+            }
+        }
+        .padding(.horizontal, 16)
     }
 }
 
