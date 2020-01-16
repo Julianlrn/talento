@@ -101,7 +101,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
             image = Image(uiImage: uiImage)
             presentationMode.dismiss()
-            let imageData = uiImage.pngData()
+            //let imageData = uiImage.pngData()
 
         }
 
@@ -122,13 +122,11 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: UIImagePickerController,
-                                context: UIViewControllerRepresentableContext<ImagePicker>) {
+        context: UIViewControllerRepresentableContext<ImagePicker>) {
 
     }
 
 }
-
-
 
 
 class getChallengeData : ObservableObject{
