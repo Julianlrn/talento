@@ -58,8 +58,6 @@ struct ChallengeCreateView: View {
                                           Text("IMPORT").font(.headline)
                                       }.foregroundColor(.black)
                                       Spacer()
-                              
-                
                 Button(action: {
                     self.upload()
                     
@@ -98,11 +96,21 @@ struct ImagePicker: UIViewControllerRepresentable {
 
         func imagePickerController(_ picker: UIImagePickerController,
                                    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            
             let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
             image = Image(uiImage: uiImage)
-            presentationMode.dismiss()
-            //let imageData = uiImage.pngData()
-
+            let storage = Storage.storage()
+            storage.reference().child("temp").putData(uiImage.jpegData(compressionQuality: 0.35)!, metadata:
+                nil) { (_, err) in
+                    
+                if err != nil{
+                    print((err?.localizedDescription)!)
+                    return
+                }
+                print("upload successfull")
+                return
+            }
+        // }
         }
 
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
