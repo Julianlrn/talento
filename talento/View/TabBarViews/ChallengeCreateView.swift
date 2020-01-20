@@ -111,7 +111,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             image = Image(uiImage: uiImage)
             let storage = Storage.storage()
             
-            storage.reference().child("Images/" + imgID).putData(uiImage.jpegData(compressionQuality: 0.35)!, metadata:
+            storage.reference().child("Images/" + imgID + ".jpeg").putData(uiImage.jpegData(compressionQuality: 0.35)!, metadata:
                 nil) { (_, err) in
                     
                 if err != nil{
@@ -119,7 +119,9 @@ struct ImagePicker: UIViewControllerRepresentable {
                     return
                 }
                 print("upload of image " + imgID +  " successfull")
-                return
+                
+                    self.presentationMode.dismiss()
+                // return
             }
         // }
         }
