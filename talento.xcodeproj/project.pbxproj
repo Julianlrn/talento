@@ -30,6 +30,8 @@
 		D0464F79937DBD5D0D74A7ED /* Pods_talento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD79194C95BB7F620C0B23C /* Pods_talento.framework */; };
 		ED68C98A7615F4D2CB08FBCF /* Pods_talentoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D7A0623AB88B75C407B09B /* Pods_talentoTests.framework */; };
 		F30C3A9023C0EFDC00D663C9 /* ChallengeCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30C3A8F23C0EFDC00D663C9 /* ChallengeCreateView.swift */; };
+		F332F3D923D61E8C00DF9848 /* EntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F332F3D823D61E8C00DF9848 /* EntryModel.swift */; };
+		F332F3DB23D61F3B00DF9848 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F332F3DA23D61F3B00DF9848 /* EntryView.swift */; };
 		F35AACCF23BFA86D005942EC /* ChallengeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AACCE23BFA86D005942EC /* ChallengeModel.swift */; };
 		F35AACD323BFABBF005942EC /* ChallengeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AACD223BFABBF005942EC /* ChallengeData.swift */; };
 		F35AACD523BFD937005942EC /* ChallengeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AACD423BFD937005942EC /* ChallengeDetailView.swift */; };
@@ -90,6 +92,8 @@
 		EBD79194C95BB7F620C0B23C /* Pods_talento.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talento.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25E808EE14980D0C9B8FB9F /* Pods_talento_talentoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talento_talentoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30C3A8F23C0EFDC00D663C9 /* ChallengeCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCreateView.swift; sourceTree = "<group>"; };
+		F332F3D823D61E8C00DF9848 /* EntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryModel.swift; sourceTree = "<group>"; };
+		F332F3DA23D61F3B00DF9848 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		F35AACCE23BFA86D005942EC /* ChallengeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeModel.swift; sourceTree = "<group>"; };
 		F35AACD223BFABBF005942EC /* ChallengeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeData.swift; sourceTree = "<group>"; };
 		F35AACD423BFD937005942EC /* ChallengeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailView.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 				F35AACD623BFD9DA005942EC /* UserFeedView.swift */,
 				227C134D23A2A06D00D36384 /* ChallengeCardView.swift */,
 				2262E05423CA25680090B2B8 /* ActivityEntryView.swift */,
+				F332F3DA23D61F3B00DF9848 /* EntryView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				F35AACCE23BFA86D005942EC /* ChallengeModel.swift */,
+				F332F3D823D61E8C00DF9848 /* EntryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -569,12 +575,14 @@
 				2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */,
 				F35AACCF23BFA86D005942EC /* ChallengeModel.swift in Sources */,
 				F35AACD323BFABBF005942EC /* ChallengeData.swift in Sources */,
+				F332F3DB23D61F3B00DF9848 /* EntryView.swift in Sources */,
 				F30C3A9023C0EFDC00D663C9 /* ChallengeCreateView.swift in Sources */,
 				227C135523A2AB8D00D36384 /* ProfileDetailView.swift in Sources */,
 				228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */,
 				F35AACD523BFD937005942EC /* ChallengeDetailView.swift in Sources */,
 				227C134E23A2A06D00D36384 /* ChallengeCardView.swift in Sources */,
 				2266C36A23A29BE700E6216A /* ChallengesView.swift in Sources */,
+				F332F3D923D61E8C00DF9848 /* EntryModel.swift in Sources */,
 				228F066D239D8CBB001C0D7A /* SceneDelegate.swift in Sources */,
 				B9236F9323CF7FC10095CA9E /* ImageLoader.swift in Sources */,
 				2266C36C23A29BF400E6216A /* ActivityView.swift in Sources */,
