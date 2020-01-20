@@ -20,9 +20,9 @@ struct ChallengeCardView: View {
         ZStack {
             VStack {
                 //MARK: - IMAGE
-                Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! :UIImage())
+                Image(challenge.image)
                 .resizable()
-                .scaledToFit()
+                .aspectRatio(contentMode: .fill)
                 .overlay(
                     HStack {
                         Spacer()
@@ -43,6 +43,7 @@ struct ChallengeCardView: View {
                         .padding(.trailing, 16)
                     }
                 )
+                .frame(maxHeight: 220)
                 
                 //MARK: - CONTENT
                 VStack(alignment: .leading, spacing: 24) {
@@ -84,8 +85,8 @@ struct ChallengeCardView: View {
 }
 
 /*struct ChallengeCardView_Previews: PreviewProvider {
-    
     static var previews: some View {
+        ChallengeCardView()
     }
 }*/
 
