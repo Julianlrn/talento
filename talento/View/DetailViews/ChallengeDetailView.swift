@@ -182,7 +182,18 @@ struct Ranking: View {
     var challenge: Challenge
 
     var body: some View {
-        Text("This is Ranking!")
+        VStack(alignment: .leading) {
+            Text("This is Ranking!")
+                .font(.title)
+                .padding(.top, 16)
+            Image("profile")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 343, height: 400)
+                .cornerRadius(16)
+        }
+        .padding(.horizontal, 16)
+        
     }
 }
 
