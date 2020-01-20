@@ -16,6 +16,7 @@ struct ChallengeCreateView: View {
    // @ObservedObject var imageLoader: ImageLoader
     @State private var description = ""
     @State private var name = ""
+    // @Published var imgName: String = ""
     @State var isShowPicker: Bool = false
     @State var image: Image? = Image("placeholder")
     
@@ -31,9 +32,9 @@ struct ChallengeCreateView: View {
                     print((err?.localizedDescription)!)
                     return
                 }
-                
         }
     }
+    
     
     
     var body: some View {
@@ -47,7 +48,7 @@ struct ChallengeCreateView: View {
                 TextField("Enter Challenge Name", text: $name)
                     .border(Color.black)
                 // TODO: Image aus DB lesen und hochladen
-                // image?.resizable().scaledToFit().frame(height: CGFloat(320))
+                image?.resizable().scaledToFit().frame(height: CGFloat(320))
                                       Button(action: {
                                           withAnimation {
                                               self.isShowPicker.toggle()
@@ -78,7 +79,7 @@ struct ChallengeCreateView: View {
 
 
 struct ImagePicker: UIViewControllerRepresentable {
-
+    
     @Environment(\.presentationMode)
     var presentationMode
 
@@ -97,17 +98,27 @@ struct ImagePicker: UIViewControllerRepresentable {
         func imagePickerController(_ picker: UIImagePickerController,
                                    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             
+            func randomString(length: Int) -> String {
+              let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+              return String((0..<length).map{ _ in letters.randomElement()! })
+            }
+
+            
             let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+            let imgID = randomString(length: 10)
+            
+            
             image = Image(uiImage: uiImage)
             let storage = Storage.storage()
-            storage.reference().child("temp").putData(uiImage.jpegData(compressionQuality: 0.35)!, metadata:
+            
+            storage.reference().child("Images/" + imgID).putData(uiImage.jpegData(compressionQuality: 0.35)!, metadata:
                 nil) { (_, err) in
                     
                 if err != nil{
                     print((err?.localizedDescription)!)
                     return
                 }
-                print("upload successfull")
+                print("upload of image " + imgID +  " successfull")
                 return
             }
         // }
@@ -133,7 +144,7 @@ struct ImagePicker: UIViewControllerRepresentable {
         context: UIViewControllerRepresentableContext<ImagePicker>) {
 
     }
-
+    
 }
 
 
@@ -159,6 +170,7 @@ class getChallengeData : ObservableObject{
         }
     }
 }
+
 
 
 struct challengeDescription : Identifiable {
