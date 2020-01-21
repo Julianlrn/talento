@@ -9,7 +9,7 @@
 import SwiftUI
 import SDWebImage
 
-struct EntryView: View {
+struct MediaEntryView: View {
     
     @ObservedObject var obser = observer()
     @State var liked = 0
@@ -89,11 +89,5 @@ struct Loader : UIViewRepresentable {
         
     }
     func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<Loader>) {
-    }
-}
-
-struct EntryView_Previews: PreviewProvider {
-    static var previews: some View {
-        EntryView()
     }
 }

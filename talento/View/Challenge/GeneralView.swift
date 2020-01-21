@@ -1,78 +1,14 @@
 //
-//  ChallengeDetailView.swift
+//  GeneralView.swift
 //  talento
 //
-//  Created by Julian Lorenz on 12.12.19.
-//  Copyright © 2019 JulianLorenz. All rights reserved.
+//  Created by Gökay Inan on 21.01.20.
+//  Copyright © 2020 JulianLorenz. All rights reserved.
 //
 
 import SwiftUI
 
-struct ChallengeDetailView: View {
-    
-    @ObservedObject var imageLoader: ImageLoader
-    @State var tabIndex = 0
-    
-    var challenge: Challenge
-    
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            //MARK: - TABS
-            HStack(spacing: 16) {
-                HStack {
-                    Text("General")
-                        .foregroundColor(self.tabIndex == 0 ? Color.init(red:1.00, green:1.00, blue:1.00) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.32))
-                }
-                .padding(16)
-                .background(self.tabIndex == 0 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.06))
-                .cornerRadius(16)
-                .onTapGesture {
-                    self.tabIndex = 0
-                }
-                
-                HStack {
-                    Text("Rating")
-                    .foregroundColor(self.tabIndex == 1 ? Color.init(red:1.00, green:1.00, blue:1.00) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.32))
-                }
-                .padding(16)
-                .background(self.tabIndex == 1 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.06))
-                .cornerRadius(16)
-                .onTapGesture {
-                    self.tabIndex = 1
-                }
-                
-                HStack {
-                    Text("Ranking")
-                    .foregroundColor(self.tabIndex == 2 ? Color.init(red:1.00, green:1.00, blue:1.00) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.32))
-                }
-                .padding(16)
-                .background(self.tabIndex == 2 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.06))
-                .cornerRadius(16)
-                .onTapGesture {
-                    self.tabIndex = 2
-                }
-            }
-            .padding(.bottom, 8)
-            .padding(.leading, 16)
-            
-            if self.tabIndex == 0 {
-                General(challenge: self.challenge)
-            }
-            else if self.tabIndex == 1 {
-                Rating(challenge: self.challenge)
-            }
-            else if self.tabIndex == 2 {
-                Ranking(challenge: self.challenge)
-            }
-            
-            Spacer()
-        }
-    }
-}
-
-
-struct General: View {
+struct GeneralView: View {
     
     var challenge: Challenge
     
@@ -160,6 +96,22 @@ struct General: View {
                          .font(.title)
                      Text(challenge.instructions)
                          .font(.system(size: 20))
+                    
+                    Button(action: {
+                        print("Participate tapped!")
+                    }) {
+                        HStack {
+                            Text("Participate")
+                                .font(.system(size: 16, weight: .bold))
+                                .foregroundColor(Color.white)
+                                .padding(24)
+                        }
+                        .frame(width: 343)
+                        .background(Color.init(red:0.96, green:0.11, blue:0.34))
+                        .cornerRadius(16)
+                        .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
+                        .padding(.bottom, 24)
+                    }
                  }
                  .padding(.horizontal, 16)
              }
@@ -167,40 +119,3 @@ struct General: View {
         }
     }
 }
-
-struct Rating: View {
-
-    var challenge: Challenge
-
-    var body: some View {
-        EntryView()
-    }
-}
-
-struct Ranking: View {
-
-    var challenge: Challenge
-
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text("This is Ranking!")
-                .font(.title)
-                .padding(.top, 16)
-            Image("profile")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 343, height: 400)
-                .cornerRadius(16)
-        }
-        .padding(.horizontal, 16)
-        
-    }
-}
-
-
-/*struct ChallengeDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChallengeDetailView(challenge: challengesData[0])
-            //.previewLayout(.sizeThatFits)
-    }
-}*/

@@ -15,7 +15,7 @@
 		2266C36C23A29BF400E6216A /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266C36B23A29BF400E6216A /* ActivityView.swift */; };
 		2266C36E23A29C0100E6216A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266C36D23A29C0100E6216A /* ProfileView.swift */; };
 		227C134E23A2A06D00D36384 /* ChallengeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C134D23A2A06D00D36384 /* ChallengeCardView.swift */; };
-		227C135523A2AB8D00D36384 /* ProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C135423A2AB8D00D36384 /* ProfileDetailView.swift */; };
+		227C135523A2AB8D00D36384 /* ForeignProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C135423A2AB8D00D36384 /* ForeignProfileView.swift */; };
 		228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066A239D8CBB001C0D7A /* AppDelegate.swift */; };
 		228F066D239D8CBB001C0D7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066C239D8CBB001C0D7A /* SceneDelegate.swift */; };
 		228F066F239D8CBB001C0D7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066E239D8CBB001C0D7A /* ContentView.swift */; };
@@ -31,11 +31,15 @@
 		ED68C98A7615F4D2CB08FBCF /* Pods_talentoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D7A0623AB88B75C407B09B /* Pods_talentoTests.framework */; };
 		F30C3A9023C0EFDC00D663C9 /* ChallengeCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30C3A8F23C0EFDC00D663C9 /* ChallengeCreateView.swift */; };
 		F332F3D923D61E8C00DF9848 /* EntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F332F3D823D61E8C00DF9848 /* EntryModel.swift */; };
-		F332F3DB23D61F3B00DF9848 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F332F3DA23D61F3B00DF9848 /* EntryView.swift */; };
+		F332F3DB23D61F3B00DF9848 /* MediaEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F332F3DA23D61F3B00DF9848 /* MediaEntryView.swift */; };
 		F35AACCF23BFA86D005942EC /* ChallengeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AACCE23BFA86D005942EC /* ChallengeModel.swift */; };
 		F35AACD323BFABBF005942EC /* ChallengeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AACD223BFABBF005942EC /* ChallengeData.swift */; };
 		F35AACD523BFD937005942EC /* ChallengeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AACD423BFD937005942EC /* ChallengeDetailView.swift */; };
 		F35AACD723BFD9DA005942EC /* UserFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AACD623BFD9DA005942EC /* UserFeedView.swift */; };
+		F39CC38B23D76D6A00C8C9DA /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39CC38A23D76D6A00C8C9DA /* RankingView.swift */; };
+		F39CC38D23D7733A00C8C9DA /* RankingEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39CC38C23D7733A00C8C9DA /* RankingEntryView.swift */; };
+		F39CC38F23D782C500C8C9DA /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39CC38E23D782C500C8C9DA /* GeneralView.swift */; };
+		F39CC39123D7845900C8C9DA /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39CC39023D7845900C8C9DA /* RatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +70,7 @@
 		2266C36B23A29BF400E6216A /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		2266C36D23A29C0100E6216A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		227C134D23A2A06D00D36384 /* ChallengeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCardView.swift; sourceTree = "<group>"; };
-		227C135423A2AB8D00D36384 /* ProfileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailView.swift; sourceTree = "<group>"; };
+		227C135423A2AB8D00D36384 /* ForeignProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignProfileView.swift; sourceTree = "<group>"; };
 		228F0667239D8CBB001C0D7A /* talento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = talento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228F066A239D8CBB001C0D7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		228F066C239D8CBB001C0D7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,11 +97,15 @@
 		F25E808EE14980D0C9B8FB9F /* Pods_talento_talentoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talento_talentoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30C3A8F23C0EFDC00D663C9 /* ChallengeCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCreateView.swift; sourceTree = "<group>"; };
 		F332F3D823D61E8C00DF9848 /* EntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryModel.swift; sourceTree = "<group>"; };
-		F332F3DA23D61F3B00DF9848 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
+		F332F3DA23D61F3B00DF9848 /* MediaEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEntryView.swift; sourceTree = "<group>"; };
 		F35AACCE23BFA86D005942EC /* ChallengeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeModel.swift; sourceTree = "<group>"; };
 		F35AACD223BFABBF005942EC /* ChallengeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeData.swift; sourceTree = "<group>"; };
 		F35AACD423BFD937005942EC /* ChallengeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailView.swift; sourceTree = "<group>"; };
 		F35AACD623BFD9DA005942EC /* UserFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeedView.swift; sourceTree = "<group>"; };
+		F39CC38A23D76D6A00C8C9DA /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
+		F39CC38C23D7733A00C8C9DA /* RankingEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingEntryView.swift; sourceTree = "<group>"; };
+		F39CC38E23D782C500C8C9DA /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
+		F39CC39023D7845900C8C9DA /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +161,8 @@
 				F35AACD623BFD9DA005942EC /* UserFeedView.swift */,
 				227C134D23A2A06D00D36384 /* ChallengeCardView.swift */,
 				2262E05423CA25680090B2B8 /* ActivityEntryView.swift */,
-				F332F3DA23D61F3B00DF9848 /* EntryView.swift */,
+				F332F3DA23D61F3B00DF9848 /* MediaEntryView.swift */,
+				F39CC38C23D7733A00C8C9DA /* RankingEntryView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -168,15 +177,6 @@
 				2266C36D23A29C0100E6216A /* ProfileView.swift */,
 			);
 			path = TabBarViews;
-			sourceTree = "<group>";
-		};
-		227C135023A2A07A00D36384 /* DetailViews */ = {
-			isa = PBXGroup;
-			children = (
-				F35AACD423BFD937005942EC /* ChallengeDetailView.swift */,
-				227C135423A2AB8D00D36384 /* ProfileDetailView.swift */,
-			);
-			path = DetailViews;
 			sourceTree = "<group>";
 		};
 		228F065E239D8CBB001C0D7A = {
@@ -208,6 +208,7 @@
 				F35AACCD23BFA83B005942EC /* Model */,
 				F35AACD023BFAB38005942EC /* Data */,
 				2258373C239ECC9100A9FD1B /* FacebookLogin */,
+				B9236F9223CF7FC10095CA9E /* ImageLoader.swift */,
 				228F066A239D8CBB001C0D7A /* AppDelegate.swift */,
 				228F066C239D8CBB001C0D7A /* SceneDelegate.swift */,
 				228F0670239D8CBE001C0D7A /* Assets.xcassets */,
@@ -280,12 +281,23 @@
 			isa = PBXGroup;
 			children = (
 				228F066E239D8CBB001C0D7A /* ContentView.swift */,
-				B9236F9223CF7FC10095CA9E /* ImageLoader.swift */,
+				227C135423A2AB8D00D36384 /* ForeignProfileView.swift */,
+				F39CC39223D7879E00C8C9DA /* Challenge */,
 				2262E05323CA24470090B2B8 /* Components */,
-				227C135023A2A07A00D36384 /* DetailViews */,
 				2266C36F23A29C8200E6216A /* TabBarViews */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F39CC39223D7879E00C8C9DA /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				F35AACD423BFD937005942EC /* ChallengeDetailView.swift */,
+				F39CC38E23D782C500C8C9DA /* GeneralView.swift */,
+				F39CC39023D7845900C8C9DA /* RatingView.swift */,
+				F39CC38A23D76D6A00C8C9DA /* RankingView.swift */,
+			);
+			path = Challenge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -571,13 +583,17 @@
 				F35AACD723BFD9DA005942EC /* UserFeedView.swift in Sources */,
 				22583737239EAEEB00A9FD1B /* FeedView.swift in Sources */,
 				2266C36E23A29C0100E6216A /* ProfileView.swift in Sources */,
+				F39CC39123D7845900C8C9DA /* RatingView.swift in Sources */,
+				F39CC38F23D782C500C8C9DA /* GeneralView.swift in Sources */,
 				2262E05523CA25680090B2B8 /* ActivityEntryView.swift in Sources */,
+				F39CC38D23D7733A00C8C9DA /* RankingEntryView.swift in Sources */,
 				2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */,
 				F35AACCF23BFA86D005942EC /* ChallengeModel.swift in Sources */,
 				F35AACD323BFABBF005942EC /* ChallengeData.swift in Sources */,
-				F332F3DB23D61F3B00DF9848 /* EntryView.swift in Sources */,
+				F39CC38B23D76D6A00C8C9DA /* RankingView.swift in Sources */,
+				F332F3DB23D61F3B00DF9848 /* MediaEntryView.swift in Sources */,
 				F30C3A9023C0EFDC00D663C9 /* ChallengeCreateView.swift in Sources */,
-				227C135523A2AB8D00D36384 /* ProfileDetailView.swift in Sources */,
+				227C135523A2AB8D00D36384 /* ForeignProfileView.swift in Sources */,
 				228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */,
 				F35AACD523BFD937005942EC /* ChallengeDetailView.swift in Sources */,
 				227C134E23A2A06D00D36384 /* ChallengeCardView.swift in Sources */,
