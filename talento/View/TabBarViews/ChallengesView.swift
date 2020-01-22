@@ -69,6 +69,9 @@ struct ChallengeView: View {
                     .offset(y: -80)
                 }
                 else if self.tabIndex == 1 {
+                    Text("Munich, Germany")
+                        .font(.title)
+                        .padding(.leading, 16)
                     LocalChallenges()
                 }
             }
@@ -122,7 +125,7 @@ struct LocalChallenges: View {
     var body: some View {
         
         VStack(alignment: .leading){
-            HStack {
+          /* HStack {
                 Text("Your Location: ")
                 
                 Text("Munich, Germany")
@@ -134,8 +137,8 @@ struct LocalChallenges: View {
                 )
             }
             .padding(.top, 8)
-            .padding(.bottom, 8)
-            
+            .padding(.bottom, 8)*/
+         
             ForEach(challenges) { item in
                 ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
             }

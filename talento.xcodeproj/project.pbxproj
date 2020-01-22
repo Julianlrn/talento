@@ -158,9 +158,9 @@
 		2262E05323CA24470090B2B8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2262E05423CA25680090B2B8 /* ActivityEntryView.swift */,
 				F35AACD623BFD9DA005942EC /* UserFeedView.swift */,
 				227C134D23A2A06D00D36384 /* ChallengeCardView.swift */,
-				2262E05423CA25680090B2B8 /* ActivityEntryView.swift */,
 				F332F3DA23D61F3B00DF9848 /* MediaEntryView.swift */,
 				F39CC38C23D7733A00C8C9DA /* RankingEntryView.swift */,
 			);
@@ -170,10 +170,10 @@
 		2266C36F23A29C8200E6216A /* TabBarViews */ = {
 			isa = PBXGroup;
 			children = (
+				2266C36B23A29BF400E6216A /* ActivityView.swift */,
 				22583736239EAEEB00A9FD1B /* FeedView.swift */,
 				2266C36923A29BE700E6216A /* ChallengesView.swift */,
 				F30C3A8F23C0EFDC00D663C9 /* ChallengeCreateView.swift */,
-				2266C36B23A29BF400E6216A /* ActivityView.swift */,
 				2266C36D23A29C0100E6216A /* ProfileView.swift */,
 			);
 			path = TabBarViews;

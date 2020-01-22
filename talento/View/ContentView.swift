@@ -55,7 +55,7 @@ struct TabBar : View {
     
     var body: some View {
         
-        HStack(spacing: 16) {
+        HStack(spacing: 32) {
             
             HStack {
                 Image(systemName: self.index == 0 ? "house.fill" : "house")
@@ -90,7 +90,7 @@ struct TabBar : View {
                 self.index = 2
             }
             
-            HStack {
+           /*HStack {
                 Image(systemName: self.index == 3 ? "suit.heart.fill" : "suit.heart")
                     .resizable()
                     .frame(width: 25, height: 24)
@@ -99,7 +99,7 @@ struct TabBar : View {
             .padding(.horizontal, 16)
             .onTapGesture {
                 self.index = 3
-            }
+            }*/
             
             HStack {
                 Image(systemName: self.index == 4 ? "person.fill" : "person")
