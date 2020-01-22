@@ -6,4 +6,145 @@
 //  Copyright © 2019 JulianLorenz. All rights reserved.
 //
 
+import Foundation
 import SwiftUI
+import FBSDKLoginKit
+import Firebase
+import FirebaseUI
+
+struct ForeignProfileView: View {
+    
+    @State var tabIndex = 0
+    
+    
+    
+    var body: some View {
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: .leading) {
+                Image("Profile")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: 300)
+                    .clipped()
+                    .colorMultiply(Color.init(red:0.96, green:0.11, blue:0.34, opacity: 1))
+                    .overlay (
+                        VStack(alignment: .leading, spacing: 8) {
+                            HStack {
+                                Text("Michael 0301")
+                                    .font(.system(size: 32, weight: .bold))
+                                    .foregroundColor(Color.white)
+                            }
+                            HStack {
+                                Text("keep it simple.")
+                                    .font(.system(size: 24, weight: .light))
+                                    .foregroundColor(Color.white)
+                            }
+                            Divider()
+                            Divider()
+                            //View for TalentPoints, Followers and Preferences Button
+                            HStack (spacing : 80){
+                                HStack(spacing: 48) {
+                                    VStack(spacing: 4){
+                                        Text("2700")
+                                            .font(.system(size: 20, weight: .bold))
+                                            .foregroundColor(Color.black)
+                                        Text("TALENT POINTS")
+                                            .font(.system(size: 8))
+                                            .foregroundColor(Color.black)
+                                    }
+                                    
+                                    VStack(spacing: 4){
+                                        Text("2700")
+                                            .font(.system(size: 20, weight: .bold))
+                                            .foregroundColor(Color.black)
+                                        Text("FOLLOWER")
+                                            .font(.system(size: 8))
+                                            .foregroundColor(Color.black)
+                                    }
+                                }
+                                
+                                HStack {
+                                    Image(systemName: "suit.heart")
+                                        .resizable()
+                                        .frame(width: 25, height: 24)
+                                        .foregroundColor( Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.40))
+                                                                   }
+                                .onTapGesture {
+                                    print("EINSTELLUNGEN ÖFFNEN")
+                                }
+                              //Spacer()
+                             }
+                            .padding(24)
+                            //.padding(.leading, 24)
+                            .frame(minWidth: 343)
+                            .background(Color.white)
+                            .cornerRadius(16)
+                            .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24), radius: 24, x: 0, y: 12)
+                            
+                        }
+                        .padding(.top, 198)
+                        .padding(.horizontal, 16)
+                    )
+                
+                
+                
+                //Buttons to Switch between Achievements, Active Challenges and History Challenges
+                HStack(spacing: 16) {
+                    HStack {
+                            Text("Achievements")
+                                .foregroundColor(self.tabIndex == 0 ? Color.init(red:1.00, green:1.00, blue:1.00) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.32))
+                            }
+                            .padding(16)
+                            .background(self.tabIndex == 0 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.06))
+                            .cornerRadius(16)
+                            .onTapGesture {
+                                self.tabIndex = 0
+                            }
+                                   
+                    HStack {
+                            Text("Active")
+                                .foregroundColor(self.tabIndex == 1 ? Color.init(red:1.00, green:1.00, blue:1.00) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.32))
+                            }
+                            .padding(16)
+                            .background(self.tabIndex == 1 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.06))
+                                   .cornerRadius(16)
+                            .onTapGesture {
+                                self.tabIndex = 1
+                            }
+                                    
+                    HStack {
+                        Text("History")
+                                .foregroundColor(self.tabIndex == 2 ? Color.init(red:1.00, green:1.00, blue:1.00) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.32))
+                            }
+                            .padding(16)
+                            .background(self.tabIndex == 2 ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.06))
+                            .cornerRadius(16)
+                            .onTapGesture {
+                                self.tabIndex = 2
+                            }
+                }
+                .padding(.top, 64)
+                .padding(.bottom, 16)
+                .padding(.leading, 16)
+                
+                if self.tabIndex == 0 {
+                     ActiveChallenges()
+                }
+                else if self.tabIndex == 1 {
+                      ActiveChallenges()
+                }
+                else if self.tabIndex == 2 {
+                   HistoryChallenges()
+                }
+                            
+            }
+        }
+        .edgesIgnoringSafeArea(.all)
+    }
+}
+
+
+
+
+
+

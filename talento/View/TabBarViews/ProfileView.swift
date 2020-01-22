@@ -17,6 +17,7 @@ struct ProfileView: View {
     @State var tabIndex = 0
     
     
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
@@ -27,7 +28,7 @@ struct ProfileView: View {
                     .clipped()
                     .colorMultiply(Color.init(red:0.96, green:0.11, blue:0.34, opacity: 1))
                     .overlay (
-                        VStack(alignment: .leading, spacing: 16) {
+                        VStack(alignment: .leading, spacing: 8) {
                             HStack {
                                 Text("Michael 0301")
                                     .font(.system(size: 32, weight: .bold))
@@ -38,12 +39,14 @@ struct ProfileView: View {
                                     .font(.system(size: 24, weight: .light))
                                     .foregroundColor(Color.white)
                             }
+                            Divider()
+                            Divider()
                             //View for TalentPoints, Followers and Preferences Button
-                            HStack (){
-                                HStack(spacing: 16) {
+                            HStack (spacing : 80){
+                                HStack(spacing: 48) {
                                     VStack(spacing: 4){
                                         Text("2700")
-                                            .font(.system(size: 20))
+                                            .font(.system(size: 20, weight: .bold))
                                             .foregroundColor(Color.black)
                                         Text("TALENT POINTS")
                                             .font(.system(size: 8))
@@ -52,34 +55,37 @@ struct ProfileView: View {
                                     
                                     VStack(spacing: 4){
                                         Text("2700")
-                                            .font(.system(size: 20))
+                                            .font(.system(size: 20, weight: .bold))
                                             .foregroundColor(Color.black)
                                         Text("FOLLOWER")
                                             .font(.system(size: 8))
                                             .foregroundColor(Color.black)
                                     }
-                                    
-                                    Text("3 hours ago")
-                                        .font(.system(size: 16))
-                                        .foregroundColor(Color.black)
-
-                                    }
+                                }
+                                
+                                HStack {
+                                    Image(systemName: "suit.heart")
+                                        .resizable()
+                                        .frame(width: 25, height: 24)
+                                        .foregroundColor( Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.40))
+                                                                   }
+                                .onTapGesture {
+                                    print("EINSTELLUNGEN ÖFFNEN")
+                                }
                               //Spacer()
                              }
-                            .padding(16)
-                            //.padding(.horizontal, 16)
-                            //.frame(minWidth: 343)
+                            .padding(24)
+                            //.padding(.leading, 24)
+                            .frame(minWidth: 343)
                             .background(Color.white)
                             .cornerRadius(16)
                             .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24), radius: 24, x: 0, y: 12)
-
+                            
                         }
                         .padding(.top, 198)
-                        .padding(.trailing, 120)
                         .padding(.horizontal, 16)
-                  
-                        
                     )
+                
                 
                 
                 //Buttons to Switch between Achievements, Active Challenges and History Challenges

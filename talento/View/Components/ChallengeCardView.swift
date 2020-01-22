@@ -27,6 +27,7 @@ struct ChallengeCardView: View {
                     HStack {
                         Spacer()
                         //MARK: - HOT
+                        
                         VStack {
                             Text("HOT")
                                 .font(.system(size: 12))
