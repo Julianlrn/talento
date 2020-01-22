@@ -14,6 +14,9 @@ import FirebaseUI
 
 struct ProfileView: View {
     
+    //Bekommt UserId Übergeben
+    
+    
     @State var tabIndex = 0
     
     
@@ -128,13 +131,16 @@ struct ProfileView: View {
                 .padding(.leading, 16)
                 
                 if self.tabIndex == 0 {
-                     ActiveChallenges()
+                    //Alle Challenges, an denen User Teilimmt  && "time == 0"  && "Ranking <= 3"
+                    ActiveChallenges()
                 }
                 else if self.tabIndex == 1 {
-                      ActiveChallenges()
+                    //Alle Challenges, bei denen der User (ID) teilnimmt && "time != 0"
+                    ActiveChallenges()
                 }
                 else if self.tabIndex == 2 {
-                   HistoryChallenges()
+                    //Alle Challenges, bei denen der User (ID) teilnimmt
+                    HistoryChallenges()
                 }
                             
             }
