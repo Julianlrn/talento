@@ -17,10 +17,8 @@ struct ActivityEntryView: View {
     var body: some View {
         
             HStack {
-               
-                HStack(spacing: 16) {
-                        
-                            Image("profile")
+               HStack(spacing: 16) {
+                        Image("profile")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 48, height: 48)
@@ -29,7 +27,6 @@ struct ActivityEntryView: View {
                             Text("3 hours ago")
                                 .font(.system(size: 16))
                                 .foregroundColor(Color.black)
-                      
                     }
                  Spacer()
                 }
@@ -37,7 +34,6 @@ struct ActivityEntryView: View {
                 .frame(minWidth: 343)
                 .background(Color.init(red: 0.00, green: 0.00, blue: 0.00, opacity: 0.06))
                 .cornerRadius(16)
-      
     }
 }
 
