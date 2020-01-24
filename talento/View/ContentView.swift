@@ -41,6 +41,7 @@ struct ContentView: View {
             }
             else if self.index == 4 {
                 ProfileView()
+                //ForeignProfileView()
             }
             
             TabBar(index : $index)

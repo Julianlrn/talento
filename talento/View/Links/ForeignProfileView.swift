@@ -1,5 +1,5 @@
 //
-//  ProfileDetailView.swift
+//  ForeignProfileView.swift
 //  talento
 //
 //  Created by Julian Lorenz on 12.12.19.
@@ -14,13 +14,17 @@ import FirebaseUI
 
 struct ForeignProfileView: View {
     
+    //Bekommt UserId eigenes + foreignProfil übergeben
+    
+    
+    
     @State var tabIndex = 0
     
     
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .leading) {
+            VStack(alignment: HorizontalAlignment.leading) {
                 Image("Profile")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -28,65 +32,97 @@ struct ForeignProfileView: View {
                     .clipped()
                     .colorMultiply(Color.init(red:0.96, green:0.11, blue:0.34, opacity: 1))
                     .overlay (
-                        VStack(alignment: .leading, spacing: 8) {
-                            HStack {
-                                Text("Michael 0301")
-                                    .font(.system(size: 32, weight: .bold))
-                                    .foregroundColor(Color.white)
-                            }
-                            HStack {
-                                Text("keep it simple.")
-                                    .font(.system(size: 24, weight: .light))
-                                    .foregroundColor(Color.white)
-                            }
-                            Divider()
-                            Divider()
-                            //View for TalentPoints, Followers and Preferences Button
-                            HStack (spacing : 80){
-                                HStack(spacing: 48) {
-                                    VStack(spacing: 4){
-                                        Text("2700")
-                                            .font(.system(size: 20, weight: .bold))
-                                            .foregroundColor(Color.black)
-                                        Text("TALENT POINTS")
-                                            .font(.system(size: 8))
-                                            .foregroundColor(Color.black)
-                                    }
-                                    
-                                    VStack(spacing: 4){
-                                        Text("2700")
-                                            .font(.system(size: 20, weight: .bold))
-                                            .foregroundColor(Color.black)
-                                        Text("FOLLOWER")
-                                            .font(.system(size: 8))
-                                            .foregroundColor(Color.black)
-                                    }
-                                }
-                                
+                        VStack(alignment: HorizontalAlignment.leading, spacing: 96){
+                            VStack(alignment: .trailing){
                                 HStack {
-                                    Image(systemName: "suit.heart")
+                                    Spacer()
+                                    Button(action: {
+                                        print("SHARE ÖFFNEN")
+                                    }) {
+                                        Image(systemName: "square.and.arrow.up")
+                                        .foregroundColor(.white)
+                                        .frame(width: 20, height: 25)
+                                    }
+                                  /*  Image(systemName: "square.and.arrow.up")
                                         .resizable()
-                                        .frame(width: 25, height: 24)
-                                        .foregroundColor( Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.40))
-                                                                   }
-                                .onTapGesture {
-                                    print("EINSTELLUNGEN ÖFFNEN")
+                                        .frame(width: 19, height: 24)
+                                        .foregroundColor(Color.white)*/
                                 }
-                              //Spacer()
-                             }
-                            .padding(24)
-                            //.padding(.leading, 24)
-                            .frame(minWidth: 343)
-                            .background(Color.white)
-                            .cornerRadius(16)
-                            .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24), radius: 24, x: 0, y: 12)
+                               // .onTapGesture {
+                                 //   print("SHARE ÖFFNEN")
+                               // }
+                            }//.padding(.top, 64)
+                            //.padding(.horizontal, 16)
+
+                            VStack(alignment: .leading, spacing: 8) {
+                                HStack {
+                                    Text("Michael 0301")
+                                        .font(Font.system(size: 32, weight: .bold))
+                                        .foregroundColor(Color.white)
+                                }
+                                HStack {
+                                    Text("keep it simple.")
+                                        .font(Font.system(size: 24, weight: .light))
+                                        .foregroundColor(Color.white)
+                                }
+                                Divider()
+                                Divider()
+                                
+                                //View for TalentPoints, Followers and Preferences Button
+                                HStack (){
+                                    HStack(spacing: 40) {
+                                       
+                                        VStack(spacing: 4){
+                                            Text("2700")
+                                                .font(Font.system(size: 20, weight: .bold))
+                                                .foregroundColor(Color.black)
+                                            Text("TALENT POINTS")
+                                                .font(Font.system(size: 8))
+                                                .foregroundColor(Color.black)
+                                        }.frame(minWidth: 76)
+                                        
+                                        VStack(spacing: 4){
+                                            Text("2700")
+                                                .font(Font.system(size: 20, weight: .bold))
+                                                .foregroundColor(Color.black)
+                                            Text("FOLLOWER")
+                                                .font(Font.system(size: 8))
+                                                .foregroundColor(Color.black)
+                                        }.frame(minWidth: 56)
+                                    }
+                                    Spacer()
+
+                                    HStack {
+                                        //Wenn ForeignProfilID in NICIHT following Array ist: Follow Button
+                                        Image("FollowButton")
+                                            .resizable()
+                                            .frame(width: 90, height: 86)
+                                        
+                                        //ElSE: UNFOLLOW BUTTON
+                                    }
+                                    .onTapGesture {
+                                        //WENN FOLLOW HIT: Foreign ProfilID: in following Array +  ProfilID: in foreignProfil followers Array + unfollow Button
+                                        
+                                        //WENN UNFOLLOW HIT: Foreign ProfilID: aus following Array löschen +  ProfilID: aus foreignProfil followers Array löschen + follow Button
+                                       print("Folgen/Entfolgen")
+                                    }
+                                  //Spacer()
+                                 }
+                                //.padding(24)
+                                .padding(.leading, 24)
+                                .frame(minWidth: 343)
+                                .background(Color.white)
+                                .cornerRadius(16)
+                                .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24), radius: 24, x: 0, y: 12)
+                                
+                            }
+                           // .padding(.top, 198)
+                           // .padding(.horizontal, 16)
                             
-                        }
-                        .padding(.top, 198)
-                        .padding(.horizontal, 16)
+                        }.padding(.horizontal, 16)
+                        .padding(.top, 72)
+                        
                     )
-                
-                
                 
                 //Buttons to Switch between Achievements, Active Challenges and History Challenges
                 HStack(spacing: 16) {
@@ -128,13 +164,16 @@ struct ForeignProfileView: View {
                 .padding(.leading, 16)
                 
                 if self.tabIndex == 0 {
-                     ActiveChallenges()
+                    //Alle Challenges, an denen User Teilimmt  && "time == 0"  && "Ranking <= 3"
+                    ActiveChallenges()
                 }
                 else if self.tabIndex == 1 {
-                      ActiveChallenges()
+                    //Alle Challenges, bei denen der User (ID) teilnimmt && "time != 0"
+                    ActiveChallenges()
                 }
                 else if self.tabIndex == 2 {
-                   HistoryChallenges()
+                    //Alle Challenges, bei denen der User (ID) teilnimmt
+                    HistoryChallenges()
                 }
                             
             }
@@ -142,7 +181,6 @@ struct ForeignProfileView: View {
         .edgesIgnoringSafeArea(.all)
     }
 }
-
 
 
 
