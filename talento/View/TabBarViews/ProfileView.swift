@@ -24,7 +24,7 @@ struct ProfileView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
-                Image("Profile")
+                Image("profile")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 300)
@@ -67,14 +67,15 @@ struct ProfileView: View {
                                 }
                                 
                                 HStack {
-                                    Image(systemName: "suit.heart")
+                                    Image(systemName: "person.2.fill")
                                         .resizable()
-                                        .frame(width: 25, height: 24)
-                                        .foregroundColor( Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.40))
-                                                                   }
-                                .onTapGesture {
-                                    print("EINSTELLUNGEN ÖFFNEN")
+                                        .frame(width: 36, height: 24)
+                                        .foregroundColor( Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24))
                                 }
+                                .onTapGesture {
+                                    print("FREUNDESLISTE ÖFFNEN")
+                                }
+                                
                               //Spacer()
                              }
                             .padding(24)

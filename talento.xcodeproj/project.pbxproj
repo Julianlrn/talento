@@ -30,6 +30,7 @@
 		D0464F79937DBD5D0D74A7ED /* Pods_talento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD79194C95BB7F620C0B23C /* Pods_talento.framework */; };
 		ED68C98A7615F4D2CB08FBCF /* Pods_talentoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D7A0623AB88B75C407B09B /* Pods_talentoTests.framework */; };
 		F30C3A9023C0EFDC00D663C9 /* ChallengeCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30C3A8F23C0EFDC00D663C9 /* ChallengeCreateView.swift */; };
+		F30DCA9823DB4E5900B9C4C5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30DCA9723DB4E5900B9C4C5 /* SettingsView.swift */; };
 		F332F3D923D61E8C00DF9848 /* EntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F332F3D823D61E8C00DF9848 /* EntryModel.swift */; };
 		F332F3DB23D61F3B00DF9848 /* MediaEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F332F3DA23D61F3B00DF9848 /* MediaEntryView.swift */; };
 		F35AACCF23BFA86D005942EC /* ChallengeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AACCE23BFA86D005942EC /* ChallengeModel.swift */; };
@@ -96,6 +97,7 @@
 		EBD79194C95BB7F620C0B23C /* Pods_talento.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talento.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25E808EE14980D0C9B8FB9F /* Pods_talento_talentoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talento_talentoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30C3A8F23C0EFDC00D663C9 /* ChallengeCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCreateView.swift; sourceTree = "<group>"; };
+		F30DCA9723DB4E5900B9C4C5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F332F3D823D61E8C00DF9848 /* EntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryModel.swift; sourceTree = "<group>"; };
 		F332F3DA23D61F3B00DF9848 /* MediaEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEntryView.swift; sourceTree = "<group>"; };
 		F35AACCE23BFA86D005942EC /* ChallengeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeModel.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				F30C3A8F23C0EFDC00D663C9 /* ChallengeCreateView.swift */,
 				2266C36B23A29BF400E6216A /* ActivityView.swift */,
 				2266C36D23A29C0100E6216A /* ProfileView.swift */,
+				F30DCA9723DB4E5900B9C4C5 /* SettingsView.swift */,
 			);
 			path = TabBarViews;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				F30C3A9023C0EFDC00D663C9 /* ChallengeCreateView.swift in Sources */,
 				227C135523A2AB8D00D36384 /* ForeignProfileView.swift in Sources */,
 				228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */,
+				F30DCA9823DB4E5900B9C4C5 /* SettingsView.swift in Sources */,
 				F35AACD523BFD937005942EC /* ChallengeDetailView.swift in Sources */,
 				227C134E23A2A06D00D36384 /* ChallengeCardView.swift in Sources */,
 				2266C36A23A29BE700E6216A /* ChallengesView.swift in Sources */,
@@ -780,14 +784,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = 74ZL66WBK4;
+				DEVELOPMENT_TEAM = PRVDUT282L;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lorenz.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -802,14 +806,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = 74ZL66WBK4;
+				DEVELOPMENT_TEAM = PRVDUT282L;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lorenz.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

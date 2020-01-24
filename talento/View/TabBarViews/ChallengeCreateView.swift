@@ -74,7 +74,8 @@ struct ChallengeCreateView: View {
             .sheet(isPresented: $isShowPicker){ ImagePicker(image: self.$image)}
             .padding()
             .font(.title)
-    }.navigationBarTitle("Create Challenge")
+            .navigationBarTitle("Create Challenge")
+        }
     }
 
 
