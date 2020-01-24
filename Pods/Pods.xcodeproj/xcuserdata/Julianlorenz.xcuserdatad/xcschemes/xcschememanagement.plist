@@ -235,6 +235,11 @@
 			<key>orderHint</key>
 			<integer>37</integer>
 		</dict>
+		<key>Pods-talento.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>41</integer>
+		</dict>
 		<key>Pods-talentoTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>

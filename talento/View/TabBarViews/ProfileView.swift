@@ -13,14 +13,14 @@ import Firebase
 import FirebaseUI
 
 struct ProfileView: View {
-    
+
     //Bekommt UserId Übergeben
-    
-    
+
+
     @State var tabIndex = 0
-    
-    
-    
+
+
+
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
@@ -31,67 +31,90 @@ struct ProfileView: View {
                     .clipped()
                     .colorMultiply(Color.init(red:0.96, green:0.11, blue:0.34, opacity: 1))
                     .overlay (
-                        VStack(alignment: .leading, spacing: 8) {
-                            HStack {
-                                Text("Michael 0301")
-                                    .font(.system(size: 32, weight: .bold))
-                                    .foregroundColor(Color.white)
-                            }
-                            HStack {
-                                Text("keep it simple.")
-                                    .font(.system(size: 24, weight: .light))
-                                    .foregroundColor(Color.white)
-                            }
-                            Divider()
-                            Divider()
-                            //View for TalentPoints, Followers and Preferences Button
-                            HStack (spacing : 80){
-                                HStack(spacing: 48) {
-                                    VStack(spacing: 4){
-                                        Text("2700")
-                                            .font(.system(size: 20, weight: .bold))
-                                            .foregroundColor(Color.black)
-                                        Text("TALENT POINTS")
-                                            .font(.system(size: 8))
-                                            .foregroundColor(Color.black)
-                                    }
-                                    
-                                    VStack(spacing: 4){
-                                        Text("2700")
-                                            .font(.system(size: 20, weight: .bold))
-                                            .foregroundColor(Color.black)
-                                        Text("FOLLOWER")
-                                            .font(.system(size: 8))
-                                            .foregroundColor(Color.black)
-                                    }
-                                }
-                                
+                        VStack(alignment: HorizontalAlignment.leading, spacing: 96){
+                            VStack(alignment: .trailing){
                                 HStack {
-                                    Image(systemName: "person.2.fill")
+                                    Spacer()
+                                    Button(action: {
+                                        print("SHARE ÖFFNEN")
+                                    }) {
+                                        Image(systemName: "square.and.arrow.up")
+                                        .foregroundColor(.white)
+                                        .frame(width: 20, height: 25)
+                                    }
+                                  /*  Image(systemName: "square.and.arrow.up")
                                         .resizable()
-                                        .frame(width: 36, height: 24)
-                                        .foregroundColor( Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24))
+                                        .frame(width: 19, height: 24)
+                                        .foregroundColor(Color.white)*/
                                 }
-                                .onTapGesture {
-                                    print("FREUNDESLISTE ÖFFNEN")
+                               // .onTapGesture {
+                                 //   print("SHARE ÖFFNEN")
+                               // }
+                            }//.padding(.top, 64)
+                            //.padding(.horizontal, 16)
+
+                            VStack(alignment: .leading, spacing: 8) {
+                                HStack {
+                                    Text("Michael 0301")
+                                        .font(Font.system(size: 32, weight: .bold))
+                                        .foregroundColor(Color.white)
                                 }
-                                
-                              //Spacer()
-                             }
-                            .padding(24)
-                            //.padding(.leading, 24)
-                            .frame(minWidth: 343)
-                            .background(Color.white)
-                            .cornerRadius(16)
-                            .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24), radius: 24, x: 0, y: 12)
-                            
-                        }
-                        .padding(.top, 198)
-                        .padding(.horizontal, 16)
+                                HStack {
+                                    Text("keep it simple.")
+                                        .font(Font.system(size: 24, weight: .light))
+                                        .foregroundColor(Color.white)
+                                }
+                                Divider()
+                                Divider()
+                                //View for TalentPoints, Followers and Preferences Button
+                                HStack (spacing : 80){
+                                    HStack(spacing: 40) {
+                                        VStack(spacing: 4){
+                                            Text("2700")
+                                                .font(Font.system(size: 20, weight: .bold))
+                                                .foregroundColor(Color.black)
+                                            Text("TALENT POINTS")
+                                                .font(Font.system(size: 8))
+                                                .foregroundColor(Color.black)
+                                        }.frame(minWidth: 76)
+
+                                        VStack(spacing: 4){
+                                            Text("2700")
+                                                .font(Font.system(size: 20, weight: .bold))
+                                                .foregroundColor(Color.black)
+                                            Text("FOLLOWER")
+                                                .font(Font.system(size: 8))
+                                                .foregroundColor(Color.black)
+                                        }.frame(minWidth: 56)
+                                    }
+
+                                    HStack {
+                                        Image(systemName: "gear")
+                                            .resizable()
+                                            .frame(width: 24, height: 24)
+                                            .foregroundColor( Color.black)
+                                                                       }
+                                    .onTapGesture {
+                                        print("EINSTELLUNGEN ÖFFNEN")
+                                    }
+                                  //Spacer()
+                                 }
+                                .padding(24)
+                                //.padding(.leading, 24)
+                                .frame(minWidth: 343)
+                                .background(Color.white)
+                                .cornerRadius(16)
+                                .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24), radius: 24, x: 0, y: 12)
+
+                            }
+                           // .padding(.top, 198)
+                           // .padding(.horizontal, 16)
+
+                        }.padding(.horizontal, 16)
+                        .padding(.top, 72)
+
                     )
-                
-                
-                
+
                 //Buttons to Switch between Achievements, Active Challenges and History Challenges
                 HStack(spacing: 16) {
                     HStack {
@@ -104,7 +127,7 @@ struct ProfileView: View {
                             .onTapGesture {
                                 self.tabIndex = 0
                             }
-                                   
+
                     HStack {
                             Text("Active")
                                 .foregroundColor(self.tabIndex == 1 ? Color.init(red:1.00, green:1.00, blue:1.00) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.32))
@@ -115,7 +138,7 @@ struct ProfileView: View {
                             .onTapGesture {
                                 self.tabIndex = 1
                             }
-                                    
+
                     HStack {
                         Text("History")
                                 .foregroundColor(self.tabIndex == 2 ? Color.init(red:1.00, green:1.00, blue:1.00) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.32))
@@ -130,7 +153,7 @@ struct ProfileView: View {
                 .padding(.top, 64)
                 .padding(.bottom, 16)
                 .padding(.leading, 16)
-                
+
                 if self.tabIndex == 0 {
                     //Alle Challenges, an denen User Teilimmt  && "time == 0"  && "Ranking <= 3"
                     ActiveChallenges()
@@ -143,7 +166,7 @@ struct ProfileView: View {
                     //Alle Challenges, bei denen der User (ID) teilnimmt
                     HistoryChallenges()
                 }
-                            
+
             }
         }
         .edgesIgnoringSafeArea(.all)
@@ -151,11 +174,11 @@ struct ProfileView: View {
 }
 
 struct ActiveChallenges: View {
-    
+
     var challenges: [Challenge] = getChallengeData()
-    
+
     var body: some View {
-        
+
         VStack(alignment: .leading){
             ForEach(challenges) { item in
                 ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
@@ -167,11 +190,11 @@ struct ActiveChallenges: View {
 
 
 struct HistoryChallenges: View {
-    
+
     var challenges: [Challenge] = getChallengeData()
-    
+
     var body: some View {
-        
+
         VStack(alignment: .leading){
             ForEach(challenges) { item in
                 ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
@@ -186,5 +209,3 @@ struct ProfileView_Previews: PreviewProvider {
         ProfileView()
     }
 }
-
-
