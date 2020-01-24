@@ -89,13 +89,13 @@ struct ProfileView: View {
                                     }
 
                                     HStack {
-                                        Image(systemName: "gear")
+                                        Image(systemName: "person.2.fill")
                                             .resizable()
-                                            .frame(width: 24, height: 24)
-                                            .foregroundColor( Color.black)
-                                                                       }
+                                            .frame(width: 36, height: 24)
+                                            .foregroundColor( Color.init(red:0.00, green:0.00, blue:0.00, opacity: 1.00))
+                                    }
                                     .onTapGesture {
-                                        print("EINSTELLUNGEN ÖFFNEN")
+                                        print("FREUNDESLISTE ÖFFNEN")
                                     }
                                   //Spacer()
                                  }
