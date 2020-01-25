@@ -28,6 +28,7 @@ struct GeneralView: View {
 
 
     func upload(){
+        if (uploadLabel == ""){
         let db = Firestore.firestore()
         db.collection("challenge-entry")
             .document()
@@ -39,9 +40,12 @@ struct GeneralView: View {
                    
                     print((err?.localizedDescription)!)
                     return
-                }
+                }}
+        }  else {
+                return
+            }
         }
-    }
+    
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
