@@ -20,7 +20,7 @@ struct ContentView: View {
     var body: some View {
 
         
-        
+       /*
         if loginStatus.loading == true {
             return AnyView(Text("loading"))
         }
@@ -31,9 +31,9 @@ struct ContentView: View {
         else{
             return AnyView(StartView())
         }
-        
+        */
 
-        
+        return AnyView(StartView())
     }
 }
 
@@ -65,7 +65,7 @@ struct StartView: View {
         .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.04), radius: 16, x: 0, y: -8)
     }
     .sheet(isPresented: $isPresented, content: {
-        ChallengeCreateView()
+        ChallengeCreateView(isPresented: self.$isPresented)
     })
     .edgesIgnoringSafeArea(.bottom)
 
