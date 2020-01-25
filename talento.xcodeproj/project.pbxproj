@@ -25,6 +25,7 @@
 		228F0682239D8CBE001C0D7A /* talentoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F0681239D8CBE001C0D7A /* talentoTests.swift */; };
 		228F068D239D8CBE001C0D7A /* talentoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F068C239D8CBE001C0D7A /* talentoUITests.swift */; };
 		228F069B239D90D6001C0D7A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 228F069A239D90D6001C0D7A /* GoogleService-Info.plist */; };
+		22936AB723DCB7E0004802F7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22936AB623DCB7E0004802F7 /* ImagePicker.swift */; };
 		66F25D05A15511E4C4469CD4 /* Pods_talento_talentoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25E808EE14980D0C9B8FB9F /* Pods_talento_talentoUITests.framework */; };
 		B9236F9323CF7FC10095CA9E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9236F9223CF7FC10095CA9E /* ImageLoader.swift */; };
 		D0464F79937DBD5D0D74A7ED /* Pods_talento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD79194C95BB7F620C0B23C /* Pods_talento.framework */; };
@@ -87,6 +88,7 @@
 		228F068C239D8CBE001C0D7A /* talentoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = talentoUITests.swift; sourceTree = "<group>"; };
 		228F068E239D8CBE001C0D7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		228F069A239D90D6001C0D7A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		22936AB623DCB7E0004802F7 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		46A0C27DA15A4AB0DB179472 /* Pods-talento-talentoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento-talentoUITests.debug.xcconfig"; path = "Target Support Files/Pods-talento-talentoUITests/Pods-talento-talentoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6BD65366CB93C821FCCEAB32 /* Pods-talento.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento.release.xcconfig"; path = "Target Support Files/Pods-talento/Pods-talento.release.xcconfig"; sourceTree = "<group>"; };
 		A90D7CD39EDF29E768585197 /* Pods-talentoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talentoTests.release.xcconfig"; path = "Target Support Files/Pods-talentoTests/Pods-talentoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		228F0669239D8CBB001C0D7A /* talento */ = {
 			isa = PBXGroup;
 			children = (
+				22936AB523DCB7D4004802F7 /* Image */,
 				F35AACD123BFAB55005942EC /* View */,
 				F35AACCD23BFA83B005942EC /* Model */,
 				F35AACD023BFAB38005942EC /* Data */,
@@ -248,6 +251,14 @@
 				228F068E239D8CBE001C0D7A /* Info.plist */,
 			);
 			path = talentoUITests;
+			sourceTree = "<group>";
+		};
+		22936AB523DCB7D4004802F7 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				22936AB623DCB7E0004802F7 /* ImagePicker.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		E6CB5CA67053636A3DA48633 /* Pods */ = {
@@ -604,6 +615,7 @@
 				F39CC38B23D76D6A00C8C9DA /* RankingView.swift in Sources */,
 				F332F3DB23D61F3B00DF9848 /* MediaEntryView.swift in Sources */,
 				F30C3A9023C0EFDC00D663C9 /* ChallengeCreateView.swift in Sources */,
+				22936AB723DCB7E0004802F7 /* ImagePicker.swift in Sources */,
 				227C135523A2AB8D00D36384 /* ForeignProfileView.swift in Sources */,
 				228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */,
 				F30DCA9823DB4E5900B9C4C5 /* SettingsView.swift in Sources */,
