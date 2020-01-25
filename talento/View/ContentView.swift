@@ -24,7 +24,25 @@ struct ContentView: View {
     
     var body: some View {
 
-        
+        VStack {
+            
+            if status {
+                    StartView()
+            }
+            else {
+                
+                NavigationView {
+                    AuthenticationPage()
+                }
+            }
+        }.onAppear {
+            
+            NotificationCenter.default.addObserver(forName: NSNotification.Name("statusChange"), object: nil, queue: .main) { (_) in
+                
+                let status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
+                self.status = status
+            }
+        }
 
        /*
         if loginStatus.loading == true {
@@ -39,7 +57,7 @@ struct ContentView: View {
         }
         
 
-        return AnyView(StartView())
+        return AnyView(StartView())*/
     }
 }
 
@@ -75,28 +93,9 @@ struct StartView: View {
         ChallengeCreateView(isPresented: self.$isPresented)
     })
     .edgesIgnoringSafeArea(.bottom)
-*/
 
-        VStack {
-            
-            if status {
-                
-                Home()
-            }
-            else {
-                
-                NavigationView {
-                    AuthenticationPage()
-                }
-            }
-        }.onAppear {
-            
-            NotificationCenter.default.addObserver(forName: NSNotification.Name("statusChange"), object: nil, queue: .main) { (_) in
-                
-                let status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
-                self.status = status
-            }
-        }
+
+        
 
     }
 }
@@ -347,51 +346,6 @@ struct LoginPage : View {
     }
 }
 
-struct Home : View {
-    
-    @State var index = 0
-    
-    var body : some View {
-        
-        VStack {
-            
-                if self.index == 0 {
-                    FeedView()
-                }
-                else if self.index == 1 {
-                    ChallengeView()
-                }
-                else if self.index == 2 {
-                    ChallengeCreateView()
-                }
-                else if self.index == 3 {
-                    ActivityView()
-                }
-                else if self.index == 4 {
-                    ProfileView()
-                }
-                
 
-                TabBar(index : $index)
-            
-                Button(action: {
-                    
-                    try! Auth.auth().signOut()
-                    
-                    UserDefaults.standard.set(false, forKey: "status")
-                    
-                    NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
-                    
-                }) {
-                    
-                    Text("Logout")
-                }
-            
-            }.edgesIgnoringSafeArea(.bottom)
-            
-            
-            
-        }
-    }
 
 

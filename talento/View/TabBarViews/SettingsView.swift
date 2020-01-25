@@ -7,15 +7,31 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseUI
+
 
 struct SettingsView: View {
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading) {
-                    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                    Text("hi")
+                     Button(action: {
+                                       
+                                       try! Auth.auth().signOut()
+                                       
+                                       UserDefaults.standard.set(false, forKey: "status")
+                                       
+                                       NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+                                       
+                                   }) {
+                                       
+                                       Text("Logout")
+                                   }
                 }
             }.navigationBarTitle(Text("Settings"))
+            
         }
     }
 }
