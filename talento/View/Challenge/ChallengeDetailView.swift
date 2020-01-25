@@ -74,13 +74,14 @@ struct ChallengeDetailView: View {
 
 struct General: View {
 
-    var challenges: [Challenge] = getChallengeData()
+    //var challenges: [Challenge] = getChallengeData()
     // var imageLoader: ImageLoader
+    var challenge: Challenge
     
     var body: some View {
-        ForEach(challenges) { item in
-            GeneralView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
-        }
+        // ForEach(challenges) { item in
+        GeneralView(challenge: challenge, imageLoader: ImageLoader(urlString: challenge.image))
+        //}
     }
 }
 
