@@ -21,6 +21,8 @@ struct ChallengeCreateView: View {
     @State var image: Image? = Image("placeholder")
     @State var imageUrl : String? = ""
     
+    @Binding var isPresented : Bool
+    
     
     func upload(){
         let db = Firestore.firestore()
@@ -63,15 +65,25 @@ struct ChallengeCreateView: View {
                                       Spacer()
                 Button(action: {
                     self.upload()
-                    
+                    self.isPresented.toggle()
                 }) {
-                    Text("Submit")
+                    HStack {
+                        Text("Submit")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundColor(Color.white)
+                            .padding(24)
+                    }
+                    .frame(width: 343)
+                    .background(Color.init(red:0.96, green:0.11, blue:0.34))
+                    .cornerRadius(16)
+                    .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
+                    .padding(.bottom, 24)
                 }
               
-                List(challengeData.datas){i in
+                /*List(challengeData.datas){i in
                     Text("Challenge: " + i.name + " Description: " +  i.description)
                     
-                }
+                }*/
                 }
             .sheet(isPresented: $isShowPicker){ ImagePicker(image: self.$image, imageUrl: self.$imageUrl)}
             .padding()
