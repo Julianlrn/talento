@@ -20,7 +20,7 @@ struct ChallengeCardView: View {
         ZStack {
             VStack {
                 //MARK: - IMAGE
-                Image(challenge.image)
+                Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! :UIImage())
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .overlay(

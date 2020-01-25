@@ -11,6 +11,7 @@ import SwiftUI
 struct GeneralView: View {
     
     var challenge: Challenge
+    @ObservedObject var imageLoader: ImageLoader
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
@@ -18,7 +19,7 @@ struct GeneralView: View {
                  //MARK: - CARD
                  VStack {
                      //MARK: - IMAGE
-                     Image(challenge.image)
+                     Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! :UIImage())
                      .resizable()
                      .aspectRatio(contentMode: .fill)
                      .overlay(

@@ -19,13 +19,15 @@ struct ChallengeCreateView: View {
     // @Published var imgName: String = ""
     @State var isShowPicker: Bool = false
     @State var image: Image? = Image("placeholder")
+    @State var imageUrl : String? = ""
+    
     
     func upload(){
         let db = Firestore.firestore()
         db.collection("challenges")
             .document()
             .setData(
-            ["title":self.name, "instructions":self.description, "image": "https://firebasestorage.googleapis.com/v0/b/talento1-1.appspot.com/o/Images%2Fmountain.jpg?alt=media&token=78316d65-33a9-4b0f-a739-5efdc8cb20e6"]) { (err) in
+            ["title":self.name, "instructions":self.description, "image": self.imageUrl!]) { (err) in
                 
                 if err != nil{
                    
@@ -71,7 +73,7 @@ struct ChallengeCreateView: View {
                     
                 }
                 }
-            .sheet(isPresented: $isShowPicker){ ImagePicker(image: self.$image)}
+            .sheet(isPresented: $isShowPicker){ ImagePicker(image: self.$image, imageUrl: self.$imageUrl)}
             .padding()
             .font(.title)
             .navigationBarTitle("Create Challenge")
@@ -85,33 +87,38 @@ struct ImagePicker: UIViewControllerRepresentable {
     var presentationMode
 
     @Binding var image: Image?
+    @Binding var imageUrl: String?
 
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
         @Binding var presentationMode: PresentationMode
         @Binding var image: Image?
+        @Binding var imageUrl: String?
 
-        init(presentationMode: Binding<PresentationMode>, image: Binding<Image?>) {
+        init(presentationMode: Binding<PresentationMode>, image: Binding<Image?>, imageUrl: Binding<String?>) {
             _presentationMode = presentationMode
             _image = image
+            _imageUrl = imageUrl
         }
 
         func imagePickerController(_ picker: UIImagePickerController,
                                    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             
-            func randomString(length: Int) -> String {
-              let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-              return String((0..<length).map{ _ in letters.randomElement()! })
-            }
+//            func randomString(length: Int) -> String {
+//              let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+//              return String((0..<length).map{ _ in letters.randomElement()! })
+//            }
 
             
             let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-            let imgID = randomString(length: 10)
+            let imgID = UUID().uuidString
+            
+                // randomString(length: 10)
             
             
             image = Image(uiImage: uiImage)
             let storage = Storage.storage()
-            
+            let imgRef = storage.reference().child("Images/" + imgID + ".jpeg")
             storage.reference().child("Images/" + imgID + ".jpeg").putData(uiImage.jpegData(compressionQuality: 0.35)!, metadata:
                 nil) { (_, err) in
                     
@@ -119,6 +126,18 @@ struct ImagePicker: UIViewControllerRepresentable {
                     print((err?.localizedDescription)!)
                     return
                 }
+                    imgRef.downloadURL{
+                        (url, error) in
+                        guard let url = url else {
+                            print("Im error case...")
+                            return
+                        }
+                    
+                        self.imageUrl = url.absoluteString
+                        // print(url!)
+                        print("im success modus..." + self.imageUrl!)
+                        
+                    }
                 print("upload of image " + imgID +  " successfull")
                 
                     self.presentationMode.dismiss()
@@ -134,7 +153,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 
     func makeCoordinator() -> Coordinator {
-        return Coordinator(presentationMode: presentationMode, image: $image)
+        return Coordinator(presentationMode: presentationMode, image: $image, imageUrl: $imageUrl)
     }
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
