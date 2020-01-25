@@ -20,7 +20,7 @@ struct ChallengeCardView: View {
         ZStack {
             VStack {
                 //MARK: - IMAGE
-                Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! :UIImage())
+                Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! : UIImage())
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .overlay(
@@ -44,7 +44,8 @@ struct ChallengeCardView: View {
                         .padding(.trailing, 16)
                     }
                 )
-                .frame(maxHeight: 220)
+                
+                
                 
                 //MARK: - CONTENT
                 VStack(alignment: .leading, spacing: 24) {

@@ -58,6 +58,7 @@ struct StartView: View {
             }
         }
 
+
         TabBar(index: $index, isPresented: $isPresented)
         .cornerRadius(16)
         .padding(.top, -16)
@@ -67,6 +68,7 @@ struct StartView: View {
         ChallengeCreateView()
     })
     .edgesIgnoringSafeArea(.bottom)
+
     }
 }
 

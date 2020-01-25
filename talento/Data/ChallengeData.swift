@@ -25,8 +25,8 @@ func getChallengeData() -> [Challenge]{
                 let data: Challenge =
              Challenge(
                 // id: i.document.documentID,
-                image: i.document.get("image") as! String,
-                // image: "mountain",
+                // image: i.document.get("image") as! String,
+                image: "mountain",
                 participants: 13241,
                 fbId: i.document.documentID,
                 title: i.document.get("title") as! String,
