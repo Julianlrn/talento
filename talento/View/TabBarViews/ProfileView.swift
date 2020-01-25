@@ -24,7 +24,7 @@ struct ProfileView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
-                Image("profile")
+                Image("Profile")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 300)
