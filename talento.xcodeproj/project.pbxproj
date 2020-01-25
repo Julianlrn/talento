@@ -211,8 +211,8 @@
 				B9236F9223CF7FC10095CA9E /* ImageLoader.swift */,
 				228F066A239D8CBB001C0D7A /* AppDelegate.swift */,
 				228F066C239D8CBB001C0D7A /* SceneDelegate.swift */,
-				228F0670239D8CBE001C0D7A /* Assets.xcassets */,
 				228F0675239D8CBE001C0D7A /* LaunchScreen.storyboard */,
+				228F0670239D8CBE001C0D7A /* Assets.xcassets */,
 				228F0678239D8CBE001C0D7A /* Info.plist */,
 				228F069A239D90D6001C0D7A /* GoogleService-Info.plist */,
 				22583735239D99EF00A9FD1B /* talento.entitlements */,
@@ -780,14 +780,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = PRVDUT282L;
+				DEVELOPMENT_TEAM = 48HSGWZKBV;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hajimi.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -809,7 +809,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hajimi.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
