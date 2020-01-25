@@ -20,6 +20,7 @@ struct ChallengeCreateView: View {
     @State var isShowPicker: Bool = false
     @State var image: Image? = Image("placeholder")
     @State var imageUrl : String? = ""
+    @State var isSourceTypeforPicker : Int = 2
     
     @Binding var isPresented : Bool
     
@@ -79,13 +80,8 @@ struct ChallengeCreateView: View {
                     .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
                     .padding(.bottom, 24)
                 }
-              
-                /*List(challengeData.datas){i in
-                    Text("Challenge: " + i.name + " Description: " +  i.description)
-                    
-                }*/
-                }
-            .sheet(isPresented: $isShowPicker){ ImagePicker(image: self.$image, imageUrl: self.$imageUrl)}
+            }
+            .sheet(isPresented: $isShowPicker){ ImagePicker(image: self.$image, imageUrl: self.$imageUrl, sourceTypeforPicker: self.$isSourceTypeforPicker)}
             .padding()
             .font(.title)
             .navigationBarTitle("Create Challenge")

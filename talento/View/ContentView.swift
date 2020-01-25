@@ -15,6 +15,8 @@ import FirebaseUI
 struct ContentView: View {
 
 
+
+
     
    // @EnvironmentObject var loginStatus:LoginCheck
 
@@ -194,7 +196,7 @@ struct AuthenticationPage : View {
         
         VStack(spacing : 20) {
             
-            Image("logo") //doesn't work, why?
+           // Image("logo") //doesn't work, why?
             
             Text("Verify Your Number").font(.largeTitle).fontWeight(.heavy)
             
@@ -278,7 +280,7 @@ struct LoginPage : View {
                 
                 VStack(spacing : 20) {
                     
-                    Image("logo") //doesn't work, why?
+                    //Image("logo") //doesn't work, why?
                     
                     Text("Verification Code").font(.largeTitle).fontWeight(.heavy)
                     
@@ -304,9 +306,12 @@ struct LoginPage : View {
                                 
                                 self.msg = (err?.localizedDescription)!
                                 self.alert.toggle()
+                                print("this is the user id    " + self.ID)
                                 return
                                 
                             }
+                            
+                            print("this is the user id    " + self.ID)
                             
                             UserDefaults.standard.set(true, forKey: "status")
                             

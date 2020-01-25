@@ -19,17 +19,20 @@ struct ImagePicker: UIViewControllerRepresentable {
 
     @Binding var image: Image?
     @Binding var imageUrl: String?
+    @Binding var sourceTypeforPicker: Int
 
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
         @Binding var presentationMode: PresentationMode
         @Binding var image: Image?
         @Binding var imageUrl: String?
+        @Binding var sourceTypeforPicker: Int
 
-        init(presentationMode: Binding<PresentationMode>, image: Binding<Image?>, imageUrl: Binding<String?>) {
+        init(presentationMode: Binding<PresentationMode>, image: Binding<Image?>, imageUrl: Binding<String?>, sourceTypeforPicker: Binding<Int>) {
             _presentationMode = presentationMode
             _image = image
             _imageUrl = imageUrl
+            _sourceTypeforPicker = sourceTypeforPicker
         }
 
         func imagePickerController(_ picker: UIImagePickerController,
@@ -84,12 +87,18 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 
     func makeCoordinator() -> Coordinator {
-        return Coordinator(presentationMode: presentationMode, image: $image, imageUrl: $imageUrl)
+        return Coordinator(presentationMode: presentationMode, image: $image, imageUrl: $imageUrl, sourceTypeforPicker: $sourceTypeforPicker)
     }
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
+        if (sourceTypeforPicker == 1){
+            picker.sourceType = .camera
+        }else{
+            picker.sourceType = .photoLibrary
+        }
+        
         return picker
     }
 
