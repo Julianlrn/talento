@@ -11,48 +11,62 @@ import FBSDKLoginKit
 import Firebase
 import FirebaseUI
 
+
 struct ContentView: View {
 
-    @State var index = 0
-    @State var isPresented = false
-
+    
+    @EnvironmentObject var loginStatus:LoginCheck
+    
     var body: some View {
 
-        /*
-        @EnvironmentObject var loginStatus:LoginCheck
+        
+        
         if loginStatus.loading == true {
-            return AnyView(Text("Loading"))
+            return AnyView(Text("loading"))
         }
         else if loginStatus.loggedIn == false {
             return AnyView(login().frame(width: 100, height: 50))
         }
-        */
-
-        VStack {
-            ZStack {
-                if self.index == 0 {
-                    FeedView()
-                }
-                else if self.index == 1 {
-                    ChallengeView()
-                }
-                else if self.index == 2 {
-                    ProfileView()
-                }
-                else if self.index == 3 {
-                    SettingsView()
-                }
-            }
-
-            TabBar(index: $index, isPresented: $isPresented)
-            .cornerRadius(16)
-            .padding(.top, -16)
-            .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.04), radius: 16, x: 0, y: -8)
+        
+        else{
+            return AnyView(StartView())
         }
-        .sheet(isPresented: $isPresented, content: {
-            ChallengeCreateView()
-        })
-        .edgesIgnoringSafeArea(.bottom)
+        
+
+        
+    }
+}
+
+struct StartView: View {
+   
+    @State var index = 0
+    @State var isPresented = false
+    var body: some View {
+    VStack {
+        ZStack {
+            if self.index == 0 {
+                FeedView()
+            }
+            else if self.index == 1 {
+                 ChallengeView()
+            }
+            else if self.index == 2 {
+                 ProfileView()
+            }
+            else if self.index == 3 {
+                SettingsView()
+            }
+        }
+
+        TabBar(index: $index, isPresented: $isPresented)
+        .cornerRadius(16)
+        .padding(.top, -16)
+        .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.04), radius: 16, x: 0, y: -8)
+    }
+    .sheet(isPresented: $isPresented, content: {
+        ChallengeCreateView()
+    })
+    .edgesIgnoringSafeArea(.bottom)
     }
 }
 
