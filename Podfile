@@ -11,7 +11,8 @@ target 'talento' do
 	pod 'FBSDKLoginKit'
 	pod 'FBSDKShareKit'
 	pod 'Firebase/Auth'
-
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
 
   # Pods for talento
 
