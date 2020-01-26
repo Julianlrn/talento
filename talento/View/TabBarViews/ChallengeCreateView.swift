@@ -72,9 +72,9 @@ struct ChallengeCreateView: View {
                         Text("Submit")
                             .font(.system(size: 16, weight: .bold))
                             .foregroundColor(Color.white)
-                            .padding(24)
+                            .padding(16)
                     }
-                    .frame(width: 343)
+                    .frame(width: UIScreen.main.bounds.width - 32)
                     .background(Color.init(red:0.96, green:0.11, blue:0.34))
                     .cornerRadius(16)
                     .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)

@@ -155,7 +155,7 @@ struct GeneralView: View {
                             Text(self.buttonText)
                                 .font(.system(size: 16, weight: .bold))
                                 .foregroundColor(Color.white)
-                                .padding(24)
+                                .padding(16)
                         }
                         .frame(width: 343)
                         .background(Color.init(red:0.96, green:0.11, blue:0.34))

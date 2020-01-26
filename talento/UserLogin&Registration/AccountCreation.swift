@@ -58,7 +58,7 @@ struct AccountCreation : View {
                     Spacer()
                     
                 }
-                .padding(.vertical, 15)
+                .padding(.vertical, 16)
                 
                 Text("Enter User Name")
                                    .font(.body)
@@ -70,9 +70,13 @@ struct AccountCreation : View {
                 }
                    //.keyboardType(.numberPad)
                    .padding()
-                   .background(Color("Color"))
-                   .clipShape(RoundedRectangle(cornerRadius: 10))
-                   .padding(.top, 15)
+                   .background(Color.white)
+                   .overlay(
+                       RoundedRectangle(cornerRadius: 16)
+                        .stroke(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), lineWidth: 2)
+                   )
+                   .clipShape(RoundedRectangle(cornerRadius: 16))
+                   .padding(.top, 16)
                 
                 Text("About You")
                                     .font(.body)
@@ -84,9 +88,13 @@ struct AccountCreation : View {
                 }
                     //.keyboardType(.numberPad)
                     .padding()
-                    .background(Color("Color"))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding(.top, 15)
+                    .background(Color.white)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), lineWidth: 2)
+                    )
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .padding(.top, 16)
                 
                 if self.loading {
                     
@@ -123,11 +131,14 @@ struct AccountCreation : View {
                     }) {
                         
 
-                    Text("Create").frame(width: UIScreen.main.bounds.width - 30,height: 50)
+                    Text("Create")
+                        .padding(16)
                              
-                    }.foregroundColor(.white)
+                    }
+                    .frame(width: UIScreen.main.bounds.width - 32)
+                    .foregroundColor(.white)
                     .background(Color.init(red:0.96, green:0.11, blue:0.34))
-                    .cornerRadius(10)
+                    .cornerRadius(16)
                     
                 }
                 
