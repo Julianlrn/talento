@@ -139,6 +139,7 @@ struct AccountCreation : View {
                     .foregroundColor(.white)
                     .background(Color.init(red:0.96, green:0.11, blue:0.34))
                     .cornerRadius(16)
+                    .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
                     
                 }
                 

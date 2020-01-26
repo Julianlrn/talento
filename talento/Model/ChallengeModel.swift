@@ -15,7 +15,7 @@ struct Challenge: Identifiable {
     var fbId: String
   //  var participants: Platzhalter -> Participant Array
     var title: String
-    var visibility: String
+    var isPublic: Bool?
     var time: Int
     var instructions: String
     // var author: Platzhalter -> User Object

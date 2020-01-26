@@ -16,6 +16,7 @@ struct ChallengeCreateView: View {
    // @ObservedObject var imageLoader: ImageLoader
     @State private var description = ""
     @State private var name = ""
+    @State private var isPublic : Bool = false
     // @Published var imgName: String = ""
     @State var isShowPicker: Bool = false
     @State var image: Image? = Image("placeholder")
@@ -30,7 +31,7 @@ struct ChallengeCreateView: View {
         db.collection("challenges")
             .document()
             .setData(
-            ["title":self.name, "instructions":self.description, "image": self.imageUrl!]) { (err) in
+            ["title":self.name, "instructions":self.description, "image": self.imageUrl!, "isPublic":self.isPublic]) { (err) in
                 
                 if err != nil{
                    
@@ -47,23 +48,50 @@ struct ChallengeCreateView: View {
         NavigationView {
             VStack {
                 
-                TextField("Enter Challenge Description", text: $description)
-                    .border(Color.black)
+                TextField("Title", text: $name)
+                    .font(.system(size: 16))
+                    .padding(16)
+                    .background(Color.white)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), lineWidth: 2)
+                    )
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
                 
-                TextField("Enter Challenge Name", text: $name)
-                    .border(Color.black)
+                TextField("Instructions", text: $description)
+                    .font(.system(size: 16))
+                    .padding(16)
+                    .background(Color.white)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), lineWidth: 2)
+                    )
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                
+                Toggle(isOn: $isPublic) {
+                    Text("Public")
+                }
+
                 // TODO: Image aus DB lesen und hochladen
-                image?.resizable().scaledToFit().frame(height: CGFloat(320))
-                                      Button(action: {
-                                          withAnimation {
-                                              self.isShowPicker.toggle()
-                                          }
-                                      }) {
-                                          Image(systemName: "photo")
-                                              .font(.headline)
-                                          Text("IMPORT").font(.headline)
-                                      }.foregroundColor(.black)
-                                      Spacer()
+                image?.resizable().scaledToFit().frame(height: 150)
+                  Button(action: {
+                      withAnimation {
+                          self.isShowPicker.toggle()
+                      }
+                  }) {
+                    HStack {
+                        Text("Import")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundColor(Color.white)
+                            .padding(16)
+                    }
+                    .frame(width: UIScreen.main.bounds.width - 32)
+                    .background(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16))
+                    .cornerRadius(16)
+                    .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
+                    .padding(.bottom, 12)
+                  }
+
                 Button(action: {
                     self.upload()
                     self.isPresented.toggle()
@@ -88,34 +116,29 @@ struct ChallengeCreateView: View {
         }
     }
 
-
-
-
-
-class getChallengeData : ObservableObject{
-    @Published var datas = [challengeDescription]()
-    
-    init() {
-        let db = Firestore.firestore()
+    class getChallengeData : ObservableObject{
+        @Published var datas = [challengeDescription]()
         
-        db.collection("challenges").addSnapshotListener{ (snap, err) in
-            if err != nil{
-                print((err?.localizedDescription)!)
-                return
-            }
-            for i in snap!.documentChanges{
-                let id = i.document.documentID
-                let name = i.document.get("title") as! String
-                let description = i.document.get("instructions") as! String
-                 let image = i.document.get("image") as! String
-                
-                self.datas.append(challengeDescription(id : id, name: name, description: description, image:image))
+        init() {
+            let db = Firestore.firestore()
+            
+            db.collection("challenges").addSnapshotListener{ (snap, err) in
+                if err != nil{
+                    print((err?.localizedDescription)!)
+                    return
+                }
+                for i in snap!.documentChanges{
+                    let id = i.document.documentID
+                    let name = i.document.get("title") as! String
+                    let description = i.document.get("instructions") as! String
+                     let image = i.document.get("image") as! String
+                    
+                    self.datas.append(challengeDescription(id : id, name: name, description: description, image:image))
+                }
             }
         }
     }
 }
-
-
 
 struct challengeDescription : Identifiable {
     var id : String
@@ -123,6 +146,3 @@ struct challengeDescription : Identifiable {
     var description : String
     var image : String
 }
-
-}
-

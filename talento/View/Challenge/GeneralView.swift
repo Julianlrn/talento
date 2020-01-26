@@ -93,7 +93,10 @@ struct GeneralView: View {
                          HStack {
                              HStack {
                                  Image(systemName: "globe")
-                                 Text(challenge.visibility)
+                                if challenge.isPublic ?? false {
+                                    Text("Public")
+                                }
+                                else { Text("Local") }
                              }
                              Spacer()
                              HStack {
