@@ -16,19 +16,21 @@ struct SettingsView: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading) {
-                    Text("hi")
-                     Button(action: {
-                                       
-                                       try! Auth.auth().signOut()
-                                       
-                                       UserDefaults.standard.set(false, forKey: "status")
-                                       
-                                       NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
-                                       
-                                   }) {
-                                       
-                                       Text("Logout")
-                                   }
+                    
+                    Text("Welcome \(UserDefaults.standard.value(forKey: "UserName") as! String)")
+                    
+                    Button(action: {
+                                   
+                        try! Auth.auth().signOut()
+
+                        UserDefaults.standard.set(false, forKey: "status")
+
+                        NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+
+                    }) {
+
+                        Text("Logout")
+                    }
                 }
             }.navigationBarTitle(Text("Settings"))
             

@@ -6,10 +6,12 @@
 //  Copyright © 2019 JulianLorenz. All rights reserved.
 //
 
+
 import SwiftUI
-import FBSDKLoginKit
 import Firebase
 import FirebaseUI
+import FirebaseFirestore
+import FirebaseStorage
 
 
 struct ContentView: View {
@@ -32,7 +34,7 @@ struct ContentView: View {
                     StartView()
             }
             else {
-                
+
                 NavigationView {
                     AuthenticationPage()
                 }
@@ -67,8 +69,11 @@ struct StartView: View {
    
     @State var index = 0
     @State var isPresented = false
+    
     var body: some View {
+
     VStack {
+        
         ZStack {
             if self.index == 0 {
                 FeedView()
@@ -182,6 +187,7 @@ struct ContentView_Preview: PreviewProvider {
         ContentView()
     }
 }
+
 
 struct AuthenticationPage : View {
     
@@ -350,7 +356,6 @@ struct LoginPage : View {
         }
     }
 }
-
 
 
 
