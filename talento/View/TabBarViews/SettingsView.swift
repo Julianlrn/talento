@@ -17,7 +17,7 @@ struct SettingsView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading) {
                     
-                    Text("Welcome \(UserDefaults.standard.value(forKey: "UserName") as! String)")
+                    //Text("Welcome \(UserDefaults.standard.value(forKey: "UserName") as! String)")
                     
                     Button(action: {
                                    

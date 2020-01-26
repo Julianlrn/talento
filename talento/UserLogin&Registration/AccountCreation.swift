@@ -20,122 +20,133 @@ struct AccountCreation : View {
     
     
     var body : some View {
-
-        VStack(alignment: .leading, spacing: 15) {
-            
-            Text("Create an Account").font(.title)
-            
-            HStack {
+        Background{
+            VStack(alignment: .leading, spacing: 15) {
                 
-                Spacer()
-                
-                Button(action: {
-                    
-                    self.picker.toggle()
-                    
-                }) {
-                    
-                    if self.imagedata.count == 0 {
-                        
-                        Image(systemName: "person.crop.circle.badge.plus")
-                            .resizable()
-                            .frame(width: 90, height: 70)
-                            .foregroundColor(.gray)
-                        
-                    }
-                    else {
-                        
-                        Image(uiImage: UIImage(data: self.imagedata)!)
-                            .resizable()
-                            .renderingMode(.original)
-                            .frame(width: 90, height: 90)
-                            .clipShape(Circle())
-                    }
-                    
-                    
-                }
-                
-                Spacer()
-                
-            }
-            .padding(.vertical, 15)
-            
-            Text("Enter User Name")
-                               .font(.body)
-                               .foregroundColor(.gray)
-                               .padding(.top, 12)
-
-           TextField("Name", text: self.$name)
-               .keyboardType(.numberPad)
-               .padding()
-               .background(Color("Color"))
-               .clipShape(RoundedRectangle(cornerRadius: 10))
-               .padding(.top, 15)
-            
-            Text("About You")
-                                .font(.body)
-                                .foregroundColor(.gray)
-                                .padding(.top, 12)
-
-            TextField("About You", text: self.$bio)
-                .keyboardType(.numberPad)
-                .padding()
-                .background(Color("Color"))
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding(.top, 15)
-            
-            if self.loading {
+                Text("Create an Account").font(.title)
                 
                 HStack {
                     
                     Spacer()
                     
-                    Indicator()
+                    Button(action: {
+                        
+                        self.picker.toggle()
+                        
+                    }) {
+                        
+                        if self.imagedata.count == 0 {
+                            
+                            Image(systemName: "person.crop.circle.badge.plus")
+                                .resizable()
+                                .frame(width: 90, height: 70)
+                                .foregroundColor(.gray)
+                            
+                        }
+                        else {
+                            
+                            Image(uiImage: UIImage(data: self.imagedata)!)
+                                .resizable()
+                                .renderingMode(.original)
+                                .frame(width: 90, height: 90)
+                                .clipShape(Circle())
+                        }
+                        
+                        
+                    }
                     
                     Spacer()
-                }
-            }
-            else{
-                            
-                Button(action: {
                     
-                    if self.name != "" && self.bio != "" && self.imagedata.count != 0{
+                }
+                .padding(.vertical, 15)
+                
+                Text("Enter User Name")
+                                   .font(.body)
+                                   .foregroundColor(.gray)
+                                   .padding(.top, 12)
+
+                TextField("Name", text: self.$name){
+                    self.endEditing(true)
+                }
+                   //.keyboardType(.numberPad)
+                   .padding()
+                   .background(Color("Color"))
+                   .clipShape(RoundedRectangle(cornerRadius: 10))
+                   .padding(.top, 15)
+                
+                Text("About You")
+                                    .font(.body)
+                                    .foregroundColor(.gray)
+                                    .padding(.top, 12)
+
+                TextField("About You", text: self.$bio){
+                    self.endEditing(true)
+                }
+                    //.keyboardType(.numberPad)
+                    .padding()
+                    .background(Color("Color"))
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .padding(.top, 15)
+                
+                if self.loading {
+                    
+                    HStack {
                         
-                        self.loading.toggle()
-                        CreateUser(name: self.name, bio: self.bio, imagedata: self.imagedata) { (status) in
-                            
-                            if status{
+                        Spacer()
+                        
+                        Indicator()
+                        
+                        Spacer()
+                    }
+                }
+                else{
                                 
-                                self.show.toggle()
+                    Button(action: {
+                        
+                        if self.name != "" && self.bio != "" && self.imagedata.count != 0{
+                            
+                            self.loading.toggle()
+                            CreateUser(name: self.name, bio: self.bio, imagedata: self.imagedata) { (status) in
+                                
+                                if status{
+                                    
+                                    self.show.toggle()
+                                }
                             }
                         }
-                    }
-                    else{
+                        else{
+                            
+                            self.alert.toggle()
+                        }
                         
-                        self.alert.toggle()
-                    }
-                    
-                    
-                }) {
-                    
+                        
+                    }) {
+                        
 
-                Text("Create").frame(width: UIScreen.main.bounds.width - 30,height: 50)
-                         
-                }.foregroundColor(.white)
-                .background(Color.blue)
-                .cornerRadius(10)
+                    Text("Create").frame(width: UIScreen.main.bounds.width - 30,height: 50)
+                             
+                    }.foregroundColor(.white)
+                    .background(Color.init(red:0.96, green:0.11, blue:0.34))
+                    .cornerRadius(10)
+                    
+                }
                 
             }
-            
-        }
-        .padding()
-        .sheet(isPresented: self.$picker, content: {
-            
-            RegistrationImagePicker(picker: self.$picker, imagedata: self.$imagedata)
-        })
-        .alert(isPresented: self.$alert) {
-            
-            Alert(title: Text("Message"), message: Text("Please Fill The Contents"), dismissButton: .default(Text("Ok")))
+            .padding()
+            .sheet(isPresented: self.$picker, content: {
+                
+                RegistrationImagePicker(picker: self.$picker, imagedata: self.$imagedata)
+            })
+            .alert(isPresented: self.$alert) {
+                
+                Alert(title: Text("Message"), message: Text("Please Fill The Contents"), dismissButton: .default(Text("Ok")))
+            }
+        }.onTapGesture {
+            self.endEditing(true)
         }
     }
+    
+    private func endEditing(_ force: Bool) {
+                UIApplication.shared.endEditing()
+            }
 }

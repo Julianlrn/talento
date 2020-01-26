@@ -60,7 +60,7 @@ struct ChallengeCardView: View {
                     //MARK: - PROPERTIES
                     HStack {
                         HStack {
-                            Image("\(challenge.image)")
+                            Image(systemName: "globe")
                             Text(challenge.visibility)
                         }
                         Spacer()
