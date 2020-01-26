@@ -7,11 +7,45 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseUI
+
+
+
 
 struct GeneralView: View {
     
     var challenge: Challenge
     @ObservedObject var imageLoader: ImageLoader
+    @State var isShowPicker: Bool = false
+    @State var isShowPicker2: Bool = true
+    @State var image: Image? = Image("placeholder")
+    @State var imageUrl : String? = ""
+    @State var isSourceTypeforPicker : Int = 1
+    @State var buttonText = "Participate"
+    @State var uploadLabel = ""
+    
+
+
+    func upload(){
+        if (uploadLabel == ""){
+        let db = Firestore.firestore()
+        db.collection("challenge-entry")
+            .document()
+            .setData(
+                // TODO: add challenge und user ID
+            ["image": self.imageUrl!]) { (err) in
+                
+                if err != nil{
+                   
+                    print((err?.localizedDescription)!)
+                    return
+                }}
+        }  else {
+                return
+            }
+        }
+    
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
@@ -97,12 +131,28 @@ struct GeneralView: View {
                          .font(.title)
                      Text(challenge.instructions)
                          .font(.system(size: 20))
+                    image?.resizable().scaledToFit().frame(height: CGFloat(320))
+                    Text(self.uploadLabel)
+                    .font(.system(size: 20))
                     
                     Button(action: {
+                        if (self.isShowPicker2){
+                            
+                       self.isShowPicker.toggle()
                         print("Participate tapped!")
+                            self.isShowPicker2 = false
+                            self.buttonText = "Upload Picture"
+                        return
+                        }else{
+                            print("Upload tapped!")
+                            self.upload()
+                            self.uploadLabel = "Picture was Uploaded! Good Luck in the Challenge"
+                        
+                        return
+                        }
                     }) {
                         HStack {
-                            Text("Participate")
+                            Text(self.buttonText)
                                 .font(.system(size: 16, weight: .bold))
                                 .foregroundColor(Color.white)
                                 .padding(24)
@@ -113,9 +163,12 @@ struct GeneralView: View {
                         .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
                         .padding(.bottom, 24)
                     }
+
                  }
+                
                  .padding(.horizontal, 16)
              }
+            .sheet(isPresented: $isShowPicker){ ImagePicker(image: self.$image, imageUrl: self.$imageUrl, sourceTypeforPicker: self.$isSourceTypeforPicker)}
             .padding(.top, 16)
         }
     }

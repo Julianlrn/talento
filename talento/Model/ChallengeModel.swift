@@ -13,7 +13,7 @@ struct Challenge: Identifiable {
     var image: String
     var participants: Int
     var fbId: String
-    // var participants: Platzhalter -> Participant Array
+  //  var participants: Platzhalter -> Participant Array
     var title: String
     var visibility: String
     var time: Int

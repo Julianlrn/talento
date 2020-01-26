@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -29,6 +30,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+      for urlContext in URLContexts {
+          let url = urlContext.url
+          Auth.auth().canHandle(url)
+      }
+      // URL not auth related, developer should handle it.
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

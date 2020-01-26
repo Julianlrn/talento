@@ -24,10 +24,9 @@ struct ChallengeCardView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .overlay(
-                    HStack {
+                   HStack {
                         Spacer()
                         //MARK: - HOT
-                        
                         VStack {
                             Text("HOT")
                                 .font(.system(size: 12))
@@ -43,6 +42,7 @@ struct ChallengeCardView: View {
                         .padding(.top, 16)
                         .padding(.trailing, 16)
                     }
+                    
                 )
                 
                 
@@ -51,7 +51,7 @@ struct ChallengeCardView: View {
                 VStack(alignment: .leading, spacing: 24) {
                     
                     //MARK: - PARTICIPANTS
-                    Text("Participants: 123")
+                    Text("Participants: \(challenge.participants)")
                         .font(.system(size: 16))
                     
                     //MARK: - TITLE
@@ -85,6 +85,8 @@ struct ChallengeCardView: View {
         .edgesIgnoringSafeArea(.all)
     }
 }
+
+
 
 /*struct ChallengeCardView_Previews: PreviewProvider {
     static var previews: some View {

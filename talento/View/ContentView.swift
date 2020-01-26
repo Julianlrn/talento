@@ -6,21 +6,51 @@
 //  Copyright © 2019 JulianLorenz. All rights reserved.
 //
 
+
 import SwiftUI
-import FBSDKLoginKit
 import Firebase
 import FirebaseUI
+import FirebaseFirestore
+import FirebaseStorage
+
+
 
 
 struct ContentView: View {
 
+
+
+
     
-    @EnvironmentObject var loginStatus:LoginCheck
+   // @EnvironmentObject var loginStatus:LoginCheck
+
+    
+    @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
+
     
     var body: some View {
 
-        
-        
+        VStack {
+            
+            if status {
+                    StartView()
+            }
+            else {
+
+                NavigationView {
+                    AuthenticationPage()
+                }
+            }
+        }.onAppear {
+            
+            NotificationCenter.default.addObserver(forName: NSNotification.Name("statusChange"), object: nil, queue: .main) { (_) in
+                
+                let status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
+                self.status = status
+            }
+        }
+
+       /*
         if loginStatus.loading == true {
             return AnyView(Text("loading"))
         }
@@ -33,7 +63,7 @@ struct ContentView: View {
         }
         
 
-        
+        return AnyView(StartView())*/
     }
 }
 
@@ -41,8 +71,11 @@ struct StartView: View {
    
     @State var index = 0
     @State var isPresented = false
+    
     var body: some View {
+
     VStack {
+        
         ZStack {
             if self.index == 0 {
                 FeedView()
@@ -60,6 +93,7 @@ struct StartView: View {
 
 
         TabBar(index: $index, isPresented: $isPresented)
+
         .cornerRadius(16)
         .padding(.top, -16)
         .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.04), radius: 16, x: 0, y: -8)
@@ -68,6 +102,9 @@ struct StartView: View {
         ChallengeCreateView(isPresented: self.$isPresented)
     })
     .edgesIgnoringSafeArea(.bottom)
+
+
+        
 
     }
 }
@@ -152,3 +189,5 @@ struct ContentView_Preview: PreviewProvider {
         ContentView()
     }
 }
+
+
