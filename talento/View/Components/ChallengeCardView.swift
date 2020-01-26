@@ -23,6 +23,7 @@ struct ChallengeCardView: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(height: 220)
+            .clipShape(Rectangle())
             .overlay(
                HStack {
                     Spacer()
@@ -42,7 +43,6 @@ struct ChallengeCardView: View {
                     .padding(.top, 16)
                     .padding(.trailing, 16)
                 }
-                
             )
             
             

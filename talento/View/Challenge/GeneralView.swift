@@ -56,6 +56,8 @@ struct GeneralView: View {
                      Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! :UIImage())
                      .resizable()
                      .aspectRatio(contentMode: .fill)
+                     .frame(height: 230)
+                     .clipShape(Rectangle())
                      .overlay(
                          HStack {
                              Spacer()
