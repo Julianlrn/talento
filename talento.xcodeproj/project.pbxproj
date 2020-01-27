@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		223A10A623DF55EE00900461 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A10A523DF55EE00900461 /* UserList.swift */; };
+		223A10A823DF6C7E00900461 /* ProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A10A723DF6C7E00900461 /* ProfilePictureView.swift */; };
 		22583737239EAEEB00A9FD1B /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583736239EAEEB00A9FD1B /* FeedView.swift */; };
 		22583739239EB9E600A9FD1B /* LoginCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583738239EB9E600A9FD1B /* LoginCheck.swift */; };
 		2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258373A239ECC1D00A9FD1B /* FBLoginButton.swift */; };
@@ -17,7 +18,6 @@
 		2266C36E23A29C0100E6216A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266C36D23A29C0100E6216A /* ProfileView.swift */; };
 		227C134E23A2A06D00D36384 /* ChallengeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C134D23A2A06D00D36384 /* ChallengeCardView.swift */; };
 		227C135523A2AB8D00D36384 /* ForeignProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C135423A2AB8D00D36384 /* ForeignProfileView.swift */; };
-		22826CED23DE16EE00D6B6E8 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22826CEC23DE16EE00D6B6E8 /* UserData.swift */; };
 		228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066A239D8CBB001C0D7A /* AppDelegate.swift */; };
 		228F066D239D8CBB001C0D7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066C239D8CBB001C0D7A /* SceneDelegate.swift */; };
 		228F066F239D8CBB001C0D7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066E239D8CBB001C0D7A /* ContentView.swift */; };
@@ -76,6 +76,7 @@
 /* Begin PBXFileReference section */
 		00D7A0623AB88B75C407B09B /* Pods_talentoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talentoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		223A10A523DF55EE00900461 /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+		223A10A723DF6C7E00900461 /* ProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureView.swift; sourceTree = "<group>"; };
 		22583735239D99EF00A9FD1B /* talento.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = talento.entitlements; sourceTree = "<group>"; };
 		22583736239EAEEB00A9FD1B /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		22583738239EB9E600A9FD1B /* LoginCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCheck.swift; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		2266C36D23A29C0100E6216A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		227C134D23A2A06D00D36384 /* ChallengeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCardView.swift; sourceTree = "<group>"; };
 		227C135423A2AB8D00D36384 /* ForeignProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignProfileView.swift; sourceTree = "<group>"; };
-		22826CEC23DE16EE00D6B6E8 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		228F0667239D8CBB001C0D7A /* talento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = talento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228F066A239D8CBB001C0D7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		228F066C239D8CBB001C0D7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +204,7 @@
 				F30C3A8F23C0EFDC00D663C9 /* ChallengeCreateView.swift */,
 				2266C36B23A29BF400E6216A /* ActivityView.swift */,
 				2266C36D23A29C0100E6216A /* ProfileView.swift */,
+				223A10A723DF6C7E00900461 /* ProfilePictureView.swift */,
 				F30DCA9723DB4E5900B9C4C5 /* SettingsView.swift */,
 			);
 			path = TabBarViews;
@@ -329,7 +330,6 @@
 			isa = PBXGroup;
 			children = (
 				F35AACD223BFABBF005942EC /* ChallengeData.swift */,
-				22826CEC23DE16EE00D6B6E8 /* UserData.swift */,
 				223A10A523DF55EE00900461 /* UserList.swift */,
 			);
 			path = Data;
@@ -668,6 +668,7 @@
 				F3A63EA423DF673200B5F075 /* Extensions.swift in Sources */,
 				228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */,
 				8F3E6DCA23DDBD7B00CF12E0 /* Indicator.swift in Sources */,
+				223A10A823DF6C7E00900461 /* ProfilePictureView.swift in Sources */,
 				F30DCA9823DB4E5900B9C4C5 /* SettingsView.swift in Sources */,
 				F35AACD523BFD937005942EC /* ChallengeDetailView.swift in Sources */,
 				8F3E6DC823DDBD5800CF12E0 /* AccountCreation.swift in Sources */,
@@ -680,7 +681,6 @@
 				B9236F9323CF7FC10095CA9E /* ImageLoader.swift in Sources */,
 				B9FCBE8B23DF61A700DB265D /* ImageLoaderCache.swift in Sources */,
 				2266C36C23A29BF400E6216A /* ActivityView.swift in Sources */,
-				22826CED23DE16EE00D6B6E8 /* UserData.swift in Sources */,
 				22583739239EB9E600A9FD1B /* LoginCheck.swift in Sources */,
 				8F3E6DCC23DDBDA600CF12E0 /* CreateUser.swift in Sources */,
 				228F066F239D8CBB001C0D7A /* ContentView.swift in Sources */,
@@ -852,14 +852,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = PRVDUT282L;
+				DEVELOPMENT_TEAM = 74ZL66WBK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lorenz.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -874,14 +874,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = PRVDUT282L;
+				DEVELOPMENT_TEAM = 74ZL66WBK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lorenz.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

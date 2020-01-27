@@ -16,22 +16,20 @@ struct ProfileView: View {
 
     @ObservedObject var userList = UserList()
    
-    
+    @ObservedObject var challenges = ChallengeData()
    
 
     @State var tabIndex = 0
    
 
     var body: some View {
-        if let currentUser = userList.getCurrentUser(){
+        if let currentUser = userList.getCurrentUser(), challenges.challengeData.count != 0{
                    return AnyView(
                     NavigationView {
                     ScrollView(.vertical, showsIndicators: false) {
-                        VStack(alignment: .leading) {
-                            Image("1")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(height: 300)
+                        VStack() {
+                            ProfilePictureView(currentUser: currentUser)
+                                .frame(width:UIScreen.main.bounds.width, height: 300)
                                 .clipped()
                                 .colorMultiply(Color.init(red:0.96, green:0.11, blue:0.34, opacity: 1))
                                 .overlay (
@@ -68,6 +66,7 @@ struct ProfileView: View {
                                                     .font(Font.system(size: 24, weight: .light))
                                                     .foregroundColor(Color.white)
                                             }
+                                            .padding(.bottom, 24)
                                             //View for TalentPoints, Followers and Preferences Button
                                             HStack (spacing : 80){
                                                 HStack(spacing: 40) {
@@ -158,15 +157,42 @@ struct ProfileView: View {
 
                             if self.tabIndex == 0 {
                                 //Alle Challenges, an denen User Teilimmt  && "time == 0"  && "Ranking <= 3"
-                                ActiveChallenges()
+                                ScrollView(.vertical, showsIndicators: false) {
+                                    ForEach(challenges.challengeData) { item in
+                                        UserFeedView()
+                                        NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
+                                           ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+                                        }
+                                        .buttonStyle(PlainButtonStyle())
+                                    }
+                                    .padding(.horizontal, 16)
+                                }
                             }
                             else if self.tabIndex == 1 {
                                 //Alle Challenges, bei denen der User (ID) teilnimmt && "time != 0"
-                                ActiveChallenges()
+                                ScrollView(.vertical, showsIndicators: false) {
+                                    ForEach(challenges.challengeData) { item in
+                                        UserFeedView()
+                                        NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
+                                           ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+                                        }
+                                        .buttonStyle(PlainButtonStyle())
+                                    }
+                                    .padding(.horizontal, 16)
+                                }
                             }
                             else if self.tabIndex == 2 {
                                 //Alle Challenges, bei denen der User (ID) teilnimmt
-                                HistoryChallenges()
+                               ScrollView(.vertical, showsIndicators: false) {
+                                    ForEach(challenges.challengeData) { item in
+                                        UserFeedView()
+                                        NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
+                                           ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+                                        }
+                                        .buttonStyle(PlainButtonStyle())
+                                    }
+                                    .padding(.horizontal, 16)
+                                }
                             }
 
                         }
@@ -188,50 +214,6 @@ struct ProfileView: View {
 
 
 
-struct ActiveChallenges: View {
-
-    var challenges: [Challenge] = getChallengeData()
-
-    var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
-                ForEach(challenges) { item in
-                    NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
-                       ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
-                       .frame(width: 311)
-                       .padding(.leading, 16)
-                       .padding(.vertical, 48)
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                }
-            }
-        }
-        .offset(y: -48)
-    }
-}
-
-
-struct HistoryChallenges: View {
-
-    var challenges: [Challenge] = getChallengeData()
-
-    var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
-                ForEach(challenges) { item in
-                    NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
-                       ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
-                       .frame(width: 311)
-                       .padding(.leading, 16)
-                       .padding(.vertical, 48)
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                }
-            }
-        }
-        .offset(y: -48)
-    }
-}
 
 
 
