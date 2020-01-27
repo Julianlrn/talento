@@ -150,6 +150,7 @@ struct TabBar : View {
             .background(Color.init(red:0.96, green:0.11, blue:0.34))
             .cornerRadius(16)
             .padding(.horizontal, 12)
+            .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
 
             HStack {
                 Image(systemName: self.index == 2 ? "person.fill" : "person")
