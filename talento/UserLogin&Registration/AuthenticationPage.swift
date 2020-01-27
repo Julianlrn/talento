@@ -62,15 +62,23 @@ struct AuthenticationPage : View {
                         .keyboardType(.numberPad)
                         .frame(width: 45)
                         .padding()
-                        .background(Color("Color")) //doesn't work, why?
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .background(Color.white)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                                .stroke(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), lineWidth: 2)
+                        )
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
                     
                     TextField("Number", text: self.$no)
                         .keyboardType(.numberPad)
                         .padding()
-                        .background(Color("Color")) //doesn't work, why?
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                }.padding(.top, 15)
+                        .background(Color.white)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                                .stroke(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), lineWidth: 2)
+                        )
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                }.padding(.top, 16)
                 
                 NavigationLink(destination: LoginPage(show: self.$show, ID: self.$ID), isActive: self.$show){
                     
@@ -96,10 +104,14 @@ struct AuthenticationPage : View {
                         
                     }) {
                         
-                        Text("Send").frame(width: UIScreen.main.bounds.width - 30, height: 50 )
-                    }.foregroundColor(.white)
+                        Text("Send")
+                            .padding(16)
+                    }
+                    .frame(width: UIScreen.main.bounds.width - 32)
+                    .foregroundColor(.white)
                     .background(Color.init(red:0.96, green:0.11, blue:0.34))
-                    .cornerRadius(10)
+                    .cornerRadius(16)
+                    .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
                     
                 }
                 

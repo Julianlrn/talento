@@ -18,9 +18,6 @@ import FirebaseStorage
 
 struct ContentView: View {
 
-
-
-
     
    // @EnvironmentObject var loginStatus:LoginCheck
 

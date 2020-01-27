@@ -56,6 +56,8 @@ struct GeneralView: View {
                      Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! :UIImage())
                      .resizable()
                      .aspectRatio(contentMode: .fill)
+                     .frame(height: 230)
+                     .clipShape(Rectangle())
                      .overlay(
                          HStack {
                              Spacer()
@@ -93,7 +95,10 @@ struct GeneralView: View {
                          HStack {
                              HStack {
                                  Image(systemName: "globe")
-                                 Text(challenge.visibility)
+                                if challenge.isPublic ?? false {
+                                    Text("Public")
+                                }
+                                else { Text("Local") }
                              }
                              Spacer()
                              HStack {
@@ -155,7 +160,7 @@ struct GeneralView: View {
                             Text(self.buttonText)
                                 .font(.system(size: 16, weight: .bold))
                                 .foregroundColor(Color.white)
-                                .padding(24)
+                                .padding(16)
                         }
                         .frame(width: 343)
                         .background(Color.init(red:0.96, green:0.11, blue:0.34))

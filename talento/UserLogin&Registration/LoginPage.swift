@@ -45,9 +45,13 @@ struct LoginPage : View {
                         TextField("Code", text: self.$code)
                             .keyboardType(.numberPad)
                             .padding()
-                            .background(Color("Color"))
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .padding(.top, 15)
+                            .background(Color.white)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16)
+                                    .stroke(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), lineWidth: 2)
+                            )
+                            .clipShape(RoundedRectangle(cornerRadius: 16))
+                            .padding(.top, 16)
                         
                         if self.loading {
                             
@@ -100,10 +104,14 @@ struct LoginPage : View {
                                 
                             }) {
                                 
-                                Text("Verify").frame(width: UIScreen.main.bounds.width - 30, height: 50 )
-                            }.foregroundColor(.white)
+                                Text("Verify")
+                                    .padding(16)
+                            }
+                            .frame(width: UIScreen.main.bounds.width - 32)
+                            .foregroundColor(.white)
                             .background(Color.init(red:0.96, green:0.11, blue:0.34))
-                            .cornerRadius(10)
+                            .cornerRadius(16)
+                            .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
                             
                         }
                         
@@ -122,7 +130,7 @@ struct LoginPage : View {
                 
             }
             .padding()
-            .navigationBarTitle("")
+            .navigationBarTitle("Login")
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
             .alert(isPresented: self.$alert) {
