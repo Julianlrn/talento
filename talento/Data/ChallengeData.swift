@@ -12,8 +12,6 @@ let db = Firestore.firestore()
 
 
 func getChallengeData() -> [Challenge]{
-
-
         db.collection("challenges").addSnapshotListener{ (snap, err) in
             if err != nil{
                 print((err?.localizedDescription)!)
