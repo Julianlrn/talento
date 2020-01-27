@@ -10,12 +10,13 @@ import SwiftUI
 
 struct AccountCreation : View {
     
-    @Binding var show : Bool
     @State var name = ""
     @State var bio = ""
+    @State var imagedata : Data = .init(count: 0)
+    
+    @Binding var show : Bool
     @State var picker = false
     @State var loading = false
-    @State var imagedata : Data = .init(count: 0)
     @State var alert = false
     
     
@@ -85,6 +86,7 @@ struct AccountCreation : View {
 
                 TextField("About You", text: self.$bio){
                     self.endEditing(true)
+
                 }
                     //.keyboardType(.numberPad)
                     .padding()
@@ -108,7 +110,7 @@ struct AccountCreation : View {
                     }
                 }
                 else{
-                                
+                                 
                     Button(action: {
                         
                         if self.name != "" && self.bio != "" && self.imagedata.count != 0{
