@@ -14,11 +14,18 @@ import FirebaseStorage
 
 func CreateUser(name: String, bio: String, imagedata : Data, completion: @escaping(Bool)-> Void) {
     
+    var challenges: [Challenge] = []
+    var latitude: Double = 0
+    var longitude: Double = 0
+    var talentPoints: Double = 0
+    var followers: [User] = []
+    var followed: [User] = []
+    
     let db = Firestore.firestore()
     
     let storage = Storage.storage().reference()
     
-    let uid = Auth.auth().currentUser?.uid
+    let uid  = Auth.auth().currentUser?.uid
     
     //delete only for testing purposes
     //print("this user's uid: " + uid!)
@@ -38,9 +45,10 @@ func CreateUser(name: String, bio: String, imagedata : Data, completion: @escapi
                 print((err?.localizedDescription)!)
                 return
             }
+           
             
             db.collection("users").document(uid!).setData(
-            ["name": name,"bio": bio,"pic":"\(url!)","uid": uid!]) { (err) in
+            ["name": name,"bio": bio,"image":"\(url!)","uid": uid!, "challenges": challenges, "latitude": latitude, "longitude": longitude, "talentPoints": talentPoints, "followers": followers, "followed": followed ]) { (err) in
                 
                 if err != nil {
                     

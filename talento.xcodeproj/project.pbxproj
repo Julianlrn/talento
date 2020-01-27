@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		223A10A623DF55EE00900461 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A10A523DF55EE00900461 /* UserList.swift */; };
 		22583737239EAEEB00A9FD1B /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583736239EAEEB00A9FD1B /* FeedView.swift */; };
 		22583739239EB9E600A9FD1B /* LoginCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583738239EB9E600A9FD1B /* LoginCheck.swift */; };
 		2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258373A239ECC1D00A9FD1B /* FBLoginButton.swift */; };
@@ -16,6 +17,7 @@
 		2266C36E23A29C0100E6216A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266C36D23A29C0100E6216A /* ProfileView.swift */; };
 		227C134E23A2A06D00D36384 /* ChallengeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C134D23A2A06D00D36384 /* ChallengeCardView.swift */; };
 		227C135523A2AB8D00D36384 /* ForeignProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C135423A2AB8D00D36384 /* ForeignProfileView.swift */; };
+		22826CED23DE16EE00D6B6E8 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22826CEC23DE16EE00D6B6E8 /* UserData.swift */; };
 		228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066A239D8CBB001C0D7A /* AppDelegate.swift */; };
 		228F066D239D8CBB001C0D7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066C239D8CBB001C0D7A /* SceneDelegate.swift */; };
 		228F066F239D8CBB001C0D7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F066E239D8CBB001C0D7A /* ContentView.swift */; };
@@ -25,6 +27,7 @@
 		228F0682239D8CBE001C0D7A /* talentoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F0681239D8CBE001C0D7A /* talentoTests.swift */; };
 		228F068D239D8CBE001C0D7A /* talentoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F068C239D8CBE001C0D7A /* talentoUITests.swift */; };
 		22936AB723DCB7E0004802F7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22936AB623DCB7E0004802F7 /* ImagePicker.swift */; };
+		22936AB923DDE682004802F7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22936AB823DDE681004802F7 /* UserModel.swift */; };
 		66F25D05A15511E4C4469CD4 /* Pods_talento_talentoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25E808EE14980D0C9B8FB9F /* Pods_talento_talentoUITests.framework */; };
 		8F3E6DC123DDBBFE00CF12E0 /* RegistrationImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E6DC023DDBBFD00CF12E0 /* RegistrationImagePicker.swift */; };
 		8F3E6DC423DDBCE000CF12E0 /* AuthenticationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E6DC323DDBCE000CF12E0 /* AuthenticationPage.swift */; };
@@ -69,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		00D7A0623AB88B75C407B09B /* Pods_talentoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talentoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		223A10A523DF55EE00900461 /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 		22583735239D99EF00A9FD1B /* talento.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = talento.entitlements; sourceTree = "<group>"; };
 		22583736239EAEEB00A9FD1B /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		22583738239EB9E600A9FD1B /* LoginCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCheck.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 		2266C36D23A29C0100E6216A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		227C134D23A2A06D00D36384 /* ChallengeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCardView.swift; sourceTree = "<group>"; };
 		227C135423A2AB8D00D36384 /* ForeignProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignProfileView.swift; sourceTree = "<group>"; };
+		22826CEC23DE16EE00D6B6E8 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		228F0667239D8CBB001C0D7A /* talento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = talento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228F066A239D8CBB001C0D7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		228F066C239D8CBB001C0D7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +99,7 @@
 		228F068C239D8CBE001C0D7A /* talentoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = talentoUITests.swift; sourceTree = "<group>"; };
 		228F068E239D8CBE001C0D7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22936AB623DCB7E0004802F7 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		22936AB823DDE681004802F7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		46A0C27DA15A4AB0DB179472 /* Pods-talento-talentoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento-talentoUITests.debug.xcconfig"; path = "Target Support Files/Pods-talento-talentoUITests/Pods-talento-talentoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6BD65366CB93C821FCCEAB32 /* Pods-talento.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento.release.xcconfig"; path = "Target Support Files/Pods-talento/Pods-talento.release.xcconfig"; sourceTree = "<group>"; };
 		8F3E6DC023DDBBFD00CF12E0 /* RegistrationImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationImagePicker.swift; sourceTree = "<group>"; };
@@ -305,6 +311,7 @@
 			children = (
 				F35AACCE23BFA86D005942EC /* ChallengeModel.swift */,
 				F332F3D823D61E8C00DF9848 /* EntryModel.swift */,
+				22936AB823DDE681004802F7 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -313,6 +320,8 @@
 			isa = PBXGroup;
 			children = (
 				F35AACD223BFABBF005942EC /* ChallengeData.swift */,
+				22826CEC23DE16EE00D6B6E8 /* UserData.swift */,
+				223A10A523DF55EE00900461 /* UserList.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -633,11 +642,13 @@
 				2266C36E23A29C0100E6216A /* ProfileView.swift in Sources */,
 				8F3E6DC623DDBD0A00CF12E0 /* LoginPage.swift in Sources */,
 				F39CC39123D7845900C8C9DA /* RatingView.swift in Sources */,
+				223A10A623DF55EE00900461 /* UserList.swift in Sources */,
 				F39CC38F23D782C500C8C9DA /* GeneralView.swift in Sources */,
 				2262E05523CA25680090B2B8 /* ActivityEntryView.swift in Sources */,
 				F39CC38D23D7733A00C8C9DA /* RankingEntryView.swift in Sources */,
 				2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */,
 				F35AACCF23BFA86D005942EC /* ChallengeModel.swift in Sources */,
+				22936AB923DDE682004802F7 /* UserModel.swift in Sources */,
 				F35AACD323BFABBF005942EC /* ChallengeData.swift in Sources */,
 				F39CC38B23D76D6A00C8C9DA /* RankingView.swift in Sources */,
 				F332F3DB23D61F3B00DF9848 /* MediaEntryView.swift in Sources */,
@@ -657,6 +668,7 @@
 				228F066D239D8CBB001C0D7A /* SceneDelegate.swift in Sources */,
 				B9236F9323CF7FC10095CA9E /* ImageLoader.swift in Sources */,
 				2266C36C23A29BF400E6216A /* ActivityView.swift in Sources */,
+				22826CED23DE16EE00D6B6E8 /* UserData.swift in Sources */,
 				22583739239EB9E600A9FD1B /* LoginCheck.swift in Sources */,
 				8F3E6DCC23DDBDA600CF12E0 /* CreateUser.swift in Sources */,
 				228F066F239D8CBB001C0D7A /* ContentView.swift in Sources */,
