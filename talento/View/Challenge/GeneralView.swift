@@ -103,7 +103,7 @@ struct GeneralView: View {
                              Spacer()
                              HStack {
                                  Image(systemName: "timer")
-                                 Text("Time left: \(challenge.time/60/60) hours")
+                                 Text("Time left: \(challenge.timestamp/60/60) hours")
                              }
                              .padding(.trailing, 24)
                          }
