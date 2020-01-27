@@ -126,32 +126,22 @@ struct LocalChallenges: View {
     
     var challenges: [Challenge] = getChallengeData()
     
-    var body: some View {
-        
-        VStack(alignment: .leading){
-          /* HStack {
-                Text("Your Location: ")
-                
-                Text("Munich, Germany")
-                .padding()
-                .foregroundColor(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.32))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), lineWidth: 1)
-                )
-            }
-            .padding(.top, 8)
-            .padding(.bottom, 8)*/
-         
-            ForEach(challenges) { item in
-                 NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
-                                      ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
-                                   }
-                                   .buttonStyle(PlainButtonStyle())
-            }
-        }
-        .padding(.horizontal, 16)
-    }
+     var body: some View {
+           ScrollView(.horizontal, showsIndicators: false) {
+               HStack {
+                   ForEach(challenges) { item in
+                       NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
+                          ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+                          .frame(width: 311)
+                          .padding(.leading, 16)
+                          .padding(.vertical, 48)
+                       }
+                       .buttonStyle(PlainButtonStyle())
+                   }
+               }
+           }
+           .offset(y: -48)
+       }
 }
 
 struct ChallengeView_Previews: PreviewProvider {
