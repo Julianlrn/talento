@@ -16,11 +16,9 @@ struct Challenge: Identifiable {
   //  var participants: Platzhalter -> Participant Array
     var title: String
     var isPublic: Bool?
-    var time: Int
+    var timestamp: Double
     var instructions: String
     // var author: Platzhalter -> User Object
     var entry: [entry]
     // var ranking: Platzhalter -> Ranking Object
-    
-    
 }

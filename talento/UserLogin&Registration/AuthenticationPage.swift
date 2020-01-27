@@ -105,6 +105,7 @@ struct AuthenticationPage : View {
                     }) {
                         
                         Text("Send")
+                            .fontWeight(.bold)
                             .padding(16)
                     }
                     .frame(width: UIScreen.main.bounds.width - 32)

@@ -54,6 +54,7 @@
 		F39CC38D23D7733A00C8C9DA /* RankingEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39CC38C23D7733A00C8C9DA /* RankingEntryView.swift */; };
 		F39CC38F23D782C500C8C9DA /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39CC38E23D782C500C8C9DA /* GeneralView.swift */; };
 		F39CC39123D7845900C8C9DA /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39CC39023D7845900C8C9DA /* RatingView.swift */; };
+		F3A63EA423DF673200B5F075 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A63EA323DF673200B5F075 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		F39CC38C23D7733A00C8C9DA /* RankingEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingEntryView.swift; sourceTree = "<group>"; };
 		F39CC38E23D782C500C8C9DA /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		F39CC39023D7845900C8C9DA /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		F3A63EA323DF673200B5F075 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 				F35AACCD23BFA83B005942EC /* Model */,
 				F35AACD023BFAB38005942EC /* Data */,
 				2258373C239ECC9100A9FD1B /* FacebookLogin */,
+				F3A63EA323DF673200B5F075 /* Extensions.swift */,
 				B9236F9223CF7FC10095CA9E /* ImageLoader.swift */,
 				B9FCBE8A23DF61A700DB265D /* ImageLoaderCache.swift */,
 				228F066A239D8CBB001C0D7A /* AppDelegate.swift */,
@@ -665,6 +668,7 @@
 				F30C3A9023C0EFDC00D663C9 /* ChallengeCreateView.swift in Sources */,
 				22936AB723DCB7E0004802F7 /* ImagePicker.swift in Sources */,
 				227C135523A2AB8D00D36384 /* ForeignProfileView.swift in Sources */,
+				F3A63EA423DF673200B5F075 /* Extensions.swift in Sources */,
 				228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */,
 				8F3E6DCA23DDBD7B00CF12E0 /* Indicator.swift in Sources */,
 				223A10A823DF6C7E00900461 /* ProfilePictureView.swift in Sources */,

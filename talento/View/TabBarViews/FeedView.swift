@@ -10,12 +10,14 @@ import SwiftUI
 
 struct FeedView: View {
     
-    var challenges: [Challenge] = getChallengeData()
+   @ObservedObject var challenges = ChallengeData()
     
     var body: some View {
+        if challenges.challengeData.count != 0 {
+        return AnyView(
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
-                ForEach(challenges) { item in
+                ForEach(challenges.challengeData) { item in
                     UserFeedView()
                     NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
                        ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
@@ -24,6 +26,15 @@ struct FeedView: View {
                 }
                 .padding(.horizontal, 16)
             }.navigationBarTitle(Text("Feed"))
+        })
+        }
+        else {
+            return AnyView(
+                VStack{
+                    Text("Loading")
+                    Spacer()
+                }.padding(.top, 120)
+            )
         }
     }
 }

@@ -80,9 +80,9 @@ struct AccountCreation : View {
                    .padding(.top, 16)
                 
                 Text("About You")
-                                    .font(.body)
-                                    .foregroundColor(.gray)
-                                    .padding(.top, 12)
+                    .font(.body)
+                    .foregroundColor(.gray)
+                    .padding(.top, 12)
 
                 TextField("About You", text: self.$bio){
                     self.endEditing(true)
@@ -134,6 +134,7 @@ struct AccountCreation : View {
                         
 
                     Text("Create")
+                        .fontWeight(.bold)
                         .padding(16)
                              
                     }
