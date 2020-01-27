@@ -68,8 +68,6 @@ struct ProfileView: View {
                                                     .font(Font.system(size: 24, weight: .light))
                                                     .foregroundColor(Color.white)
                                             }
-                                            Divider()
-                                            Divider()
                                             //View for TalentPoints, Followers and Preferences Button
                                             HStack (spacing : 80){
                                                 HStack(spacing: 40) {

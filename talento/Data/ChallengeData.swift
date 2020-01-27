@@ -10,7 +10,6 @@ var uids: [String] = []
 let db = Firestore.firestore()
 
 
-
 func getChallengeData() -> [Challenge]{
         db.collection("challenges").addSnapshotListener{ (snap, err) in
             if err != nil{
@@ -29,7 +28,7 @@ func getChallengeData() -> [Challenge]{
                     fbId: i.document.documentID,
                     title: i.document.get("title") as! String,
                     isPublic: i.document.get("isPublic") as? Bool,
-                    timestamp: 60000,
+                    timestamp: i.document.get("timestamp") as! Timestamp,
                     instructions: i.document.get("instructions") as! String,
                     entry: [entry(id: "f69eZbgp2ALX4aSDSOXo", author: "michael0301", image: "sushi", likes: 2, swipe: 0, degree: 0)]
                 )

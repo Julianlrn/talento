@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct Challenge: Identifiable {
     var id = UUID()
@@ -16,7 +17,7 @@ struct Challenge: Identifiable {
   //  var participants: Platzhalter -> Participant Array
     var title: String
     var isPublic: Bool?
-    var timestamp: Double
+    var timestamp: Timestamp
     var instructions: String
     // var author: Platzhalter -> User Object
     var entry: [entry]

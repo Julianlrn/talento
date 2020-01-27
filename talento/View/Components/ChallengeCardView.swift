@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ChallengeCardView: View {
     
@@ -68,7 +69,7 @@ struct ChallengeCardView: View {
                     Spacer()
                     HStack {
                         Image(systemName: "timer")
-                        Text("Time left: \(challenge.timestamp/60/60) hours")
+                        Text("Created: \((challenge.timestamp.dateValue().calenderTimeSinceNow()))")
                     }
                     .padding(.trailing, 24)
                 }

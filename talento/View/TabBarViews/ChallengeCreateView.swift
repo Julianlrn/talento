@@ -6,13 +6,13 @@
 //  Copyright © 2020 JulianLorenz. All rights reserved.
 //
 
+import Foundation
 import SwiftUI
 import Firebase
 import FirebaseUI
 
 struct ChallengeCreateView: View {
     
-    @ObservedObject var challengeData = getChallengeData()
    // @ObservedObject var imageLoader: ImageLoader
     @State private var description = ""
     @State private var name = ""
@@ -23,6 +23,8 @@ struct ChallengeCreateView: View {
     @State var imageUrl : String? = ""
     @State var isSourceTypeforPicker : Int = 2
     
+    let createdDate = FieldValue.serverTimestamp()
+    
     @Binding var isPresented : Bool
     
     
@@ -31,7 +33,7 @@ struct ChallengeCreateView: View {
         db.collection("challenges")
             .document()
             .setData(
-            ["title":self.name, "instructions":self.description, "image": self.imageUrl!, "isPublic":self.isPublic]) { (err) in
+            ["title":self.name, "instructions":self.description, "image": self.imageUrl!, "isPublic":self.isPublic, "timestamp": self.createdDate]) { (err) in
                 
                 if err != nil{
                    
@@ -39,6 +41,8 @@ struct ChallengeCreateView: View {
                     return
                 }
         }
+        
+        print(self.createdDate)
     }
     
     
@@ -73,7 +77,7 @@ struct ChallengeCreateView: View {
                 }
 
                 // TODO: Image aus DB lesen und hochladen
-                image?.resizable().scaledToFit().frame(height: 150)
+                image?.resizable().aspectRatio(contentMode: .fit).frame(height: 150)
                   Button(action: {
                       withAnimation {
                           self.isShowPicker.toggle()
@@ -115,34 +119,4 @@ struct ChallengeCreateView: View {
             .navigationBarTitle("Create Challenge")
         }
     }
-
-    class getChallengeData : ObservableObject{
-        @Published var datas = [challengeDescription]()
-        
-        init() {
-            let db = Firestore.firestore()
-            
-            db.collection("challenges").addSnapshotListener{ (snap, err) in
-                if err != nil{
-                    print((err?.localizedDescription)!)
-                    return
-                }
-                for i in snap!.documentChanges{
-                    let id = i.document.documentID
-                    let name = i.document.get("title") as! String
-                    let description = i.document.get("instructions") as! String
-                     let image = i.document.get("image") as! String
-                    
-                    self.datas.append(challengeDescription(id : id, name: name, description: description, image:image))
-                }
-            }
-        }
-    }
-}
-
-struct challengeDescription : Identifiable {
-    var id : String
-    var name :String
-    var description : String
-    var image : String
 }
