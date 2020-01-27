@@ -174,7 +174,10 @@ struct ProfileView: View {
         }
         else {
             return AnyView(
-                Text("Loading")
+                VStack{
+                    Text("Loading")
+                    Spacer()
+                }.padding(.top, 120)
             )
         }
          
