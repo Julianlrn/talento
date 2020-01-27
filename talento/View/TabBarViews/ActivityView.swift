@@ -12,9 +12,9 @@ import FBSDKLoginKit
 import Firebase
 import FirebaseUI
 
-struct ActivityView: View {
+/*struct ActivityView: View {
     
-   var challenges: [Challenge] = challengesData
+    @ObservedObject var challenges = ChallengeData()
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -36,7 +36,7 @@ struct ActivityView_Previews: PreviewProvider {
     static var previews: some View {
         ActivityView()
     }
-}
+}*/
 
 
     
