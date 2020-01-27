@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		223A10A623DF55EE00900461 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A10A523DF55EE00900461 /* UserList.swift */; };
+		223A10A823DF6C7E00900461 /* ProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A10A723DF6C7E00900461 /* ProfilePictureView.swift */; };
 		22583737239EAEEB00A9FD1B /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583736239EAEEB00A9FD1B /* FeedView.swift */; };
 		22583739239EB9E600A9FD1B /* LoginCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583738239EB9E600A9FD1B /* LoginCheck.swift */; };
 		2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258373A239ECC1D00A9FD1B /* FBLoginButton.swift */; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		00D7A0623AB88B75C407B09B /* Pods_talentoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talentoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		223A10A523DF55EE00900461 /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+		223A10A723DF6C7E00900461 /* ProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureView.swift; sourceTree = "<group>"; };
 		22583735239D99EF00A9FD1B /* talento.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = talento.entitlements; sourceTree = "<group>"; };
 		22583736239EAEEB00A9FD1B /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		22583738239EB9E600A9FD1B /* LoginCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCheck.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				F30C3A8F23C0EFDC00D663C9 /* ChallengeCreateView.swift */,
 				2266C36B23A29BF400E6216A /* ActivityView.swift */,
 				2266C36D23A29C0100E6216A /* ProfileView.swift */,
+				223A10A723DF6C7E00900461 /* ProfilePictureView.swift */,
 				F30DCA9723DB4E5900B9C4C5 /* SettingsView.swift */,
 			);
 			path = TabBarViews;
@@ -664,6 +667,7 @@
 				227C135523A2AB8D00D36384 /* ForeignProfileView.swift in Sources */,
 				228F066B239D8CBB001C0D7A /* AppDelegate.swift in Sources */,
 				8F3E6DCA23DDBD7B00CF12E0 /* Indicator.swift in Sources */,
+				223A10A823DF6C7E00900461 /* ProfilePictureView.swift in Sources */,
 				F30DCA9823DB4E5900B9C4C5 /* SettingsView.swift in Sources */,
 				F35AACD523BFD937005942EC /* ChallengeDetailView.swift in Sources */,
 				8F3E6DC823DDBD5800CF12E0 /* AccountCreation.swift in Sources */,
@@ -848,14 +852,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = A5T89PU53A;
+				DEVELOPMENT_TEAM = 74ZL66WBK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.preissing.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lorenz.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -870,14 +874,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = A5T89PU53A;
+				DEVELOPMENT_TEAM = 74ZL66WBK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.preissing.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lorenz.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

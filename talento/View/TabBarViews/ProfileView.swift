@@ -27,10 +27,8 @@ struct ProfileView: View {
                    return AnyView(
                     NavigationView {
                     ScrollView(.vertical, showsIndicators: false) {
-                        VStack(alignment: .leading) {
-                            Image("1")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
+                        VStack() {
+                            ProfilePictureView(currentUser: currentUser)
                                 .frame(height: 300)
                                 .clipped()
                                 .colorMultiply(Color.init(red:0.96, green:0.11, blue:0.34, opacity: 1))
