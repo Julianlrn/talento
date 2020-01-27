@@ -105,6 +105,7 @@ struct LoginPage : View {
                             }) {
                                 
                                 Text("Verify")
+                                    .fontWeight(.bold)
                                     .padding(16)
                             }
                             .frame(width: UIScreen.main.bounds.width - 32)
