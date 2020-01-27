@@ -14,15 +14,15 @@ struct MediaEntryView: View {
     @ObservedObject var obser = observer()
     @State var liked = 0
     @State var disliked = 0
+    // @ObservedObject var imageLoader: ImageLoader = ImageLoader(urlString: item.image)
     
     var body: some View {
         
         GeometryReader { geo in
             ZStack {
                 ForEach(self.obser.entries) { item in
-                    Image(item.image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
+                    MediaEntryPictureView(entry: item)
+                        .aspectRatio(contentMode: .fit)
                         .frame(width: 343, height: geo.size.height)
                         .cornerRadius(16)
                         .overlay(Rectangle().frame(width: 343, height: geo.size.height).foregroundColor(self.liked == 1 ? Color.init(red:0.27, green:0.62, blue:0.27, opacity: 0.65) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0)).cornerRadius(16))

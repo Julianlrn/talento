@@ -14,10 +14,15 @@ class ImageLoader: ObservableObject {
 
     init(urlString:String) {
         guard let url = URL(string: urlString) else { return }
+        if let data = sharedCache.getFromCache(key: urlString){
+            self.data = data
+            return
+        }
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else { return }
             DispatchQueue.main.async {
                 self.data = data
+                sharedCache.addToCache(key: urlString, data: data)
             }
         }
         task.resume()
