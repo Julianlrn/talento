@@ -34,7 +34,7 @@ class ChallengeData: ObservableObject{
                            fbId: document.documentID,
                            title: document.get("title") as! String,
                            isPublic: document.get("isPublic") as? Bool,
-                           time: 60000,
+                           timestamp: 60000,
                            instructions: document.get("instructions") as! String,
                            entry: [entry(id: "f69eZbgp2ALX4aSDSOXo", author: "michael0301", image: "sushi", likes: 2, swipe: 0, degree: 0)]
                         )

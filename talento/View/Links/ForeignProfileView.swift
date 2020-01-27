@@ -6,7 +6,7 @@
 //  Copyright © 2019 JulianLorenz. All rights reserved.
 //
 
-import Foundation
+/*import Foundation
 import SwiftUI
 import FBSDKLoginKit
 import Firebase
@@ -184,5 +184,4 @@ struct ForeignProfileView: View {
 
 
 
-
-
+*/
