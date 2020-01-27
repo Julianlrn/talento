@@ -47,47 +47,4 @@ class ChallengeData: ObservableObject{
         }
         
     }
-
-
-/*func getChallengeData(){
-
-
-        db.collection("challenges").addSnapshotListener{ (snap, err) in
-            if err != nil{
-                print((err?.localizedDescription)!)
-                return
-            }
-            for i in snap!.documentChanges{
-                if (uids.contains(i.document.documentID)){
-                    return}
-                let data: Challenge =
-                Challenge(
-                    // id: i.document.documentID,
-                    image: i.document.get("image") as! String,
-                    // image: "mountain",
-                    participants: 13241,
-                    fbId: i.document.documentID,
-                    title: i.document.get("title") as! String,
-                    isPublic: i.document.get("isPublic") as? Bool,
-                    timestamp: 60000,
-                    instructions: i.document.get("instructions") as! String,
-                    entry: [entry(id: "f69eZbgp2ALX4aSDSOXo", author: "michael0301", image: "sushi", likes: 2, swipe: 0, degree: 0)]
-                )
-                print("append")
-                print(data)
-                self.challengeData.append(data)
-                uids.append(i.document.documentID)
-                print(self.challengeData);
-            }
-
-}
-    print("Test");
-    //print(document.get("image") as! String)
-    //print(challengeData);
-   // print(self.challengeData);
-  
-}
-
-*/
-
 }
