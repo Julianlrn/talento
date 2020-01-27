@@ -24,6 +24,10 @@ struct ProfilePictureView: View {
     @ObservedObject var imageLoader: ImageLoader
     var body: some View {
         Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! : UIImage())
+        .resizable()
+        .aspectRatio(contentMode: .fill)
+        
+        
         
     }
 }

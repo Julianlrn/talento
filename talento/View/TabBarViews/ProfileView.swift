@@ -29,7 +29,7 @@ struct ProfileView: View {
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack() {
                             ProfilePictureView(currentUser: currentUser)
-                                .frame(height: 300)
+                                .frame(width:UIScreen.main.bounds.width, height: 300)
                                 .clipped()
                                 .colorMultiply(Color.init(red:0.96, green:0.11, blue:0.34, opacity: 1))
                                 .overlay (
@@ -65,9 +65,9 @@ struct ProfileView: View {
                                                 Text("\(currentUser.bio)")
                                                     .font(Font.system(size: 24, weight: .light))
                                                     .foregroundColor(Color.white)
-                                            }
-                                            Divider()
-                                            Divider()
+                                            }.padding(.bottom, 24)
+                                            //Divider()
+                                           // Divider()
                                             //View for TalentPoints, Followers and Preferences Button
                                             HStack (spacing : 80){
                                                 HStack(spacing: 40) {
