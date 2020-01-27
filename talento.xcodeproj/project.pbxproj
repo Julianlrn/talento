@@ -34,6 +34,8 @@
 		8F3E6DCC23DDBDA600CF12E0 /* CreateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E6DCB23DDBDA600CF12E0 /* CreateUser.swift */; };
 		B909455123DDD09D002BFFA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B909455023DDD09D002BFFA1 /* GoogleService-Info.plist */; };
 		B9236F9323CF7FC10095CA9E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9236F9223CF7FC10095CA9E /* ImageLoader.swift */; };
+		B9FCBE8923DF5C0900DB265D /* MediaEntryPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FCBE8823DF5C0900DB265D /* MediaEntryPictureView.swift */; };
+		B9FCBE8B23DF61A700DB265D /* ImageLoaderCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FCBE8A23DF61A700DB265D /* ImageLoaderCache.swift */; };
 		D0464F79937DBD5D0D74A7ED /* Pods_talento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD79194C95BB7F620C0B23C /* Pods_talento.framework */; };
 		ED68C98A7615F4D2CB08FBCF /* Pods_talentoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D7A0623AB88B75C407B09B /* Pods_talentoTests.framework */; };
 		F30C3A9023C0EFDC00D663C9 /* ChallengeCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30C3A8F23C0EFDC00D663C9 /* ChallengeCreateView.swift */; };
@@ -106,6 +108,8 @@
 		A96A7E1978FE0653D24AF0AB /* Pods-talento.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento.debug.xcconfig"; path = "Target Support Files/Pods-talento/Pods-talento.debug.xcconfig"; sourceTree = "<group>"; };
 		B909455023DDD09D002BFFA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B9236F9223CF7FC10095CA9E /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		B9FCBE8823DF5C0900DB265D /* MediaEntryPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEntryPictureView.swift; sourceTree = "<group>"; };
+		B9FCBE8A23DF61A700DB265D /* ImageLoaderCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderCache.swift; sourceTree = "<group>"; };
 		C043D2EB785BDD6A3E5A2CA6 /* Pods-talentoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talentoTests.debug.xcconfig"; path = "Target Support Files/Pods-talentoTests/Pods-talentoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DEF3124A38CAA398A595D333 /* Pods-talento-talentoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento-talentoUITests.release.xcconfig"; path = "Target Support Files/Pods-talento-talentoUITests/Pods-talento-talentoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EBD79194C95BB7F620C0B23C /* Pods_talento.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talento.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +181,7 @@
 				F35AACD623BFD9DA005942EC /* UserFeedView.swift */,
 				227C134D23A2A06D00D36384 /* ChallengeCardView.swift */,
 				F332F3DA23D61F3B00DF9848 /* MediaEntryView.swift */,
+				B9FCBE8823DF5C0900DB265D /* MediaEntryPictureView.swift */,
 				2262E05423CA25680090B2B8 /* ActivityEntryView.swift */,
 				F39CC38C23D7733A00C8C9DA /* RankingEntryView.swift */,
 			);
@@ -229,6 +234,7 @@
 				F35AACD023BFAB38005942EC /* Data */,
 				2258373C239ECC9100A9FD1B /* FacebookLogin */,
 				B9236F9223CF7FC10095CA9E /* ImageLoader.swift */,
+				B9FCBE8A23DF61A700DB265D /* ImageLoaderCache.swift */,
 				228F066A239D8CBB001C0D7A /* AppDelegate.swift */,
 				228F066C239D8CBB001C0D7A /* SceneDelegate.swift */,
 				228F0675239D8CBE001C0D7A /* LaunchScreen.storyboard */,
@@ -652,10 +658,12 @@
 				8F3E6DC823DDBD5800CF12E0 /* AccountCreation.swift in Sources */,
 				227C134E23A2A06D00D36384 /* ChallengeCardView.swift in Sources */,
 				2266C36A23A29BE700E6216A /* ChallengesView.swift in Sources */,
+				B9FCBE8923DF5C0900DB265D /* MediaEntryPictureView.swift in Sources */,
 				F332F3D923D61E8C00DF9848 /* EntryModel.swift in Sources */,
 				8F3E6DC123DDBBFE00CF12E0 /* RegistrationImagePicker.swift in Sources */,
 				228F066D239D8CBB001C0D7A /* SceneDelegate.swift in Sources */,
 				B9236F9323CF7FC10095CA9E /* ImageLoader.swift in Sources */,
+				B9FCBE8B23DF61A700DB265D /* ImageLoaderCache.swift in Sources */,
 				2266C36C23A29BF400E6216A /* ActivityView.swift in Sources */,
 				22583739239EB9E600A9FD1B /* LoginCheck.swift in Sources */,
 				8F3E6DCC23DDBDA600CF12E0 /* CreateUser.swift in Sources */,
@@ -828,14 +836,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = PRVDUT282L;
+				DEVELOPMENT_TEAM = A5T89PU53A;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.preissing.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -850,14 +858,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = 48HSGWZKBV;
+				DEVELOPMENT_TEAM = A5T89PU53A;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.preissing.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
