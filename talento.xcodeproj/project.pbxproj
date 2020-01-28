@@ -864,9 +864,7 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-
-				DEVELOPMENT_TEAM = 48HSGWZKBV;
-
+				DEVELOPMENT_TEAM = PRVDUT282L;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

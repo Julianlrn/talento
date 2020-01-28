@@ -43,12 +43,10 @@ struct MediaEntryView: View {
                                     if value.translation.width > 0 {
                                         self.obser.update(id: item, value: value.translation.width, degree: 8)
                                         self.liked = 1
-                                        print("AM LIKEN")
                                     }
                                     else {
                                         self.obser.update(id: item, value: value.translation.width, degree: -8)
                                         self.disliked = 1
-                                        print("AM DISLIKEN")
                                     }
                                     
                                 }).onEnded({ (value) in
@@ -59,13 +57,12 @@ struct MediaEntryView: View {
                                                 self.liked = 0
                                                 self.obser.like(id: item)
                                                 self.obser.addUser(entryId: item, userId: currentUser)
-                                                print("LIKE VERSCHWINDET")
+                                                print("LIKE ERFOLGREICH")
                                             }
                                             else {
                                                 self.obser.update(id: item, value: 0, degree: 0)
                                                 self.liked = 0
                                                 self.disliked = 0
-                                                print("LIKE URSPRUNGSPOSITION")
                                             }
                                         }
                                         else {
@@ -73,13 +70,11 @@ struct MediaEntryView: View {
                                                 self.obser.update(id: item, value: -500, degree: 0)
                                                 self.disliked = 0
                                                 self.obser.addUser(entryId: item, userId: currentUser)
-                                                print("DISLIKE VERSCHWINDET")
                                             }
                                             else {
                                                 self.obser.update(id: item, value: 0, degree: 0)
                                                 self.liked = 0
                                                 self.disliked = 0
-                                                print("DISLIKE URSPRUNGSPOSITION")
                                             }
                                         }
                                     }

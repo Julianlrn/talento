@@ -52,9 +52,6 @@ struct GeneralView: View {
                 return
             }
         }
-        else{
-            wait()
-        }
     }
     
     
@@ -193,31 +190,28 @@ struct GeneralView: View {
                                         .cornerRadius(16)
                                         .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
                                         .padding(.bottom, 24)
-                                    }
-                                }
+                                                                        }
+                                                                    }
 
-                             }
-                            
-                             .padding(.horizontal, 16)
-                         }
-                        .sheet(isPresented: $isShowPicker){ ImagePicker(image: self.$image, imageUrl: self.$imageUrl, sourceTypeforPicker: self.$isSourceTypeforPicker)}
-                        .padding(.top, 16)
-                    }
-                
-                 .padding(.horizontal, 16)
-             }
-            .sheet(isPresented: $isShowPicker){ ImagePicker(image: self.$image, imageUrl: self.$imageUrl, sourceTypeforPicker: self.$isSourceTypeforPicker)}
-            .padding(.top, 16).navigationBarTitle("Challenge")
-        }
-        else {
-            return AnyView(
-                VStack{
-                    Text("Loading")
-                    Spacer()
-                }.padding(.top, 120)
-            )
-        }
-    }
+                                                                 }
+                                                                
+                                                                .padding(.horizontal, 16)
+                                                            }
+                                                                 .sheet(isPresented: $isShowPicker){ ImagePicker(image: self.$image, imageUrl: self.$imageUrl, sourceTypeforPicker: self.$isSourceTypeforPicker)}
+                                                                 .padding(.top, 16).navigationBarTitle("Challenge")
+                                                        }
+                                                    )
+                                            }
+                                            else {
+                                                return AnyView (
+                                                    VStack{
+                                                        Text("Loading")
+                                                        Spacer()
+                                                        
+                                                    }.padding(.top, 120)
+                                                )
+                                            }
+                                        }
 
 
     
@@ -232,11 +226,6 @@ struct GeneralView: View {
             }
             
          }
-        else {
-            wait()
-        }
         return author
     }
 }
-
-

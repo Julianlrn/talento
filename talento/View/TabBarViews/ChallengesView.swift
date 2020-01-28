@@ -167,13 +167,11 @@ struct ChallengeView: View {
     func checkIfLocal(challenge: Challenge, user: User) -> Bool{
         
         let challengeLocation: CLLocation = CLLocation(latitude: challenge.latitude, longitude: challenge.longitude)
-        print(challenge.latitude)
-        print(challenge.longitude)
+
         let UserLocation: CLLocation = CLLocation(latitude: user.latitude, longitude: user.longitude)
-        print(user.latitude)
-        print(user.longitude)
+        
         let distanceInMeters = challengeLocation.distance(from: UserLocation)
-        print(distanceInMeters)
+
         
         if(distanceInMeters <= 50000)
          {

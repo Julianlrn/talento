@@ -11,7 +11,7 @@ import Firebase
 
 struct RankingEntryView: View {
 
-    var entry: Entry
+    var entry: entry
     var rank: Int
 
     var body: some View {

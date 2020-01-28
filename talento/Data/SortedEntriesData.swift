@@ -12,7 +12,7 @@ import FirebaseUI
 
 public class SortedEntriesData: ObservableObject{
     
-    @Published var sortedEntriesData = [Entry]()
+    @Published var sortedEntriesData = [entry]()
        
     init() {
         let db = Firestore.firestore()
@@ -30,7 +30,7 @@ public class SortedEntriesData: ObservableObject{
                 let image = item.get("image") as! String
                 let likes = item.get("likes") as! Double
                 let idFromChallenge = item.get("id") as! String
-                self.sortedEntriesData.append(Entry(id: id, idFromChallenge: idFromChallenge, author: author, image: image, likes: likes, swipe: 0, degree: 0))
+                self.sortedEntriesData.append(entry(id: id, idFromChallenge: idFromChallenge, author: author, image: image, likes: likes, swipe: 0, degree: 0, ratedUser: []))
                 print(item)
             }
         }
