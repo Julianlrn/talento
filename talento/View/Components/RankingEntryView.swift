@@ -7,24 +7,25 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct RankingEntryView: View {
-    
+
+    var entry: Entry
     var rank: Int
-    
+
     var body: some View {
         HStack(spacing: 16) {
-            Image("placeholder")
-                .resizable()
+            MediaEntryPictureView(entry: entry)
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 80, height: 80)
                 .cornerRadius(16)
             
             HStack {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("andrea_mirella")
+                    Text(entry.author)
                         .font(.system(size: 16, weight: .bold))
-                    Text("322 likes")
+                    Text(String(Int(entry.likes)))
                         .font(.system(size: 14))
                         .foregroundColor(Color.gray)
                 }
@@ -47,3 +48,4 @@ struct RankingEntryView: View {
         }
     }
 }
+

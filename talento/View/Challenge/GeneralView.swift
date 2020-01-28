@@ -204,7 +204,10 @@ struct GeneralView: View {
                         .padding(.top, 16)
                     }
                 
-            )
+                 .padding(.horizontal, 16)
+             }
+            .sheet(isPresented: $isShowPicker){ ImagePicker(image: self.$image, imageUrl: self.$imageUrl, sourceTypeforPicker: self.$isSourceTypeforPicker)}
+            .padding(.top, 16).navigationBarTitle("Challenge")
         }
         else {
             return AnyView(
@@ -215,6 +218,8 @@ struct GeneralView: View {
             )
         }
     }
+
+
     
     func getAuthor() -> User?{
      var author: User?
