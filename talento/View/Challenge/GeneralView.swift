@@ -27,6 +27,8 @@ struct GeneralView: View {
     
     
     @ObservedObject var userList = UserList()
+    
+    
         
     
     
