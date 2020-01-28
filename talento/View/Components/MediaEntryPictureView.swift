@@ -9,15 +9,27 @@
 import SwiftUI
 
 struct MediaEntryPictureView: View {
+    
+    @ObservedObject var userList = UserList()
+    
     let entry: entry
+    
     init(entry:entry){
         self.entry = entry
         self.imageLoader = ImageLoader(urlString: entry.image)
-        }
+    }
+    
     @ObservedObject var imageLoader: ImageLoader
     var body: some View {
-        Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! : UIImage())
+        /*Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! : UIImage())
             .resizable()
-            .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height)
+            .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height)*/
+        
+        GeometryReader { geo in
+            Image(uiImage: self.imageLoader.data != nil ? UIImage(data: self.imageLoader.data!)! : UIImage())
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: geo.size.width)
+        }
     }
 }

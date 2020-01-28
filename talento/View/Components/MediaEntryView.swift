@@ -11,6 +11,7 @@ import SDWebImage
 
 struct MediaEntryView: View {
 
+    @ObservedObject var userList = UserList()
     @ObservedObject var obser: observer
     @State var liked = 0
     @State var disliked = 0
@@ -24,9 +25,12 @@ struct MediaEntryView: View {
                 if self.challenge.isEnded == true {
                     Text("Challenge already ended!")
                         .font(.title)
+                } else if self.userList.getCurrentUser() == nil {
+                    Text("Loading")
                 }
                 else {
-                    ForEach(self.obser.entries) { item in
+                    ForEach(self.obser.entries.filter { !$0.ratedUser.contains(self.userList.getCurrentUser()!.id)}) { item in
+                        
                         MediaEntryPictureView(entry: item)
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 343, height: geo.size.height)
@@ -48,31 +52,35 @@ struct MediaEntryView: View {
                                     }
                                     
                                 }).onEnded({ (value) in
-                                    if item.swipe > 0 {
-                                        if item.swipe > geo.size.width / 2 - 80 {
-                                            self.obser.update(id: item, value: 500, degree: 0)
-                                            self.liked = 0
-                                            self.obser.like(id: item)
-                                            print("LIKE VERSCHWINDET")
+                                    if let currentUser = self.userList.getCurrentUser() {
+                                        if item.swipe > 0 {
+                                            if item.swipe > geo.size.width / 2 - 80 {
+                                                self.obser.update(id: item, value: 500, degree: 0)
+                                                self.liked = 0
+                                                self.obser.like(id: item)
+                                                self.obser.addUser(entryId: item, userId: currentUser)
+                                                print("LIKE VERSCHWINDET")
+                                            }
+                                            else {
+                                                self.obser.update(id: item, value: 0, degree: 0)
+                                                self.liked = 0
+                                                self.disliked = 0
+                                                print("LIKE URSPRUNGSPOSITION")
+                                            }
                                         }
                                         else {
-                                            self.obser.update(id: item, value: 0, degree: 0)
-                                            self.liked = 0
-                                            self.disliked = 0
-                                            print("LIKE URSPRUNGSPOSITION")
-                                        }
-                                    }
-                                    else {
-                                        if -item.swipe > geo.size.width / 2 - 80 {
-                                            self.obser.update(id: item, value: -500, degree: 0)
-                                            self.disliked = 0
-                                            print("DISLIKE VERSCHWINDET")
-                                        }
-                                        else {
-                                            self.obser.update(id: item, value: 0, degree: 0)
-                                            self.liked = 0
-                                            self.disliked = 0
-                                            print("DISLIKE URSPRUNGSPOSITION")
+                                            if -item.swipe > geo.size.width / 2 - 80 {
+                                                self.obser.update(id: item, value: -500, degree: 0)
+                                                self.disliked = 0
+                                                self.obser.addUser(entryId: item, userId: currentUser)
+                                                print("DISLIKE VERSCHWINDET")
+                                            }
+                                            else {
+                                                self.obser.update(id: item, value: 0, degree: 0)
+                                                self.liked = 0
+                                                self.disliked = 0
+                                                print("DISLIKE URSPRUNGSPOSITION")
+                                            }
                                         }
                                     }
                                 })

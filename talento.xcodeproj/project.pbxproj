@@ -860,14 +860,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = 74ZL66WBK4;
+				DEVELOPMENT_TEAM = PRVDUT282L;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lorenz.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -882,14 +882,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = 74ZL66WBK4;
+				DEVELOPMENT_TEAM = PRVDUT282L;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lorenz.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

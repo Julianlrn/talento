@@ -34,7 +34,7 @@ public class observer: ObservableObject {
                 print("in der for schleife" + " asdf " + idFromChallenge + " challenge fbid " + challenge.fbId)
                 if (idFromChallenge == challenge.fbId){
                     print("im if" + idFromChallenge + "fbid " + challenge.fbId)
-                    self.entries.append(entry(id: id,idFromChallenge: idFromChallenge, image: image, likes: 0, swipe: 0, degree: 0))
+                    self.entries.append(entry(id: id,idFromChallenge: idFromChallenge, image: image, likes: 0, swipe: 0, degree: 0, ratedUser: []))
                     print(self.entries)
                 }
                 
@@ -63,15 +63,27 @@ public class observer: ObservableObject {
         }
     }
     
-    func addRatedUser(entryId: String){
+    func addUser(entryId: entry, userId: User){
+        for i in 0..<self.entries.count {
+            
+            if self.entries[i].id == entryId.id {
+                addRatedUser(entryId: self.entries[i].id, userId: userId)
+            }
+        }
+    }
+    
+    func addRatedUser(entryId: String, userId: User){
         
         let entryId = entryId
+        let userId = userId.id
 
         let db = Firestore.firestore()
         
         db.collection("challenge-entry")
             .document(entryId)
-            .updateData(["likes": FieldValue.increment(Int64(1))]) { (err) in
+            .updateData([
+                "ratedUser": FieldValue.arrayUnion([userId])
+            ]) { (err) in
                 
                 if err != nil{
                    
@@ -109,4 +121,5 @@ struct entry: Identifiable {
     var likes: Double
     var swipe: CGFloat
     var degree : Double
+    var ratedUser: [User.ID]
 }
