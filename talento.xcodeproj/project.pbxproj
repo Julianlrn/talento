@@ -35,6 +35,7 @@
 		8F3E6DC823DDBD5800CF12E0 /* AccountCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E6DC723DDBD5800CF12E0 /* AccountCreation.swift */; };
 		8F3E6DCA23DDBD7B00CF12E0 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E6DC923DDBD7B00CF12E0 /* Indicator.swift */; };
 		8F3E6DCC23DDBDA600CF12E0 /* CreateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E6DCB23DDBDA600CF12E0 /* CreateUser.swift */; };
+		8F89364A23E09F6100FFFFDD /* SortedEntriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89364923E09F6100FFFFDD /* SortedEntriesData.swift */; };
 		B909455123DDD09D002BFFA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B909455023DDD09D002BFFA1 /* GoogleService-Info.plist */; };
 		B9236F9323CF7FC10095CA9E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9236F9223CF7FC10095CA9E /* ImageLoader.swift */; };
 		B9FCBE8923DF5C0900DB265D /* MediaEntryPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FCBE8823DF5C0900DB265D /* MediaEntryPictureView.swift */; };
@@ -112,6 +113,7 @@
 		8F3E6DC723DDBD5800CF12E0 /* AccountCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreation.swift; sourceTree = "<group>"; };
 		8F3E6DC923DDBD7B00CF12E0 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		8F3E6DCB23DDBDA600CF12E0 /* CreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUser.swift; sourceTree = "<group>"; };
+		8F89364923E09F6100FFFFDD /* SortedEntriesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedEntriesData.swift; sourceTree = "<group>"; };
 		A90D7CD39EDF29E768585197 /* Pods-talentoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talentoTests.release.xcconfig"; path = "Target Support Files/Pods-talentoTests/Pods-talentoTests.release.xcconfig"; sourceTree = "<group>"; };
 		A96A7E1978FE0653D24AF0AB /* Pods-talento.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento.debug.xcconfig"; path = "Target Support Files/Pods-talento/Pods-talento.debug.xcconfig"; sourceTree = "<group>"; };
 		B909455023DDD09D002BFFA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 		F35AACD023BFAB38005942EC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8F89364923E09F6100FFFFDD /* SortedEntriesData.swift */,
 				F35AACD223BFABBF005942EC /* ChallengeData.swift */,
 				223A10A523DF55EE00900461 /* UserList.swift */,
 			);
@@ -688,6 +691,7 @@
 				22583739239EB9E600A9FD1B /* LoginCheck.swift in Sources */,
 				8F3E6DCC23DDBDA600CF12E0 /* CreateUser.swift in Sources */,
 				228F066F239D8CBB001C0D7A /* ContentView.swift in Sources */,
+				8F89364A23E09F6100FFFFDD /* SortedEntriesData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -856,14 +860,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = 74ZL66WBK4;
+				DEVELOPMENT_TEAM = 48HSGWZKBV;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lorenz.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hajimi.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -878,14 +882,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = 74ZL66WBK4;
+				DEVELOPMENT_TEAM = 48HSGWZKBV;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lorenz.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hajimi.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

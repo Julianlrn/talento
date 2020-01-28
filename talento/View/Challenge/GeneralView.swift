@@ -198,7 +198,7 @@ struct GeneralView: View {
                  .padding(.horizontal, 16)
              }
             .sheet(isPresented: $isShowPicker){ ImagePicker(image: self.$image, imageUrl: self.$imageUrl, sourceTypeforPicker: self.$isSourceTypeforPicker)}
-            .padding(.top, 16)
+            .padding(.top, 16).navigationBarTitle("Challenge")
         }
     }
     

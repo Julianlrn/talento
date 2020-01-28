@@ -13,7 +13,7 @@ struct MediaEntryPictureView: View {
     init(entry:Entry){
         self.entry = entry
         self.imageLoader = ImageLoader(urlString: entry.image)
-        }
+    }
     @ObservedObject var imageLoader: ImageLoader
     var body: some View {
         Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! : UIImage())

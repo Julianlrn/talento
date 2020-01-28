@@ -22,13 +22,16 @@ public class SortedEntriesData: ObservableObject{
                 print((err?.localizedDescription)!)
                 return
             }
+            
             for item in snap!.documents {
 
                 let id = item.documentID
                 let author = item.get("author") as! String
                 let image = item.get("image") as! String
                 let likes = item.get("likes") as! Double
-                self.sortedEntriesData.append(Entry(id: id, author: author, image: image, likes: likes, swipe: 0, degree: 0))
+                let idFromChallenge = item.get("id") as! String
+                self.sortedEntriesData.append(Entry(id: id, idFromChallenge: idFromChallenge, author: author, image: image, likes: likes, swipe: 0, degree: 0))
+                print(item)
             }
         }
     }
