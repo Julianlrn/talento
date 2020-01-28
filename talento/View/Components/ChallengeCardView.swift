@@ -94,7 +94,7 @@ struct ChallengeCardView: View {
         .padding(.bottom, 24)
     }
     
-        func challengeEnded() -> Bool {
+    func challengeEnded() -> Bool {
         
         let createdTime = Date(ticks: UInt64(self.challenge.timestamp))
         let currentTime = Date()
