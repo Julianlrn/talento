@@ -63,7 +63,7 @@ struct ChallengeCardView: View {
                 HStack {
                     HStack {
                         Image(systemName: "globe")
-                        if challenge.isPublic ?? false {
+                        if challenge.isPublic == true {
                             Text("Public")
                         }
                         else { Text("Local") }

@@ -11,6 +11,7 @@ import SwiftUI
 import FBSDKLoginKit
 import Firebase
 import FirebaseUI
+import MapKit
 
 
 struct ChallengeView: View {
@@ -64,13 +65,15 @@ struct ChallengeView: View {
                                 ScrollView(.horizontal, showsIndicators: false) {
                                     HStack {
                                         ForEach(challenges.challengeData) { item in
-                                            NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
-                                               ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
-                                               .frame(width: 311)
-                                               .padding(.leading, 16)
-                                               .padding(.vertical, 48)
+                                            if item.isPublic == true{
+                                                NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
+                                                   ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+                                                   .frame(width: 311)
+                                                   .padding(.leading, 16)
+                                                   .padding(.vertical, 48)
+                                                }
+                                                .buttonStyle(PlainButtonStyle())
                                             }
-                                            .buttonStyle(PlainButtonStyle())
                                         }
                                     }
                                 }
@@ -84,13 +87,15 @@ struct ChallengeView: View {
                               ScrollView(.horizontal, showsIndicators: false) {
                                     HStack {
                                         ForEach(challenges.challengeData) { item in
-                                            NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
-                                               ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
-                                               .frame(width: 311)
-                                               .padding(.leading, 16)
-                                               .padding(.vertical, 48)
+                                            if item.isPublic == true{
+                                                NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
+                                                   ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+                                                   .frame(width: 311)
+                                                   .padding(.leading, 16)
+                                                   .padding(.vertical, 48)
+                                                }
+                                                .buttonStyle(PlainButtonStyle())
                                             }
-                                            .buttonStyle(PlainButtonStyle())
                                         }
                                     }
                                 }
@@ -106,13 +111,15 @@ struct ChallengeView: View {
                                 ScrollView(.horizontal, showsIndicators: false) {
                                     HStack {
                                         ForEach(challenges.challengeData) { item in
-                                            NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
-                                               ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
-                                               .frame(width: 311)
-                                               .padding(.leading, 16)
-                                               .padding(.vertical, 48)
+                                            if item.isPublic == false && self.checkIfLocal(challenge: item, user: currentUser) == true{
+                                                NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
+                                                   ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+                                                   .frame(width: 311)
+                                                   .padding(.leading, 16)
+                                                   .padding(.vertical, 48)
+                                                }
+                                                .buttonStyle(PlainButtonStyle())
                                             }
-                                            .buttonStyle(PlainButtonStyle())
                                         }
                                     }
                                 }
@@ -126,13 +133,15 @@ struct ChallengeView: View {
                               ScrollView(.horizontal, showsIndicators: false) {
                                     HStack {
                                         ForEach(challenges.challengeData) { item in
-                                            NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
-                                               ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
-                                               .frame(width: 311)
-                                               .padding(.leading, 16)
-                                               .padding(.vertical, 48)
+                                            if item.isPublic == false && self.checkIfLocal(challenge: item, user: currentUser) == true{
+                                                NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
+                                                   ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+                                                   .frame(width: 311)
+                                                   .padding(.leading, 16)
+                                                   .padding(.vertical, 48)
+                                                }
+                                                .buttonStyle(PlainButtonStyle())
                                             }
-                                            .buttonStyle(PlainButtonStyle())
                                         }
                                     }
                                 }
@@ -154,8 +163,33 @@ struct ChallengeView: View {
         }
     }
     
+    
+    func checkIfLocal(challenge: Challenge, user: User) -> Bool{
+        
+        let challengeLocation: CLLocation = CLLocation(latitude: challenge.latitude, longitude: challenge.longitude)
+        print(challenge.latitude)
+        print(challenge.longitude)
+        let UserLocation: CLLocation = CLLocation(latitude: user.latitude, longitude: user.longitude)
+        print(user.latitude)
+        print(user.longitude)
+        let distanceInMeters = challengeLocation.distance(from: UserLocation)
+        print(distanceInMeters)
+        
+        if(distanceInMeters <= 50000)
+         {
+         // under 50 km
+          return true
+         }
+         else
+        {
+         // over 50 km
+           return false
+         }
+    }
 
 }
+
+
 
 
 
