@@ -12,7 +12,6 @@ import FirebaseUI
 
 
 
-
 struct GeneralView: View {
     
     var challenge: Challenge
@@ -26,7 +25,12 @@ struct GeneralView: View {
     @State var uploadLabel = ""
     @State var entryID = ""
     
-     @ObservedObject var userList = UserList()
+    
+    @ObservedObject var userList = UserList()
+    
+    
+        
+    
     
     func uploadChallengeEntry(challengeId: String){
         
@@ -55,8 +59,10 @@ struct GeneralView: View {
         }
     }
     
-    var body: some View {
+    
+    var body:  some View {
         ScrollView(.vertical, showsIndicators: true) {
+
             VStack(alignment: .leading) {
                  //MARK: - CARD
                  VStack {
@@ -110,12 +116,12 @@ struct GeneralView: View {
                              }
                              Spacer()
                              HStack {
-                                 if challengeEnded() {
-                                     Text(getTimeLeft())
+                                 if self.challenge.challengeEnded() {
+                                     Text(self.challenge.getTimeLeft())
                                          .foregroundColor(Color.red)
                                  } else {
                                      Image(systemName: "timer")
-                                     Text(getTimeLeft())
+                                     Text(self.challenge.getTimeLeft())
                                  }
                              }
                              .padding(.trailing, 24)
@@ -140,7 +146,7 @@ struct GeneralView: View {
                              .aspectRatio(contentMode: .fill)
                              .frame(width: 48, height: 48)
                              .clipShape(Circle())
-                         Text("michael0301")
+                        Text("123")
                              .font(.system(size: 20, weight: .bold))
                      }
                      .padding(.bottom, 16)
@@ -152,7 +158,7 @@ struct GeneralView: View {
                     image?.resizable().scaledToFit().frame(height: CGFloat(320))
                     Text(self.uploadLabel)
                     .font(.system(size: 20))
-                    if challengeEnded() {
+                    if self.challenge.challengeEnded() {
                         Text("No participation possible")
                             .font(.title)
                             .padding()
@@ -224,4 +230,23 @@ struct GeneralView: View {
             return "Ended"
         }
     }
+    
+    func getAuthor() -> User?{
+     var author: User?
+        if userList.userData.count != 0 {
+           for item in userList.userData {
+                if item.id == challenge.author{
+                    author = item
+                   return author
+                }
+            }
+            
+         }
+        else {
+            wait()
+        }
+        return author
+    }
 }
+
+

@@ -23,5 +23,35 @@ struct Challenge: Identifiable {
     var latitude: Double
     var longitude: Double
     var isEnded:Bool
+    
+    
+    func challengeEnded() -> Bool {
+        
+        let createdTime = Date(timeIntervalSince1970: self.timestamp / 1000)
+        let currentTime = Date()
+        let durationTime = createdTime.addingTimeInterval(self.duration * 60)
+        
+        if currentTime.isBetween(createdTime, durationTime) {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func getTimeLeft() -> String {
+        
+        //let createdTime = self.challenge.Date(tick: timestamp).dateValue()
+        let createdTime = Date(timeIntervalSince1970: self.timestamp / 1000)
+        let currentTime = Date()
+        let durationTime = createdTime.addingTimeInterval(self.duration * 60)
+        
+        let range = createdTime...durationTime
+        
+        if range.contains(currentTime) {
+            return currentTime.timeLeftTo(durationTime)
+        } else {
+            return "Ended"
+        }
+    }
 
 }

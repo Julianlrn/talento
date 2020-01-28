@@ -11,7 +11,7 @@ import SwiftUI
 struct RatingView: View {
     let challenge: Challenge
     var body: some View {
-        MediaEntryView(obser: observer(challenge: challenge), challenge: challenge)
+      MediaEntryView(obser: observer(challenge: challenge), challenge: challenge)
     }
 }
 
