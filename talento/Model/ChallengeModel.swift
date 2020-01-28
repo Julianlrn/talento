@@ -18,6 +18,7 @@ struct Challenge: Identifiable {
     var title: String
     var isPublic: Bool?
     var timestamp: Timestamp
+    var duration: Double
     var instructions: String
     // var author: Platzhalter -> User Object
     var entry: [entry]

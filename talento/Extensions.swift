@@ -10,6 +10,56 @@ import Foundation
 
 extension Date
 {
+    
+    func isBetween(_ date1: Date, _ date2: Date) -> Bool
+    {
+        let createdTime = date1
+        let currentTime = self
+        let durationTime = date2
+        
+        let range = createdTime...durationTime
+        
+        if range.contains(currentTime) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func timeLeftTo(_ date: Date) -> String
+    {
+        let calendar = Calendar.current
+        
+        let date1 = self
+        let date2 = date
+        
+        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date1, to: date2)
+        
+        let years = components.year!
+        let months = components.month!
+        let days = components.day!
+        let hours = components.hour!
+        let minutes = components.minute!
+        let seconds = components.second!
+        
+        if years > 0 {
+            return years == 1 ? "1 year left" : "\(years) years left"
+        } else if months > 0 {
+            return months == 1 ? "1 month left" : "\(months) months left"
+        } else if days >= 7 {
+            let weeks = days / 7
+            return weeks == 1 ? "1 week left" : "\(weeks) weeks left"
+        } else if days > 0 {
+            return days == 1 ? "1 day left" : "\(days) days left"
+        } else if hours > 0 {
+            return hours == 1 ? "1 hour left" : "\(hours) hours left"
+        } else if minutes > 0 {
+            return minutes == 1 ? "1 minute left" : "\(minutes) minutes left"
+        } else {
+            return seconds == 1 ? "1 second left" : "\(seconds) seconds left"
+        }
+    }
+    
     func calenderTimeSinceNow() -> String
     {
         let calendar = Calendar.current

@@ -15,6 +15,8 @@ struct ChallengeCardView: View {
     
     var challenge: Challenge
     
+    @State var isEnded : Bool = false
+    
     @ObservedObject var imageLoader: ImageLoader
     
     var body: some View {
@@ -68,8 +70,14 @@ struct ChallengeCardView: View {
                     }
                     Spacer()
                     HStack {
-                        Image(systemName: "timer")
-                        Text("Created: \((challenge.timestamp.dateValue().calenderTimeSinceNow()))")
+                        //Text("Time left: \((challenge.timestamp.dateValue().calenderTimeSinceNow()))")
+                        if challengeEnded() {
+                            Text(getTimeLeft())
+                                .foregroundColor(Color.red)
+                        } else {
+                            Image(systemName: "timer")
+                            Text(getTimeLeft())
+                        }
                     }
                     .padding(.trailing, 24)
                 }
@@ -84,6 +92,34 @@ struct ChallengeCardView: View {
         .cornerRadius(16)
         .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24), radius: 24, x: 0, y: 12)
         .padding(.bottom, 24)
+    }
+    
+    func challengeEnded() -> Bool {
+        
+        let createdTime = self.challenge.timestamp.dateValue()
+        let currentTime = Date()
+        let durationTime = createdTime.addingTimeInterval(self.challenge.duration*60)
+        
+        if currentTime.isBetween(createdTime, durationTime) {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func getTimeLeft() -> String {
+        
+        let createdTime = self.challenge.timestamp.dateValue()
+        let currentTime = Date()
+        let durationTime = createdTime.addingTimeInterval(self.challenge.duration*60)
+        
+        let range = createdTime...durationTime
+        
+        if range.contains(currentTime) {
+            return createdTime.timeLeftTo(durationTime)
+        } else {
+            return "Ended"
+        }
     }
 }
 
