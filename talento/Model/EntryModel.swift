@@ -10,24 +10,35 @@ import SwiftUI
 import Firebase
 
 public class observer: ObservableObject {
-    @Published var entries = [entry]()
     
-    init() {
+    @Published var entries = [entry]()
+    // let currentlyViewedChallenge = getCurrentlyViewedChallenge()
+    let challenge: Challenge
+    
+    init(challenge: Challenge) {
+        self.challenge = challenge
         let db = Firestore.firestore()
-        
         db.collection("entries").getDocuments { (snap, err) in
             if err != nil {
                 print((err?.localizedDescription)!)
                 return
             }
             for item in snap!.documents {
+                    
                 let id = item.documentID
                 let author = item.get("author") as! String
                 let image = item.get("image") as! String
                 let likes = item.get("likes") as! Double
+                let idFromChallenge = item.get("id") as! String
                 
+                if (idFromChallenge == challenge.fbId){
                 self.entries.append(entry(id: id, author: author, image: image, likes: likes, swipe: 0, degree: 0))
+                }
+                else {
+                    return
             }
+            }
+                
         }
     }
     

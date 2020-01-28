@@ -24,17 +24,20 @@ struct GeneralView: View {
     @State var isSourceTypeforPicker : Int = 1
     @State var buttonText = "Participate"
     @State var uploadLabel = ""
+    @State var entryID = ""
     
 
-
-    func upload(){
+    
+    func uploadChallengeEntry(challengeId: String){
+        
+        let challengeId = challengeId
         if (uploadLabel == ""){
         let db = Firestore.firestore()
         db.collection("challenge-entry")
             .document()
             .setData(
-                // TODO: add challenge und user ID
-            ["image": self.imageUrl!]) { (err) in
+                // TODO: add id to challenge and add user ID
+            ["image": self.imageUrl!, "id":challengeId]) { (err) in
                 
                 if err != nil{
                    
@@ -151,7 +154,7 @@ struct GeneralView: View {
                         return
                         }else{
                             print("Upload tapped!")
-                            self.upload()
+                            self.uploadChallengeEntry(challengeId: self.challenge.fbId)
                             self.uploadLabel = "Picture was Uploaded! Good Luck in the Challenge"
                         
                         return
