@@ -16,11 +16,11 @@ struct User: Identifiable {
     var name: String
     var image: String
     var bio: String
-    var challenges: [Challenge]
-    var followers: [User]
-    var followed: [User]
+    var challenges: [Challenge.ID]
+    var followers: [User.ID]
+    var followed: [User.ID]
     var latitude: Double
-    var longitute: Double
+    var longitude: Double
     var talentPoints: Double
 
 }

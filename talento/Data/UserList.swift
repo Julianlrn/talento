@@ -39,11 +39,11 @@ class UserList:NSObject, ObservableObject {
                          name: document.get("name")as! String,
                          image: document.get("image")as! String,
                          bio: document.get("bio")as! String,
-                         challenges: document.get("challenges")as! [Challenge],
-                         followers: document.get("followers")as! [User],
-                         followed: document.get("followed")as! [User],
+                         challenges: document.get("challenges")as! [Challenge.ID],
+                         followers: document.get("followers")as! [User.ID],
+                         followed: document.get("followed")as! [User.ID],
                          latitude: document.get("latitude")as! Double,
-                         longitute: document.get("longitude")as! Double,
+                         longitude: document.get("longitude")as! Double,
                          talentPoints: document.get("talentPoints")as! Double)
                     
                     print("append")
@@ -66,7 +66,8 @@ class UserList:NSObject, ObservableObject {
             if (User.id == currentUserID){
                 currentUser = User
                 currentUser!.latitude = loadCurrentLocation().latitude
-                currentUser!.latitude = loadCurrentLocation().longitude
+                currentUser!.longitude = loadCurrentLocation().longitude
+                print("\(currentUser!.latitude)")
             }
         }
         return currentUser

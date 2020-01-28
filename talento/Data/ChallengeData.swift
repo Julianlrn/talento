@@ -25,12 +25,12 @@ class ChallengeData: ObservableObject{
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
-                    let data: Challenge =
+                    /*let data: Challenge =
                         Challenge(
                            // id: document.documentID,
                            image: document.get("image") as! String,
                            // image: "mountain",
-                           participants: 13241,
+                           participants: [],
                            fbId: document.documentID,
                            title: document.get("title") as! String,
                            isPublic: document.get("isPublic") as? Bool,
@@ -38,7 +38,22 @@ class ChallengeData: ObservableObject{
                            duration: document.get("duration") as? Double ?? 1,
                            instructions: document.get("instructions") as! String,
                            entry: [entry(id: "f69eZbgp2ALX4aSDSOXo", author: "michael0301", image: "placeholder", likes: 2, swipe: 0, degree: 0)]
-                        )
+                        )*/
+                    
+                    let data: Challenge =
+                        Challenge(
+                            id: document.documentID,
+                            fbId: document.documentID,
+                            image: document.get("image") as! String,
+                            participants: document.get("participants") as! [User.ID],
+                            title: document.get("title") as! String,
+                            timestamp: document.get("timestamp") as! Int,
+                            duration: document.get("duration") as? Double ?? 1,
+                            instructions: document.get("instructions") as! String,
+                            author: document.get("author") as! String,
+                            latitude: document.get("latitude") as! Double,
+                            longitude: document.get("latitude") as! Double,
+                            isEnded: document.get("isEnded") as! Bool)
                     
                     print("append")
                     print(data)
