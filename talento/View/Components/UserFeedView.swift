@@ -13,7 +13,7 @@ struct UserFeedView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image("profile")
+                Image("placeholder")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 36, height: 36)

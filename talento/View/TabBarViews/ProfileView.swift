@@ -27,7 +27,7 @@ struct ProfileView: View {
                    return AnyView(
                     NavigationView {
                     ScrollView(.vertical, showsIndicators: false) {
-                        VStack() {
+                        VStack(alignment: .leading) {
                             ProfilePictureView(currentUser: currentUser)
                                 .frame(width:UIScreen.main.bounds.width, height: 300)
                                 .clipped()

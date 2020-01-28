@@ -45,9 +45,12 @@ struct AuthenticationPage : View {
     
     var body : some View {
         Background{
-            VStack(spacing : 20) {
+            VStack(alignment: .leading, spacing : 20) {
                 
-                Image("logo") //doesn't work, why?
+                Image("placeholder") //doesn't work, why?
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 343, height: 200)
                 
                 Text("Login with your Number").font(.largeTitle).fontWeight(.heavy)
                 
@@ -85,7 +88,7 @@ struct AuthenticationPage : View {
                     Button(action: {
                         
                         //remove this when testing with real phone numbers
-                        //Auth.auth().settings?.isAppVerificationDisabledForTesting = true
+                        Auth.auth().settings?.isAppVerificationDisabledForTesting = true
                         
                         PhoneAuthProvider.provider().verifyPhoneNumber("+"+self.ccode+self.no, uiDelegate: nil) { (ID, err) in
                             
@@ -121,8 +124,9 @@ struct AuthenticationPage : View {
                 .navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
                 
-            }.padding()
-                .alert(isPresented: self.$alert) {
+            }
+            .padding()
+            .alert(isPresented: self.$alert) {
                 
                 Alert(title: Text("Error"), message: Text(self.msg), dismissButton:
                     .default(Text("OK")))

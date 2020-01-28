@@ -103,7 +103,7 @@ struct GeneralView: View {
                              Spacer()
                              HStack {
                                  Image(systemName: "timer")
-                                 //Text("Created: \(challenge.timestamp)")
+                                 Text("Created: \((challenge.timestamp.dateValue().calenderTimeSinceNow()))")
                              }
                              .padding(.trailing, 24)
                          }

@@ -14,7 +14,7 @@ struct RankingEntryView: View {
     
     var body: some View {
         HStack(spacing: 16) {
-            Image("mountain")
+            Image("placeholder")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 80, height: 80)

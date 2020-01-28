@@ -36,7 +36,7 @@ class ChallengeData: ObservableObject{
                            isPublic: document.get("isPublic") as? Bool,
                            timestamp: document.get("timestamp") as! Timestamp,
                            instructions: document.get("instructions") as! String,
-                           entry: [entry(id: "f69eZbgp2ALX4aSDSOXo", author: "michael0301", image: "sushi", likes: 2, swipe: 0, degree: 0)]
+                           entry: [entry(id: "f69eZbgp2ALX4aSDSOXo", author: "michael0301", image: "placeholder", likes: 2, swipe: 0, degree: 0)]
                         )
                     
                     print("append")

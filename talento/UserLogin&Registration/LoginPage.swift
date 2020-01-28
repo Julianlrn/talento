@@ -31,9 +31,12 @@ struct LoginPage : View {
                 
                 GeometryReader {_ in
                     
-                    VStack(spacing : 20) {
+                    VStack(alignment: .leading, spacing : 20) {
                         
-                        Image("logo") //doesn't work, why?
+                        Image("placeholder") //doesn't work, why?
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 343, height: 200)
                         
                         Text("Verification Code").font(.largeTitle).fontWeight(.heavy)
                         

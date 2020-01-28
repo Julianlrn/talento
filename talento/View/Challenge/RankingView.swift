@@ -14,7 +14,7 @@ struct RankingView: View {
             VStack(alignment: .leading) {
                 HStack(spacing: 16) {
                     VStack {
-                        Image("sushi")
+                        Image("placeholder")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 90, height: 90)
@@ -30,7 +30,7 @@ struct RankingView: View {
                             .offset(y: -40)
                     }
                     VStack {
-                        Image("skateboard")
+                        Image("placeholder")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 130, height: 130)
@@ -46,7 +46,7 @@ struct RankingView: View {
                             .offset(y: -40)
                     }
                     VStack {
-                        Image("mountain")
+                        Image("placeholder")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 90, height: 90)
