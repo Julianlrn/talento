@@ -52,5 +52,6 @@ struct Challenge: Identifiable {
             return "Ended"
         }
     }
+    
 
 }

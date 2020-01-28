@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		223A10A623DF55EE00900461 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A10A523DF55EE00900461 /* UserList.swift */; };
 		223A10A823DF6C7E00900461 /* ProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A10A723DF6C7E00900461 /* ProfilePictureView.swift */; };
+		223A10AA23E0BBFE00900461 /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A10A923E0BBFD00900461 /* PullToRefresh.swift */; };
 		22583737239EAEEB00A9FD1B /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583736239EAEEB00A9FD1B /* FeedView.swift */; };
 		22583739239EB9E600A9FD1B /* LoginCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583738239EB9E600A9FD1B /* LoginCheck.swift */; };
 		2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258373A239ECC1D00A9FD1B /* FBLoginButton.swift */; };
@@ -78,6 +79,7 @@
 		00D7A0623AB88B75C407B09B /* Pods_talentoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talentoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		223A10A523DF55EE00900461 /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 		223A10A723DF6C7E00900461 /* ProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureView.swift; sourceTree = "<group>"; };
+		223A10A923E0BBFD00900461 /* PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
 		22583735239D99EF00A9FD1B /* talento.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = talento.entitlements; sourceTree = "<group>"; };
 		22583736239EAEEB00A9FD1B /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		22583738239EB9E600A9FD1B /* LoginCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCheck.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		228F0669239D8CBB001C0D7A /* talento */ = {
 			isa = PBXGroup;
 			children = (
+				223A10A923E0BBFD00900461 /* PullToRefresh.swift */,
 				B909455023DDD09D002BFFA1 /* GoogleService-Info.plist */,
 				8F3E6DC223DDBC8D00CF12E0 /* UserLogin&Registration */,
 				22936AB523DCB7D4004802F7 /* Image */,
@@ -662,6 +665,7 @@
 				F35AACCF23BFA86D005942EC /* ChallengeModel.swift in Sources */,
 				22936AB923DDE682004802F7 /* UserModel.swift in Sources */,
 				F35AACD323BFABBF005942EC /* ChallengeData.swift in Sources */,
+				223A10AA23E0BBFE00900461 /* PullToRefresh.swift in Sources */,
 				F39CC38B23D76D6A00C8C9DA /* RankingView.swift in Sources */,
 				F332F3DB23D61F3B00DF9848 /* MediaEntryView.swift in Sources */,
 				8F3E6DC423DDBCE000CF12E0 /* AuthenticationPage.swift in Sources */,
@@ -856,14 +860,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = PRVDUT282L;
+				DEVELOPMENT_TEAM = 74ZL66WBK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lorenz.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -878,14 +882,14 @@
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"talento/Preview Content\"";
-				DEVELOPMENT_TEAM = PRVDUT282L;
+				DEVELOPMENT_TEAM = 74ZL66WBK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = talento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ginan.talento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lorenz.talento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
