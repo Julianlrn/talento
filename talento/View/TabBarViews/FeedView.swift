@@ -18,6 +18,7 @@ struct FeedView: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 ForEach(challenges.challengeData) { item in
+                    //if{
                     UserFeedView()
                     NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
                        ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
