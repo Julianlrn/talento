@@ -218,35 +218,6 @@ struct GeneralView: View {
         }
     }
     
-    func challengeEnded() -> Bool {
-        
-        let createdTime = Date(timeIntervalSince1970: self.challenge.timestamp / 1000)
-        let currentTime = Date()
-        let durationTime = createdTime.addingTimeInterval(self.challenge.duration * 60)
-        
-        if currentTime.isBetween(createdTime, durationTime) {
-            return false
-        } else {
-            return true
-        }
-    }
-    
-    func getTimeLeft() -> String {
-        
-        //let createdTime = self.challenge.Date(tick: timestamp).dateValue()
-        let createdTime = Date(timeIntervalSince1970: self.challenge.timestamp / 1000)
-        let currentTime = Date()
-        let durationTime = createdTime.addingTimeInterval(self.challenge.duration * 60)
-        
-        let range = createdTime...durationTime
-        
-        if range.contains(currentTime) {
-            return currentTime.timeLeftTo(durationTime)
-        } else {
-            return "Ended"
-        }
-    }
-    
     func getAuthor() -> User?{
      var author: User?
         if userList.userData.count != 0 {

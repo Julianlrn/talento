@@ -24,6 +24,23 @@ struct Challenge: Identifiable {
     var longitude: Double
     var isEnded: Bool
     
+    func setChallengeEnded(challengeId: String){
+        
+        let challengeId = challengeId
+
+        let db = Firestore.firestore()
+        
+        db.collection("challenges")
+            .document(challengeId)
+            .updateData(["isEnded": true]) { (err) in
+                
+                if err != nil{
+                   
+                    print((err?.localizedDescription)!)
+                    return
+        }}
+    }
+    
     func challengeEnded() -> Bool {
         
         let createdTime = Date(timeIntervalSince1970: self.timestamp / 1000)
@@ -33,6 +50,7 @@ struct Challenge: Identifiable {
         if currentTime.isBetween(createdTime, durationTime) {
             return false
         } else {
+            setChallengeEnded(challengeId: fbId)
             return true
         }
     }
