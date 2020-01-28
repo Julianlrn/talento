@@ -9,13 +9,9 @@
 import SwiftUI
 
 struct RatingView: View {
+    let challenge: Challenge
     var body: some View {
-        MediaEntryView()
+      MediaEntryView(obser: observer(challenge: challenge), challenge: challenge)
     }
 }
 
-struct RatingView_Previews: PreviewProvider {
-    static var previews: some View {
-        RatingView()
-    }
-}

@@ -15,8 +15,6 @@ struct ChallengeCardView: View {
     
     var challenge: Challenge
     
-    @State var isEnded : Bool = false
-    
     @ObservedObject var imageLoader: ImageLoader
     
     var body: some View {
@@ -63,20 +61,19 @@ struct ChallengeCardView: View {
                 HStack {
                     HStack {
                         Image(systemName: "globe")
-                        if challenge.isPublic ?? false {
+                        if challenge.isPublic == true {
                             Text("Public")
                         }
                         else { Text("Local") }
                     }
                     Spacer()
                     HStack {
-                        //Text("Time left: \((challenge.timestamp.dateValue().calenderTimeSinceNow()))")
-                        if challengeEnded() {
-                            Text(getTimeLeft())
+                        if self.challenge.challengeEnded() {
+                            Text(self.challenge.getTimeLeft())
                                 .foregroundColor(Color.red)
                         } else {
                             Image(systemName: "timer")
-                            Text(getTimeLeft())
+                            Text(self.challenge.getTimeLeft())
                         }
                     }
                     .padding(.trailing, 24)
@@ -92,35 +89,6 @@ struct ChallengeCardView: View {
         .cornerRadius(16)
         .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24), radius: 24, x: 0, y: 12)
         .padding(.bottom, 24)
-    }
-    
-        func challengeEnded() -> Bool {
-        
-        let createdTime = Date(ticks: UInt64(self.challenge.timestamp))
-        let currentTime = Date()
-        let durationTime = createdTime.addingTimeInterval(self.challenge.duration*60)
-        
-        if currentTime.isBetween(createdTime, durationTime) {
-            return false
-        } else {
-            return true
-        }
-    }
-    
-    func getTimeLeft() -> String {
-        
-        //let createdTime = self.challenge.Date(tick: timestamp).dateValue()
-        let createdTime = Date(ticks: UInt64(self.challenge.timestamp))
-        let currentTime = Date()
-        let durationTime = createdTime.addingTimeInterval(self.challenge.duration*60)
-        
-        let range = createdTime...durationTime
-        
-        if range.contains(currentTime) {
-            return createdTime.timeLeftTo(durationTime)
-        } else {
-            return "Ended"
-        }
     }
 }
 

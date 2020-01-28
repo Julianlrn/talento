@@ -90,7 +90,7 @@ struct Rating: View {
     var challenge: Challenge
 
     var body: some View {
-        RatingView()
+        RatingView(challenge: challenge)
     }
 }
 

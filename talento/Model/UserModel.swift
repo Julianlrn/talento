@@ -22,5 +22,4 @@ struct User: Identifiable {
     var latitude: Double
     var longitude: Double
     var talentPoints: Double
-
 }

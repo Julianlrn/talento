@@ -47,12 +47,13 @@ class ChallengeData: ObservableObject{
                             image: document.get("image") as! String,
                             participants: document.get("participants") as! [User.ID],
                             title: document.get("title") as! String,
-                            timestamp: document.get("timestamp") as! Int,
+                            timestamp: document.get("timestamp") as! Double,
                             duration: document.get("duration") as? Double ?? 1,
                             instructions: document.get("instructions") as! String,
+                            isPublic: document.get("isPublic") as? Bool,
                             author: document.get("author") as! String,
                             latitude: document.get("latitude") as! Double,
-                            longitude: document.get("latitude") as! Double,
+                            longitude: document.get("longitude") as! Double,
                             isEnded: document.get("isEnded") as! Bool)
                     
                     print("append")
@@ -61,6 +62,5 @@ class ChallengeData: ObservableObject{
                 }
             }
         }
-        
     }
 }
