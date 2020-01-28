@@ -21,7 +21,7 @@ struct MediaEntryView: View {
         
         GeometryReader { geo in
             ZStack {
-                if self.challenge.challengeEnded() {
+                if self.challenge.isEnded == true {
                     Text("Challenge already ended!")
                         .font(.title)
                 }
@@ -52,6 +52,7 @@ struct MediaEntryView: View {
                                         if item.swipe > geo.size.width / 2 - 80 {
                                             self.obser.update(id: item, value: 500, degree: 0)
                                             self.liked = 0
+                                            self.obser.liked(id: item)
                                             print("LIKE VERSCHWINDET")
                                         }
                                         else {
@@ -65,6 +66,7 @@ struct MediaEntryView: View {
                                         if -item.swipe > geo.size.width / 2 - 80 {
                                             self.obser.update(id: item, value: -500, degree: 0)
                                             self.disliked = 0
+                                            self.obser.disliked(id: item)
                                             print("DISLIKE VERSCHWINDET")
                                         }
                                         else {
