@@ -87,7 +87,7 @@ struct GeneralView: View {
                      VStack(alignment: .leading, spacing: 24) {
                          
                          //MARK: - PARTICIPANTS
-                         Text("Participants: \(challenge.participants)")
+                        Text("Participants: \(challenge.participants.count)")
                              .font(.system(size: 16))
                              .padding(.top, 16)
                          
@@ -106,7 +106,8 @@ struct GeneralView: View {
                              Spacer()
                              HStack {
                                  Image(systemName: "timer")
-                                 Text("Created: \((challenge.timestamp.dateValue().calenderTimeSinceNow()))")
+                                 /*Text("Created: \((challenge.timestamp.dateValue().calenderTimeSinceNow()))")*/
+                                Text("Created")
                              }
                              .padding(.trailing, 24)
                          }

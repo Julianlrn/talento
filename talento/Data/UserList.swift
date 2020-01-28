@@ -11,14 +11,19 @@ import SwiftUI
 import Firebase
 import FirebaseUI
 import FirebaseFirestore
+import MapKit
 
 
-class UserList: ObservableObject{
+
+class UserList:NSObject, ObservableObject {
    
     @Published var userData: [User] = []
     
-    init() {
-        getUserData()
+    let locationManager : CLLocationManager = CLLocationManager()
+    
+    override init() {
+        super.init()
+        self.getUserData()
     }
     
     func getUserData() {
@@ -29,16 +34,16 @@ class UserList: ObservableObject{
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
-                    let data: User =
+                    var data: User =
                         User(id: document.get("uid")as! String,
                          name: document.get("name")as! String,
                          image: document.get("image")as! String,
                          bio: document.get("bio")as! String,
-                         challenges: document.get("challenges")as! [Challenge],
-                         followers: document.get("followers")as! [User],
-                         followed: document.get("followed")as! [User],
+                         challenges: document.get("challenges")as! [Challenge.ID],
+                         followers: document.get("followers")as! [User.ID],
+                         followed: document.get("followed")as! [User.ID],
                          latitude: document.get("latitude")as! Double,
-                         longitute: document.get("longitude")as! Double,
+                         longitude: document.get("longitude")as! Double,
                          talentPoints: document.get("talentPoints")as! Double)
                     
                     print("append")
@@ -50,9 +55,8 @@ class UserList: ObservableObject{
         
     }
     
+    
     func getCurrentUser() -> User?{
-        
-   
         let currentUserID = Auth.auth().currentUser?.uid
         var currentUser: User?
 
@@ -61,12 +65,99 @@ class UserList: ObservableObject{
             
             if (User.id == currentUserID){
                 currentUser = User
-                
+                currentUser!.latitude = loadCurrentLocation().latitude
+                currentUser!.longitude = loadCurrentLocation().longitude
+                print("\(currentUser!.latitude)")
             }
         }
         return currentUser
     }
-
     
- }
+    
+   
+    func loadCurrentLocation() -> (latitude: Double, longitude:Double){
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        locationManager.delegate = self
+        locationManager.requestLocation()
+
+        return ((locationManager.location?.coordinate.latitude)!,(locationManager.location?.coordinate.longitude)!)
+    }
+        
+}
+
+extension UserList : CLLocationManagerDelegate {
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+         print("error:: \(error.localizedDescription)")
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestLocation()
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if locations.first != nil {
+            print("location:: (location)")
+        }
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

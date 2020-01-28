@@ -17,10 +17,14 @@ struct ChallengeView: View {
     
     @State var tabIndex = 0
     //var challenges: [Challenge] = getChallengeData()
-     @ObservedObject var challenges = ChallengeData()
+    @ObservedObject var challenges = ChallengeData()
+    
+    @ObservedObject var userList = UserList()
+    
+    
     
     var body: some View {
-        if challenges.challengeData.count != 0 {
+        if challenges.challengeData.count != 0, let currentUser = userList.getCurrentUser() {
         return AnyView(
             NavigationView {
                 ScrollView(.vertical, showsIndicators: false) {
@@ -95,24 +99,46 @@ struct ChallengeView: View {
                             .offset(y: -80)
                         }
                         else if self.tabIndex == 1 {
-                            Text("Munich, Germany")
-                                .font(.title)
-                                .padding(.leading, 16)
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack {
-                                    ForEach(challenges.challengeData) { item in
-                                        NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
-                                           ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
-                                           .frame(width: 311)
-                                           .padding(.leading, 16)
-                                           .padding(.vertical, 48)
+                            VStack(alignment: .leading) {
+                                Text("Hot")
+                                    .font(.title)
+                                    .padding(.leading, 16)
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack {
+                                        ForEach(challenges.challengeData) { item in
+                                            NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
+                                               ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+                                               .frame(width: 311)
+                                               .padding(.leading, 16)
+                                               .padding(.vertical, 48)
+                                            }
+                                            .buttonStyle(PlainButtonStyle())
                                         }
-                                        .buttonStyle(PlainButtonStyle())
                                     }
                                 }
+                                .offset(y: -48)
                             }
-                            .offset(y: -48)
-                        }
+                            
+                            VStack(alignment: .leading) {
+                                Text("New")
+                                    .font(.title)
+                                    .padding(.leading, 16)
+                              ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack {
+                                        ForEach(challenges.challengeData) { item in
+                                            NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
+                                               ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+                                               .frame(width: 311)
+                                               .padding(.leading, 16)
+                                               .padding(.vertical, 48)
+                                            }
+                                            .buttonStyle(PlainButtonStyle())
+                                        }
+                                    }
+                                }
+                                .offset(y: -48)
+                            }
+                            .offset(y: -80)                        }
                     }
                     
                 }.navigationBarTitle(Text("Challenges"))
@@ -127,8 +153,9 @@ struct ChallengeView: View {
             )
         }
     }
-}
+    
 
+}
 
 
 

@@ -53,7 +53,7 @@ struct ChallengeCardView: View {
             VStack(alignment: .leading, spacing: 24) {
                 
                 //MARK: - PARTICIPANTS
-                Text("Participants: \(challenge.participants)")
+                Text("Participants: \(challenge.participants.count)")
                     .font(.system(size: 16))
                 
                 //MARK: - TITLE
@@ -94,9 +94,9 @@ struct ChallengeCardView: View {
         .padding(.bottom, 24)
     }
     
-    func challengeEnded() -> Bool {
+        func challengeEnded() -> Bool {
         
-        let createdTime = self.challenge.timestamp.dateValue()
+        let createdTime = Date(ticks: UInt64(self.challenge.timestamp))
         let currentTime = Date()
         let durationTime = createdTime.addingTimeInterval(self.challenge.duration*60)
         
@@ -109,7 +109,8 @@ struct ChallengeCardView: View {
     
     func getTimeLeft() -> String {
         
-        let createdTime = self.challenge.timestamp.dateValue()
+        //let createdTime = self.challenge.Date(tick: timestamp).dateValue()
+        let createdTime = Date(ticks: UInt64(self.challenge.timestamp))
         let currentTime = Date()
         let durationTime = createdTime.addingTimeInterval(self.challenge.duration*60)
         

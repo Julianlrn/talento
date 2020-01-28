@@ -10,17 +10,18 @@ import SwiftUI
 import Firebase
 
 struct Challenge: Identifiable {
-    var id = UUID()
-    var image: String
-    var participants: Int
+    var id : String
     var fbId: String
-  //  var participants: Platzhalter -> Participant Array
+    var image: String
+    var participants: [User.ID]
     var title: String
-    var isPublic: Bool?
-    var timestamp: Timestamp
+    var timestamp: Int
     var duration: Double
     var instructions: String
-    // var author: Platzhalter -> User Object
-    // var entry: [entry]
-    // var ranking: Platzhalter -> Ranking Object
+    var isPublic: Bool?
+    var author: User.ID
+    var latitude: Double
+    var longitude: Double
+    var isEnded:Bool
+
 }

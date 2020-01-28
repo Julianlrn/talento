@@ -11,6 +11,16 @@ import Foundation
 extension Date
 {
     
+    func toMillis() -> Int64! {
+          return Int64(self.timeIntervalSince1970 * 1000)
+      }
+    
+  
+   init(ticks: UInt64) {
+        self.init(timeIntervalSince1970: Double(ticks)/10_000_000 - 62_135_596_800)
+    }
+    
+    
     func isBetween(_ date1: Date, _ date2: Date) -> Bool
     {
         let createdTime = date1
