@@ -22,8 +22,7 @@ struct Challenge: Identifiable {
     var author: User.ID
     var latitude: Double
     var longitude: Double
-    var isEnded:Bool
-    
+    var isEnded: Bool
     
     func challengeEnded() -> Bool {
         
