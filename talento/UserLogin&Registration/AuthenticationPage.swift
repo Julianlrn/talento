@@ -60,7 +60,6 @@ struct AuthenticationPage : View {
                     .padding(.top, 12)
                 
                 HStack {
-                    
                     TextField("+1", text: self.$ccode)
                         .keyboardType(.numberPad)
                         .frame(width: 45)

@@ -11,6 +11,7 @@ import Firebase
 
 public class observer: ObservableObject {
     
+    @ObservedObject var userList = UserList()
     @Published var entries = [entry]()
     // let currentlyViewedChallenge = getCurrentlyViewedChallenge()
     let challenge: Challenge
@@ -38,7 +39,7 @@ public class observer: ObservableObject {
                 }
                 
             }
-                
+            
         }
     }
     
@@ -51,6 +52,49 @@ public class observer: ObservableObject {
             }
             
         }
+    }
+    
+    func like(id:entry){
+        for i in 0..<self.entries.count {
+            
+            if self.entries[i].id == id.id {
+                likeEntry(entryId: self.entries[i].id)
+            }
+        }
+    }
+    
+    func addRatedUser(entryId: String){
+        
+        let entryId = entryId
+
+        let db = Firestore.firestore()
+        
+        db.collection("challenge-entry")
+            .document(entryId)
+            .updateData(["likes": FieldValue.increment(Int64(1))]) { (err) in
+                
+                if err != nil{
+                   
+                    print((err?.localizedDescription)!)
+                    return
+        }}
+    }
+    
+    func likeEntry(entryId: String){
+        
+        let entryId = entryId
+
+        let db = Firestore.firestore()
+        
+        db.collection("challenge-entry")
+            .document(entryId)
+            .updateData(["likes": FieldValue.increment(Int64(1))]) { (err) in
+                
+                if err != nil{
+                   
+                    print((err?.localizedDescription)!)
+                    return
+        }}
     }
 }
 
