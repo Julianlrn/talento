@@ -26,9 +26,11 @@ struct GeneralView: View {
     @State var uploadLabel = ""
     @State var entryID = ""
     
-
+     @ObservedObject var userList = UserList()
     
     func uploadChallengeEntry(challengeId: String){
+        
+        if let currentUser = userList.getCurrentUser(){
         
         let challengeId = challengeId
         if (uploadLabel == ""){
@@ -37,7 +39,7 @@ struct GeneralView: View {
             .document()
             .setData(
                 // TODO: add id to challenge and add user ID
-            ["image": self.imageUrl!, "id":challengeId]) { (err) in
+            ["image": self.imageUrl!, "id":challengeId, "likes": 0,"author": currentUser.id ]) { (err) in
                 
                 if err != nil{
                    
@@ -48,7 +50,10 @@ struct GeneralView: View {
                 return
             }
         }
-    
+        else{
+            wait()
+        }
+    }
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {

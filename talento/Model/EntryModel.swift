@@ -18,7 +18,7 @@ public class observer: ObservableObject {
     init(challenge: Challenge) {
         self.challenge = challenge
         let db = Firestore.firestore()
-        db.collection("entries").getDocuments { (snap, err) in
+        db.collection("challenge-entry").getDocuments { (snap, err) in
             if err != nil {
                 print((err?.localizedDescription)!)
                 return
@@ -26,17 +26,17 @@ public class observer: ObservableObject {
             for item in snap!.documents {
                     
                 let id = item.documentID
-                let author = item.get("author") as! String
+                // let author = item.get("author") as! String
                 let image = item.get("image") as! String
-                let likes = item.get("likes") as! Double
+                //let likes = item.get("likes") as! Double
                 let idFromChallenge = item.get("id") as! String
-                
+                print("in der for schleife" + " asdf " + idFromChallenge + " challenge fbid " + challenge.fbId)
                 if (idFromChallenge == challenge.fbId){
-                self.entries.append(entry(id: id, author: author, image: image, likes: likes, swipe: 0, degree: 0))
+                    print("im if" + idFromChallenge + "fbid " + challenge.fbId)
+                    self.entries.append(entry(ownId: id,id: idFromChallenge, image: image, likes: 0, swipe: 0, degree: 0))
+                    print(self.entries)
                 }
-                else {
-                    return
-            }
+                
             }
                 
         }
@@ -45,7 +45,7 @@ public class observer: ObservableObject {
     func update(id : entry, value : CGFloat, degree : Double) {
         for i in 0..<self.entries.count {
             
-            if self.entries[i].id == id.id {
+           if self.entries[i].ownId == id.id {
                 self.entries[i].swipe = value
                 self.entries[i].degree = degree
             }
@@ -57,8 +57,10 @@ public class observer: ObservableObject {
 
 
 struct entry: Identifiable {
+    
+    var ownId: String
     var id: String
-    var author: String
+    // var author: String
     var image: String
     var likes: Double
     var swipe: CGFloat
