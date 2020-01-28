@@ -105,9 +105,13 @@ struct GeneralView: View {
                              }
                              Spacer()
                              HStack {
-                                 Image(systemName: "timer")
-                                 /*Text("Created: \((challenge.timestamp.dateValue().calenderTimeSinceNow()))")*/
-                                Text("Created")
+                                 if challengeEnded() {
+                                     Text(getTimeLeft())
+                                         .foregroundColor(Color.red)
+                                 } else {
+                                     Image(systemName: "timer")
+                                     Text(getTimeLeft())
+                                 }
                              }
                              .padding(.trailing, 24)
                          }
@@ -179,6 +183,35 @@ struct GeneralView: View {
              }
             .sheet(isPresented: $isShowPicker){ ImagePicker(image: self.$image, imageUrl: self.$imageUrl, sourceTypeforPicker: self.$isSourceTypeforPicker)}
             .padding(.top, 16)
+        }
+    }
+    
+    func challengeEnded() -> Bool {
+        
+        let createdTime = Date(timeIntervalSince1970: self.challenge.timestamp / 1000)
+        let currentTime = Date()
+        let durationTime = createdTime.addingTimeInterval(self.challenge.duration * 60)
+        
+        if currentTime.isBetween(createdTime, durationTime) {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func getTimeLeft() -> String {
+        
+        //let createdTime = self.challenge.Date(tick: timestamp).dateValue()
+        let createdTime = Date(timeIntervalSince1970: self.challenge.timestamp / 1000)
+        let currentTime = Date()
+        let durationTime = createdTime.addingTimeInterval(self.challenge.duration * 60)
+        
+        let range = createdTime...durationTime
+        
+        if range.contains(currentTime) {
+            return currentTime.timeLeftTo(durationTime)
+        } else {
+            return "Ended"
         }
     }
 }
