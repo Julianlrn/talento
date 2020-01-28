@@ -110,12 +110,12 @@ struct GeneralView: View {
                              }
                              Spacer()
                              HStack {
-                                 if challengeEnded() {
-                                     Text(getTimeLeft())
+                                 if self.challenge.challengeEnded() {
+                                     Text(self.challenge.getTimeLeft())
                                          .foregroundColor(Color.red)
                                  } else {
                                      Image(systemName: "timer")
-                                     Text(getTimeLeft())
+                                     Text(self.challenge.getTimeLeft())
                                  }
                              }
                              .padding(.trailing, 24)
@@ -152,7 +152,7 @@ struct GeneralView: View {
                     image?.resizable().scaledToFit().frame(height: CGFloat(320))
                     Text(self.uploadLabel)
                     .font(.system(size: 20))
-                    if challengeEnded() {
+                    if self.challenge.challengeEnded() {
                         Text("No participation possible")
                             .font(.title)
                             .padding()
