@@ -82,12 +82,7 @@ struct ChallengeCreateView: View {
                                 )
                                 .clipShape(RoundedRectangle(cornerRadius: 16))
                             
-                            Toggle(isOn: $isPublic) {
-                                Text("Public")
-                                    .font(.system(size: 16))
-                            }
-                            
-                            TextField("Duration", text: self.$duration)
+                            TextField("Duration in minutes", text: self.$duration)
                                 .font(.system(size: 16))
                                 .keyboardType(.numberPad)
                                 .padding(16)
@@ -97,9 +92,20 @@ struct ChallengeCreateView: View {
                                         .stroke(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), lineWidth: 2)
                                 )
                                 .clipShape(RoundedRectangle(cornerRadius: 16))
+                            
+                            Toggle(isOn: $isPublic) {
+                                Text("Public")
+                                    .font(.system(size: 16))
+                            }
 
                             // TODO: Image aus DB lesen und hochladen
-                            image?.resizable().aspectRatio(contentMode: .fit).frame(height: 150)
+                            GeometryReader { geo in
+                                self.image?
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: geo.size.width)
+                            }
+                            
                               Button(action: {
                                   withAnimation {
                                       self.isShowPicker.toggle()
