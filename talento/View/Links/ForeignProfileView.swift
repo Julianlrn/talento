@@ -110,7 +110,7 @@ struct ForeignProfileView: View {
                                                                 self.db.collection("users").document(currentUser.id).updateData(["followed" : currentUser.followed]);
                                                                 
                                                                 var profileUser1 : User = self.profileUser
-                                                                    profileUser1.followers.insert(currentUser.id, at: 0);
+                                                                   
                                                                 if let index = profileUser1.followers.firstIndex(of: currentUser.id) {
                                                                     profileUser1.followers.remove(at: index)
                                                                 }
@@ -154,7 +154,7 @@ struct ForeignProfileView: View {
                                                                 self.db.collection("users").document(currentUser.id).updateData(["followed" : currentUser.followed]);
                                                                 
                                                                 var profileUser1 : User = self.profileUser
-                                                                    profileUser1.followers.insert(currentUser.id, at: 0);
+                                                                   
                                                                 if let index = profileUser1.followers.firstIndex(of: currentUser.id) {
                                                                     profileUser1.followers.remove(at: index)
                                                                 }
