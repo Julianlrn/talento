@@ -152,34 +152,39 @@ struct GeneralView: View {
                     image?.resizable().scaledToFit().frame(height: CGFloat(320))
                     Text(self.uploadLabel)
                     .font(.system(size: 20))
-                    
-                    Button(action: {
-                        if (self.isShowPicker2){
+                    if challengeEnded() {
+                        Text("No participation possible")
+                            .font(.title)
+                            .padding()
+                    } else {
+                        Button(action: {
+                            if (self.isShowPicker2){
+                                
+                           self.isShowPicker.toggle()
+                            print("Participate tapped!")
+                                self.isShowPicker2 = false
+                                self.buttonText = "Upload Picture"
+                            return
+                            }else{
+                                print("Upload tapped!")
+                                self.uploadChallengeEntry(challengeId: self.challenge.fbId)
+                                self.uploadLabel = "Picture was Uploaded! Good Luck in the Challenge"
                             
-                       self.isShowPicker.toggle()
-                        print("Participate tapped!")
-                            self.isShowPicker2 = false
-                            self.buttonText = "Upload Picture"
-                        return
-                        }else{
-                            print("Upload tapped!")
-                            self.uploadChallengeEntry(challengeId: self.challenge.fbId)
-                            self.uploadLabel = "Picture was Uploaded! Good Luck in the Challenge"
-                        
-                        return
+                            return
+                            }
+                        }) {
+                            HStack {
+                                Text(self.buttonText)
+                                    .font(.system(size: 16, weight: .bold))
+                                    .foregroundColor(Color.white)
+                                    .padding(16)
+                            }
+                            .frame(width: 343)
+                            .background(Color.init(red:0.96, green:0.11, blue:0.34))
+                            .cornerRadius(16)
+                            .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
+                            .padding(.bottom, 24)
                         }
-                    }) {
-                        HStack {
-                            Text(self.buttonText)
-                                .font(.system(size: 16, weight: .bold))
-                                .foregroundColor(Color.white)
-                                .padding(16)
-                        }
-                        .frame(width: 343)
-                        .background(Color.init(red:0.96, green:0.11, blue:0.34))
-                        .cornerRadius(16)
-                        .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
-                        .padding(.bottom, 24)
                     }
 
                  }
