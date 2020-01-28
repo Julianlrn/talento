@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct MediaEntryPictureView: View {
-    let entry: entry
-    init(entry:entry){
+    let entry: Entry
+    init(entry:Entry){
         self.entry = entry
         self.imageLoader = ImageLoader(urlString: entry.image)
         }

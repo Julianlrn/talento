@@ -10,7 +10,7 @@ import SwiftUI
 import Firebase
 
 public class observer: ObservableObject {
-    @Published var entries = [entry]()
+    @Published var entries = [Entry]()
     
     init() {
         let db = Firestore.firestore()
@@ -26,12 +26,12 @@ public class observer: ObservableObject {
                 let image = item.get("image") as! String
                 let likes = item.get("likes") as! Double
                 
-                self.entries.append(entry(id: id, author: author, image: image, likes: likes, swipe: 0, degree: 0))
+                self.entries.append(Entry(id: id, author: author, image: image, likes: likes, swipe: 0, degree: 0))
             }
         }
     }
     
-    func update(id : entry, value : CGFloat, degree : Double) {
+    func update(id : Entry, value : CGFloat, degree : Double) {
         for i in 0..<self.entries.count {
             
             if self.entries[i].id == id.id {
@@ -45,7 +45,7 @@ public class observer: ObservableObject {
 
 
 
-struct entry: Identifiable {
+struct Entry: Identifiable {
     var id: String
     var author: String
     var image: String
