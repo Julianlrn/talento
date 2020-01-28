@@ -94,11 +94,11 @@ struct ChallengeCardView: View {
         .padding(.bottom, 24)
     }
     
-        func challengeEnded() -> Bool {
+    func challengeEnded() -> Bool {
         
-        let createdTime = Date(ticks: UInt64(self.challenge.timestamp))
+        let createdTime = Date(timeIntervalSince1970: self.challenge.timestamp / 1000)
         let currentTime = Date()
-        let durationTime = createdTime.addingTimeInterval(self.challenge.duration*60)
+        let durationTime = createdTime.addingTimeInterval(self.challenge.duration * 60)
         
         if currentTime.isBetween(createdTime, durationTime) {
             return false
@@ -110,14 +110,14 @@ struct ChallengeCardView: View {
     func getTimeLeft() -> String {
         
         //let createdTime = self.challenge.Date(tick: timestamp).dateValue()
-        let createdTime = Date(ticks: UInt64(self.challenge.timestamp))
+        let createdTime = Date(timeIntervalSince1970: self.challenge.timestamp / 1000)
         let currentTime = Date()
-        let durationTime = createdTime.addingTimeInterval(self.challenge.duration*60)
+        let durationTime = createdTime.addingTimeInterval(self.challenge.duration * 60)
         
         let range = createdTime...durationTime
         
         if range.contains(currentTime) {
-            return createdTime.timeLeftTo(durationTime)
+            return currentTime.timeLeftTo(durationTime)
         } else {
             return "Ended"
         }

@@ -15,7 +15,7 @@ struct Challenge: Identifiable {
     var image: String
     var participants: [User.ID]
     var title: String
-    var timestamp: Int
+    var timestamp: Double
     var duration: Double
     var instructions: String
     var isPublic: Bool?
