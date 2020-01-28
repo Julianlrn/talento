@@ -18,11 +18,13 @@ struct FeedView: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 ForEach(challenges.challengeData) { item in
+                    //if{
                     UserFeedView()
                     NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
                        ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
                     }
                     .buttonStyle(PlainButtonStyle())
+                //}
                 }
                 .padding(.horizontal, 16)
             }.navigationBarTitle(Text("Feed"))

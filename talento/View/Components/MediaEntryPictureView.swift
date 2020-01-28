@@ -17,6 +17,7 @@ struct MediaEntryPictureView: View {
     @ObservedObject var imageLoader: ImageLoader
     var body: some View {
         Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! : UIImage())
-        
+            .resizable()
+            .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height)
     }
 }

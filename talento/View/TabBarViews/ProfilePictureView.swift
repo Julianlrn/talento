@@ -25,9 +25,6 @@ struct ProfilePictureView: View {
     var body: some View {
         Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! : UIImage())
         .resizable()
-        .aspectRatio(contentMode: .fill)
-        
-        
-        
+        .aspectRatio(contentMode: .fill) 
     }
 }

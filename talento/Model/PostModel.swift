@@ -10,7 +10,7 @@ import Foundation
 
 struct Post: Identifiable {
     var id : String
-    var user: User
-    var challenge: Challenge
+    var user: User.ID
+    var challenge: Challenge.ID
     var timestamp: Double
 }

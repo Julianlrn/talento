@@ -22,6 +22,7 @@ struct ChallengeCreateView: View {
     @State private var isPublic : Bool = false
     @State var participants : [User.ID] = []
     @State var isEnded: Bool = false
+    @State var duration = ""
    
     
     @ObservedObject var userList = UserList()
@@ -42,7 +43,7 @@ struct ChallengeCreateView: View {
         db.collection("challenges")
             .document()
             .setData(
-            ["title":self.name, "instructions":self.description, "image": self.imageUrl!, "isPublic":self.isPublic, "timestamp": self.createdDate, "duration": 10, "participants": self.participants, "author": user.id, "latitude": user.latitude, "longitude": user.longitude, "isEnded": self.isEnded]) { (err) in
+            ["title":self.name, "instructions":self.description, "image": self.imageUrl!, "isPublic":self.isPublic, "timestamp": self.createdDate, "duration": self.duration.toDouble() ?? 1, "participants": self.participants, "author": user.id, "latitude": user.latitude, "longitude": user.longitude, "isEnded": self.isEnded]) { (err) in
                 
                 if err != nil{
                    
@@ -81,12 +82,30 @@ struct ChallengeCreateView: View {
                                 )
                                 .clipShape(RoundedRectangle(cornerRadius: 16))
                             
+                            TextField("Duration in minutes", text: self.$duration)
+                                .font(.system(size: 16))
+                                .keyboardType(.numberPad)
+                                .padding(16)
+                                .background(Color.white)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 16)
+                                        .stroke(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), lineWidth: 2)
+                                )
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                            
                             Toggle(isOn: $isPublic) {
                                 Text("Public")
+                                    .font(.system(size: 16))
                             }
 
                             // TODO: Image aus DB lesen und hochladen
-                            image?.resizable().aspectRatio(contentMode: .fit).frame(height: 150)
+                            GeometryReader { geo in
+                                self.image?
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: geo.size.width)
+                            }
+                            
                               Button(action: {
                                   withAnimation {
                                       self.isShowPicker.toggle()
@@ -138,5 +157,11 @@ struct ChallengeCreateView: View {
         }
     
     }
+    
 }
 
+extension String {
+func toDouble() -> Double? {
+    return NumberFormatter().number(from: self)?.doubleValue
+ }
+}
