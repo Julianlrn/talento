@@ -21,6 +21,6 @@ struct Challenge: Identifiable {
     var duration: Double
     var instructions: String
     // var author: Platzhalter -> User Object
-    var entry: [entry]
+    // var entry: [entry]
     // var ranking: Platzhalter -> Ranking Object
 }

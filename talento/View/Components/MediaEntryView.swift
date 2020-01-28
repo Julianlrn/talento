@@ -11,9 +11,10 @@ import SDWebImage
 
 struct MediaEntryView: View {
     
-    @ObservedObject var obser = observer()
+    @ObservedObject var obser: observer
     @State var liked = 0
     @State var disliked = 0
+    let challenge: Challenge
     // @ObservedObject var imageLoader: ImageLoader = ImageLoader(urlString: item.image)
     
     var body: some View {
