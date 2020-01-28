@@ -46,7 +46,9 @@ struct MediaEntryView: View {
                                 if item.swipe > 0 {
                                     if item.swipe > geo.size.width / 2 - 80 {
                                         self.obser.update(id: item, value: 500, degree: 0)
+                                        self.obser.liked(id: item)
                                         self.liked = 0
+                                        
                                         print("LIKE VERSCHWINDET")
                                     }
                                     else {
@@ -59,6 +61,7 @@ struct MediaEntryView: View {
                                 else {
                                     if -item.swipe > geo.size.width / 2 - 80 {
                                         self.obser.update(id: item, value: -500, degree: 0)
+                                        self.obser.disliked(id: item)
                                         self.disliked = 0
                                         print("DISLIKE VERSCHWINDET")
                                     }
