@@ -15,8 +15,8 @@ import FirebaseStorage
 func CreateUser(name: String, bio: String, imagedata : Data, completion: @escaping(Bool)-> Void) {
     
     var challenges: [Challenge] = []
-    var latitude: Double = 0
-    var longitude: Double = 0
+    var latitude: Double = 0.00
+    var longitude: Double = 0.00
     var talentPoints: Double = 0
     var followers: [User] = []
     var followed: [User] = []
