@@ -33,7 +33,7 @@ public class observer: ObservableObject {
                 print("in der for schleife" + " asdf " + idFromChallenge + " challenge fbid " + challenge.fbId)
                 if (idFromChallenge == challenge.fbId){
                     print("im if" + idFromChallenge + "fbid " + challenge.fbId)
-                    self.entries.append(entry(ownId: id,id: idFromChallenge, image: image, likes: 0, swipe: 0, degree: 0))
+                    self.entries.append(entry(id: id,idFromChallenge: idFromChallenge, image: image, likes: 0, swipe: 0, degree: 0))
                     print(self.entries)
                 }
                 
@@ -45,7 +45,7 @@ public class observer: ObservableObject {
     func update(id : entry, value : CGFloat, degree : Double) {
         for i in 0..<self.entries.count {
             
-           if self.entries[i].ownId == id.id {
+            if self.entries[i].id == id.id {
                 self.entries[i].swipe = value
                 self.entries[i].degree = degree
             }
@@ -58,8 +58,8 @@ public class observer: ObservableObject {
 
 struct entry: Identifiable {
     
-    var ownId: String
     var id: String
+    var idFromChallenge: String
     // var author: String
     var image: String
     var likes: Double
