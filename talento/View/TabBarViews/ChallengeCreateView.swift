@@ -32,7 +32,6 @@ struct ChallengeCreateView: View {
     @State var image: Image? = Image("placeholder")
     @State var imageUrl : String? = ""
     @State var isSourceTypeforPicker : Int = 2
-    //let createdDate = FieldValue.serverTimestamp()
     let createdDate = Date().toMillis()
     
     @Binding var isPresented : Bool
@@ -51,8 +50,6 @@ struct ChallengeCreateView: View {
                     return
                 }
         }
-        
-        print(self.createdDate)
     }
     
     
