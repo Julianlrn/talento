@@ -24,6 +24,7 @@ struct FeedView: View {
                        ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
                     }
                     .buttonStyle(PlainButtonStyle())
+                //}
                 }
                 .padding(.horizontal, 16)
             }.navigationBarTitle(Text("Feed"))

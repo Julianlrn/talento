@@ -110,21 +110,21 @@ struct ForeignProfileView: View {
                                                                 self.db.collection("users").document(currentUser.id).updateData(["followed" : currentUser.followed]);
                                                                 
                                                                 var profileUser1 : User = self.profileUser
-                                                                    profileUser1.followed.insert(currentUser.id, at: 0);
-                                                                if let index = profileUser1.followed.firstIndex(of: currentUser.id) {
-                                                                    profileUser1.followed.remove(at: index)
+                                                                    profileUser1.followers.insert(currentUser.id, at: 0);
+                                                                if let index = profileUser1.followers.firstIndex(of: currentUser.id) {
+                                                                    profileUser1.followers.remove(at: index)
                                                                 }
-                                                                self.db.collection("users").document(self.profileUser.id).updateData(["followers" : profileUser1.followed]);
+                                                                self.db.collection("users").document(self.profileUser.id).updateData(["followers" : profileUser1.followers]);
                                                             }
                                                             else {
                                                                 self.imageIndex = 0
-                                                                currentUser.followed.insert(self.profileUser.id, at: 0);
+                                                                currentUser.followed.append(self.profileUser.id);
                                                                 self.db.collection("users").document(currentUser.id).updateData(["followed" : currentUser.followed]);
                                                                 
                                                                     var profileUser1 : User = self.profileUser
-                                                                profileUser1.followed.append(currentUser.id);
+                                                                profileUser1.followers.append(currentUser.id);
                                                                 
-                                                                self.db.collection("users").document(self.profileUser.id).updateData(["followers" : profileUser1.followed]);
+                                                                self.db.collection("users").document(self.profileUser.id).updateData(["followers" : profileUser1.followers]);
                                                             }
                                                         }
                                                         
@@ -137,27 +137,29 @@ struct ForeignProfileView: View {
                                                         .onTapGesture {
                                                             if self.imageIndex == 0 {
                                                                 self.imageIndex = 1
-                                                                currentUser.followed.insert(self.profileUser.id, at: 0);
+                                                                currentUser.followed.append(self.profileUser.id);
                                                                 self.db.collection("users").document(currentUser.id).updateData(["followed" : currentUser.followed]);
                                                                 
                                                                     var profileUser1 : User = self.profileUser
-                                                                    profileUser1.followed.append(currentUser.id);
-                                                                self.db.collection("users").document(self.profileUser.id).updateData(["followers" : profileUser1.followed]);
+                                                                profileUser1.followers.append(currentUser.id);
+                                                                
+                                                                self.db.collection("users").document(self.profileUser.id).updateData(["followers" : profileUser1.followers]);
                                                             }
                                                             else {
                                                                 self.imageIndex = 0
                                                                 if let index = currentUser.followed.firstIndex(of: self.profileUser.id) {
-                                                                                                                                   currentUser.followed.remove(at: index)
-                                                                                                                               }
-                                                                                                                               
-                                                                                                                               self.db.collection("users").document(currentUser.id).updateData(["followed" : currentUser.followed]);
-                                                                                                                               
-                                                                                                                               var profileUser1 : User = self.profileUser
-                                                                                                                                   profileUser1.followed.insert(currentUser.id, at: 0);
-                                                                                                                               if let index = profileUser1.followed.firstIndex(of: currentUser.id) {
-                                                                                                                                   profileUser1.followed.remove(at: index)
-                                                                                                                               }
-                                                                                                                               self.db.collection("users").document(self.profileUser.id).updateData(["followers" : profileUser1.followed]);
+                                                                    currentUser.followed.remove(at: index)
+                                                                }
+                                                                
+                                                                self.db.collection("users").document(currentUser.id).updateData(["followed" : currentUser.followed]);
+                                                                
+                                                                var profileUser1 : User = self.profileUser
+                                                                    profileUser1.followers.insert(currentUser.id, at: 0);
+                                                                if let index = profileUser1.followers.firstIndex(of: currentUser.id) {
+                                                                    profileUser1.followers.remove(at: index)
+                                                                }
+                                                                self.db.collection("users").document(self.profileUser.id).updateData(["followers" : profileUser1.followers]);
+                                                              
                                                                 
                                                             }
                                                         }
