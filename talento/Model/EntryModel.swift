@@ -52,6 +52,27 @@ public class observer: ObservableObject {
             
         }
     }
+    
+    func liked(id:entry){
+        for i in 0..<self.entries.count {
+            
+            if self.entries[i].id == id.id {
+                self.entries[i].likes+=1
+            }
+            
+        }
+    }
+    
+    func disliked(id:entry){
+        for i in 0..<self.entries.count {
+            
+            if self.entries[i].id == id.id {
+                self.entries[i].likes-=1
+            }
+            
+        }
+    }
+    
 }
 
 
