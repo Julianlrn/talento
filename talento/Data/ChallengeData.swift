@@ -50,9 +50,10 @@ class ChallengeData: ObservableObject{
                             timestamp: document.get("timestamp") as! Int,
                             duration: document.get("duration") as? Double ?? 1,
                             instructions: document.get("instructions") as! String,
+                            isPublic: document.get("isPublic") as? Bool,
                             author: document.get("author") as! String,
                             latitude: document.get("latitude") as! Double,
-                            longitude: document.get("latitude") as! Double,
+                            longitude: document.get("longitude") as! Double,
                             isEnded: document.get("isEnded") as! Bool)
                     
                     print("append")
