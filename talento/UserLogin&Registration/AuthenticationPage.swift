@@ -47,7 +47,7 @@ struct AuthenticationPage : View {
         Background{
             VStack(alignment: .leading, spacing : 20) {
                 
-                Image("placeholder") //doesn't work, why?
+                Image("logo") //doesn't work, why?
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 343, height: 200)

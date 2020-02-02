@@ -34,7 +34,7 @@ class UserList:NSObject, ObservableObject {
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
-                    var data: User =
+                    let data: User =
                         User(id: document.get("uid")as! String,
                          name: document.get("name")as! String,
                          image: document.get("image")as! String,

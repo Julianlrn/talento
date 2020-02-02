@@ -14,12 +14,12 @@ import FirebaseStorage
 
 func CreateUser(name: String, bio: String, imagedata : Data, completion: @escaping(Bool)-> Void) {
     
-    var challenges: [Challenge] = []
-    var latitude: Double = 0.00
-    var longitude: Double = 0.00
-    var talentPoints: Double = 0
-    var followers: [User] = []
-    var followed: [User] = []
+    let challenges: [Challenge] = []
+    let latitude: Double = 0.00
+    let longitude: Double = 0.00
+    let talentPoints: Double = 0
+    let followers: [User] = []
+    let followed: [User] = []
     
     let db = Firestore.firestore()
     
