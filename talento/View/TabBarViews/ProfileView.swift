@@ -15,10 +15,9 @@ import FirebaseUI
 struct ProfileView: View {
 
     @ObservedObject var userList = UserList()
-   
     @ObservedObject var challenges = ChallengeData()
-   
-
+   // @ObservedObject var obser: observer
+    @ObservedObject var entries = SortedEntriesData()
     @State var tabIndex = 0
    
 
@@ -27,7 +26,7 @@ struct ProfileView: View {
                    return AnyView(
                     NavigationView {
                     ScrollView(.vertical, showsIndicators: false) {
-                        VStack(alignment: .leading) {
+                        VStack(alignment: HorizontalAlignment.leading) {
                             ProfilePictureView(currentUser: currentUser)
                                 .frame(width:UIScreen.main.bounds.width, height: 300)
                                 .clipped()
@@ -75,7 +74,7 @@ struct ProfileView: View {
                                                             .font(Font.system(size: 20, weight: .bold))
                                                             .foregroundColor(Color.black)
                                                         Text("TALENT POINTS")
-                                                            .font(Font.system(size: 8))
+                                                            .font(Font.system(size: CGFloat(8)))
                                                             .foregroundColor(Color.black)
                                                     }.frame(minWidth: 76)
 
@@ -86,13 +85,13 @@ struct ProfileView: View {
                                                         Text("FOLLOWER")
                                                             .font(Font.system(size: 8))
                                                             .foregroundColor(Color.black)
-                                                    }.frame(minWidth: 56)
+                                                    }.frame(minWidth: CGFloat(56))
                                                 }
 
                                                 HStack {
                                                     Image(systemName: "person.2.fill")
                                                         .resizable()
-                                                        .frame(width: 36, height: 24)
+                                                        .frame(width: 36, height: CGFloat(24))
                                                         .foregroundColor( Color.init(red:0.00, green:0.00, blue:0.00, opacity: 1.00))
                                                 }
                                                 .onTapGesture {
@@ -111,13 +110,13 @@ struct ProfileView: View {
                                        // .padding(.top, 198)
                                        // .padding(.horizontal, 16)
 
-                                    }.padding(.horizontal, 16)
-                                    .padding(.top, 72)
+                                    }.padding(.horizontal, CGFloat(16))
+                                    .padding(.top, CGFloat(72))
 
                                 )
 
                             //Buttons to Switch between Achievements, Active Challenges and History Challenges
-                            HStack(spacing: 16) {
+                           /* HStack(spacing: 16) {
                                 HStack {
                                         Text("Achievements")
                                             .foregroundColor(self.tabIndex == 0 ? Color.init(red:1.00, green:1.00, blue:1.00) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.32))
@@ -153,9 +152,9 @@ struct ProfileView: View {
                             }
                             .padding(.top, 64)
                             .padding(.bottom, 16)
-                            .padding(.leading, 16)
+                            .padding(.leading, 16)*/
 
-                            if self.tabIndex == 0 {
+                           /* if self.tabIndex == 0 {
                                 //Alle Challenges, an denen User Teilimmt  && "time == 0"  && "Ranking <= 3"
                                 ScrollView(.vertical, showsIndicators: false) {
                                     ForEach(challenges.challengeData) { item in
@@ -193,7 +192,27 @@ struct ProfileView: View {
                                     }
                                     .padding(.horizontal, 16)
                                 }
+                            }*/
+                        VStack{
+                            Text("\(self.entries.sortedEntriesData.count)")
+                            ScrollView(.vertical, showsIndicators: false) {
+                                ForEach(challenges.challengeData) { item in
+                                    ForEach(self.entries.sortedEntriesData) { entry in
+                                        if entry.author == currentUser.id{
+                                            if entry.idFromChallenge == item.id {
+                                     
+                                                NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
+                                                    ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+                                                }
+                                                .buttonStyle(PlainButtonStyle())
+                                            }
+                                
+                                        }
+                                    }
+                                }
+                                .padding(.horizontal, 16)
                             }
+                        }.padding(.top, CGFloat(64))
 
                         }
                     }.edgesIgnoringSafeArea(.all)})
@@ -210,11 +229,3 @@ struct ProfileView: View {
         
     }
 }
-
-
-
-
-
-
-
-
