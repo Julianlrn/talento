@@ -13,7 +13,7 @@ struct FeedView: View {
     @ObservedObject var challenges = ChallengeData()
     @ObservedObject var userList = UserList()
     @ObservedObject var entries = SortedEntriesData()
-
+    
     
     var body: some View {
         if let currentUser = userList.getCurrentUser(), challenges.challengeData.count != 0 {
@@ -22,10 +22,10 @@ struct FeedView: View {
            ScrollView(.vertical, showsIndicators: false) {
                 ForEach(challenges.challengeData) { item in
                     ForEach(self.entries.sortedEntriesData) { entry in
-                        //if entry.author == currentUser.id{
+                       
                         if currentUser.followed.contains(entry.author){
                             if entry.idFromChallenge == item.id {
-                     
+                                UserFeedView(user: self.userList.getUserUserwithId(id: entry.author))
                                 NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
                                     ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
                                 }

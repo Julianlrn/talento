@@ -68,6 +68,17 @@ class UserList:NSObject, ObservableObject {
         }
     }
     
+    public func getUserUserwithId(id: String) -> User{
+        
+        let filteredUser = userData.filter { $0.id.contains(id) }
+        
+       
+        return filteredUser[0]
+          
+        
+    }
+    
+    
     
     func getCurrentUser() -> User?{
         let currentUserID = Auth.auth().currentUser?.uid

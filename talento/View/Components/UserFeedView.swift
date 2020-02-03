@@ -10,22 +10,25 @@ import SwiftUI
 
 struct UserFeedView: View {
     
-    //var profileUserUser: User
+    let profileUserUser: User
     
-   
+    init(user:User){
+        self.profileUserUser = user
+    
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                /*ProfilePictureView(currentUser: profileUserUser)
+                ProfilePictureView(currentUser: profileUserUser)
                     .clipped()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 36, height: 36)
-                    .clipShape(Circle())*/
+                    .clipShape(Circle())
                 VStack(alignment: .leading) {
                     HStack {
-                        //Text("\(profileUserUser.name)")
-                           // .font(.system(size: 14, weight: .bold))
+                        Text("\(profileUserUser.name)")
+                            .font(.system(size: 14, weight: .bold))
                         Text("has participated")
                             .font(.system(size: 14, weight: .light))
                     }

@@ -21,6 +21,7 @@ struct ForeignProfileView: View {
     @ObservedObject var userList = UserList()
    
     @ObservedObject var challenges = ChallengeData()
+    @ObservedObject var entries = SortedEntriesData()
    
     
     @State var tabIndex = 0
@@ -185,7 +186,7 @@ struct ForeignProfileView: View {
                                 )
 
                             //Buttons to Switch between Achievements, Active Challenges and History Challenges
-                            HStack(spacing: 16) {
+                           /* HStack(spacing: 16) {
                                 HStack {
                                         Text("Achievements")
                                             .foregroundColor(self.tabIndex == 0 ? Color.init(red:1.00, green:1.00, blue:1.00) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.32))
@@ -261,7 +262,28 @@ struct ForeignProfileView: View {
                                     }
                                     .padding(.horizontal, 16)
                                 }
-                            }
+                            }*/
+                            
+                            VStack{
+                                //Text("\(self.entries.sortedEntriesData.count)")
+                                ScrollView(.vertical, showsIndicators: false) {
+                                    ForEach(challenges.challengeData) { item in
+                                        ForEach(self.entries.sortedEntriesData) { entry in
+                                            if entry.author == self.profileUser.id{
+                                                if entry.idFromChallenge == item.id {
+                                         
+                                                    NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
+                                                        ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+                                                    }
+                                                    .buttonStyle(PlainButtonStyle())
+                                                }
+                                    
+                                            }
+                                        }
+                                    }
+                                    .padding(.horizontal, 16)
+                                }
+                            }.padding(.top, CGFloat(64))
 
                         }
                     }.edgesIgnoringSafeArea(.all)})
