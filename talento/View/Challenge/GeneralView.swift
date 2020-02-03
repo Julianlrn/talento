@@ -27,8 +27,8 @@ struct GeneralView: View {
     
     
     @ObservedObject var userList = UserList()
-        
-    
+     let db = Firestore.firestore()
+   
     
     func uploadChallengeEntry(challengeId: String){
         
@@ -56,7 +56,7 @@ struct GeneralView: View {
     
     
     var body:  some View {
-        if let author: User = getAuthor(){
+        if let author: User = getAuthor(), let currentUser = userList.getCurrentUser(){
             return AnyView(
                 
                     ScrollView(.vertical, showsIndicators: true) {
@@ -175,6 +175,10 @@ struct GeneralView: View {
                                             print("Upload tapped!")
                                             self.uploadChallengeEntry(challengeId: self.challenge.fbId)
                                             self.uploadLabel = "Picture was Uploaded! Good Luck in the Challenge"
+                                            var challenge2: Challenge = self.challenge
+                                            challenge2.participants.append(currentUser.id)
+                                            self.db.collection("challenges").document(self.challenge.id).updateData(["participants" : challenge2.participants])
+                                            
                                         
                                         return
                                         }
