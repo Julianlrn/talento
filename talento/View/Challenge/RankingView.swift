@@ -11,21 +11,25 @@ import SwiftUI
 struct RankingView: View {
     
     @ObservedObject var data = SortedEntriesData()
+    var challenge: Challenge
+    
     
     var body: some View {
-        if(self.data.sortedEntriesData.count == 0){
+        let filteredData  = self.data.sortedEntriesData.filter{$0.idFromChallenge.contains(challenge.fbId)}
+        
+        if(filteredData.count == 0){
             return AnyView(Text("Loading"))
-        } else if (self.data.sortedEntriesData.count < 3) {
+        } else if (filteredData.count < 3) {
             return AnyView(Text("Not enough participants"))
         }
         else {
-            let count = self.data.sortedEntriesData.count
+            let count = filteredData.count
             return AnyView(
                 ScrollView(.vertical, showsIndicators: true) {
                 VStack(alignment: .leading) {
                     HStack(spacing: 16) {
                         VStack {
-                            MediaEntryPictureView(entry: data.sortedEntriesData[1])
+                            MediaEntryPictureView(entry: filteredData[1])
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 90, height: 90)
                                 .cornerRadius(16)
@@ -40,7 +44,7 @@ struct RankingView: View {
                                 .offset(y: -40)
                         }
                         VStack {
-                            MediaEntryPictureView(entry: data.sortedEntriesData[0])
+                            MediaEntryPictureView(entry: filteredData[0])
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 130, height: 130)
                                 .cornerRadius(16)
@@ -55,7 +59,7 @@ struct RankingView: View {
                                 .offset(y: -40)
                         }
                         VStack {
-                            MediaEntryPictureView(entry: data.sortedEntriesData[3])
+                            MediaEntryPictureView(entry: filteredData[3])
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 90, height: 90)
                                 .cornerRadius(16)
@@ -74,7 +78,7 @@ struct RankingView: View {
 
                     if count > 3 {
                         ForEach(3..<count-1) { number in
-                            RankingEntryView(entry: self.data.sortedEntriesData[number], rank: number+1)
+                            RankingEntryView(entry: filteredData[number], rank: number+1)
                         }
                     }
 

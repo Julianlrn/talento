@@ -14,7 +14,6 @@ struct RankingEntryView: View {
     var entry: entry
     var rank: Int
     @ObservedObject var userList = UserList()
-    
 
     var body: some View {
         HStack(spacing: 16) {

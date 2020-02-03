@@ -71,5 +71,9 @@ struct Challenge: Identifiable {
         }
     }
     
+    func getChallengeId() -> String {
+        return self.fbId
+    }
+    
 
 }

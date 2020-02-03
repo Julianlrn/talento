@@ -99,7 +99,7 @@ struct Ranking: View {
     var challenge: Challenge
 
     var body: some View {
-        RankingView()
+        RankingView(challenge: self.challenge)
     }
 }
 
