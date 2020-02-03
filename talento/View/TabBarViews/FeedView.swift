@@ -10,21 +10,30 @@ import SwiftUI
 
 struct FeedView: View {
     
-   @ObservedObject var challenges = ChallengeData()
+    @ObservedObject var challenges = ChallengeData()
+    @ObservedObject var userList = UserList()
+    @ObservedObject var entries = SortedEntriesData()
+
     
     var body: some View {
-        if challenges.challengeData.count != 0 {
+        if let currentUser = userList.getCurrentUser(), challenges.challengeData.count != 0 {
         return AnyView(
         NavigationView {
-            ScrollView(.vertical, showsIndicators: false) {
+           ScrollView(.vertical, showsIndicators: false) {
                 ForEach(challenges.challengeData) { item in
-                    //if{
-                    UserFeedView()
-                    NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
-                       ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+                    ForEach(self.entries.sortedEntriesData) { entry in
+                        //if entry.author == currentUser.id{
+                        if currentUser.followed.contains(entry.author){
+                            if entry.idFromChallenge == item.id {
+                     
+                                NavigationLink(destination: ChallengeDetailView(imageLoader: ImageLoader(urlString: item.image), challenge: item)) {
+                                    ChallengeCardView(challenge: item, imageLoader: ImageLoader(urlString: item.image))
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                            }
+                
+                        }
                     }
-                    .buttonStyle(PlainButtonStyle())
-                //}
                 }
                 .padding(.horizontal, 16)
             }.navigationBarTitle(Text("Feed"))
