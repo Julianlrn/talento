@@ -13,6 +13,8 @@ struct RankingEntryView: View {
 
     var entry: entry
     var rank: Int
+    @ObservedObject var userList = UserList()
+    
 
     var body: some View {
         HStack(spacing: 16) {
@@ -23,9 +25,9 @@ struct RankingEntryView: View {
             
             HStack {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(entry.author)
+                    Text(userList.getUserwithId(id: entry.author))
                         .font(.system(size: 16, weight: .bold))
-                    Text(String(Int(entry.likes)))
+                    Text(String("Likes: " + String(Int(entry.likes))))
                         .font(.system(size: 14))
                         .foregroundColor(Color.gray)
                 }
