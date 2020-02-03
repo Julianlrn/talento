@@ -194,7 +194,7 @@ struct ProfileView: View {
                                 }
                             }*/
                         VStack{
-                            Text("\(self.entries.sortedEntriesData.count)")
+                            //Text("\(self.entries.sortedEntriesData.count)")
                             ScrollView(.vertical, showsIndicators: false) {
                                 ForEach(challenges.challengeData) { item in
                                     ForEach(self.entries.sortedEntriesData) { entry in
