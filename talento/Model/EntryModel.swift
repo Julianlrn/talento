@@ -31,10 +31,11 @@ public class observer: ObservableObject {
                 let image = item.get("image") as! String
                 let likes = item.get("likes") as! Double
                 let idFromChallenge = item.get("id") as! String
+                let ratedUser = item.get("ratedUser") as? [String]
                 
                 if (idFromChallenge == challenge.fbId){
                     
-                    self.entries.append(entry(id: id,idFromChallenge: idFromChallenge, author: author, image: image, likes: likes, swipe: 0, degree: 0, ratedUser: []))
+                    self.entries.append(entry(id: id,idFromChallenge: idFromChallenge, author: author, image: image, likes: likes, swipe: 0, degree: 0, ratedUser: ratedUser ?? []))
                     
                 }
             }
@@ -57,6 +58,7 @@ public class observer: ObservableObject {
 
             if self.entries[i].id == id.id {
                 likeEntry(entryId: self.entries[i].id)
+                addTalentPoints(entryId: self.entries[i].author)
             }
         }
     }
@@ -106,6 +108,26 @@ public class observer: ObservableObject {
                     return
         }}
     }
+    
+    func addTalentPoints(entryId: String){
+        print("TalentPoints in func")
+        let entryId = entryId
+
+        let db = Firestore.firestore()
+
+        db.collection("users")
+            .document(entryId)
+            .updateData(["talentPoints": FieldValue.increment(Int64(10))]) { (err) in
+
+                if err != nil{
+                    print("TalentPoints im ERR")
+                    print((err?.localizedDescription)!)
+                    return
+        }
+                print("TalentPoints +10!")
+        }
+    }
+
 }
 
 

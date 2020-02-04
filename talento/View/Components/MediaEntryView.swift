@@ -16,21 +16,35 @@ struct MediaEntryView: View {
     @State var liked = 0
     @State var disliked = 0
     let challenge: Challenge
-    // @ObservedObject var imageLoader: ImageLoader = ImageLoader(urlString: item.image)
     
+    
+
     var body: some View {
         
+        if self.userList.getCurrentUser() == nil{
+            return AnyView(
+                VStack{
+                    Text("Loading...")
+                    Spacer()
+                }.padding(.top, 120)
+            )
+        } else {
+        let filteredEntries1 = self.obser.entries.filter({!$0.author.contains(self.userList.getCurrentUser()!.id)})
+            let filteredEntries = filteredEntries1.filter({!$0.ratedUser.contains(self.userList.getCurrentUser()!.id)})
+            
+            print("da entries")
+            print(filteredEntries)
+        
+        if filteredEntries.count != 0 {
+        return AnyView(
         GeometryReader { geo in
             ZStack {
                 if self.challenge.isEnded == true {
                     Text("Challenge already ended!")
                         .font(.title)
-                } else if self.userList.getCurrentUser() == nil {
-                    Text("Loading")
-                }
-                else {
-                    ForEach(self.obser.entries.filter { !$0.ratedUser.contains(self.userList.getCurrentUser()!.id)}) { item in
-                        
+                } else {
+                    
+                    ForEach(filteredEntries) { item in
                         MediaEntryPictureView(entry: item)
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 343, height: geo.size.height)
@@ -86,9 +100,19 @@ struct MediaEntryView: View {
                     }
                 }
             }
+            })
         }
+    else {
+                           return AnyView(
+                    VStack{
+                        Text("No Entrys to Rate")
+                        Spacer()
+                    }.padding(.top, 120)
+                )
+            }
     }
-}
+    }
+
 
 struct Loader : UIViewRepresentable {
     func makeUIView(context: UIViewRepresentableContext<Loader>) -> UIActivityIndicatorView {
@@ -100,4 +124,5 @@ struct Loader : UIViewRepresentable {
     }
     func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<Loader>) {
     }
+}
 }
