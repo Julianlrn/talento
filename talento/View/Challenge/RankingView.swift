@@ -22,7 +22,7 @@ struct RankingView: View {
         if(filteredData.count == 0){
             return AnyView(Text("Loading"))
         } else if (filteredData.count < 3) {
-            return AnyView(Text("Not enough participants").font(.title))
+            return AnyView(VStack{Spacer();Text("Not enough participants").font(.title);Spacer()})
         }
         else {
             let count = filteredData.count
