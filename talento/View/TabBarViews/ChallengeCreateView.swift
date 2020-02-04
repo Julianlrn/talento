@@ -43,7 +43,7 @@ struct ChallengeCreateView: View {
         db.collection("challenges")
             .document()
             .setData(
-            ["title":self.name, "instructions":self.description, "image": self.imageUrl!, "isPublic":self.isPublic, "timestamp": self.createdDate, "duration": self.duration.toDouble() ?? 1, "participants": self.participants, "author": user.id, "latitude": user.latitude, "longitude": user.longitude, "isEnded": self.isEnded]) { (err) in
+            ["title":self.name, "instructions":self.description, "image": self.imageUrl!, "isPublic":self.isPublic, "timestamp": self.createdDate!, "duration": self.duration.toDouble() ?? 1, "participants": self.participants, "author": user.id, "latitude": user.latitude, "longitude": user.longitude, "isEnded": self.isEnded]) { (err) in
                 
                 if err != nil{
                    
