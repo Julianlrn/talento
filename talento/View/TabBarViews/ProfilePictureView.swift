@@ -6,10 +6,8 @@
 //  Copyright © 2020 JulianLorenz. All rights reserved.
 //
 import SwiftUI
-import SwiftUI
-import FBSDKLoginKit
 import Firebase
-import FirebaseUI
+
 
 struct ProfilePictureView: View {
     
@@ -18,7 +16,7 @@ struct ProfilePictureView: View {
     
     init(currentUser:User){
         ProfilePictureView.self.currentUser = currentUser
-        print("currentUserPicURL: " + currentUser.image)
+        //print("currentUserPicURL: " + currentUser.image)
         self.imageLoader = ImageLoader(urlString: currentUser.image)
         }
     @ObservedObject var imageLoader: ImageLoader

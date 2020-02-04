@@ -11,8 +11,6 @@
 		223A10A823DF6C7E00900461 /* ProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A10A723DF6C7E00900461 /* ProfilePictureView.swift */; };
 		223A10AA23E0BBFE00900461 /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A10A923E0BBFD00900461 /* PullToRefresh.swift */; };
 		22583737239EAEEB00A9FD1B /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583736239EAEEB00A9FD1B /* FeedView.swift */; };
-		22583739239EB9E600A9FD1B /* LoginCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22583738239EB9E600A9FD1B /* LoginCheck.swift */; };
-		2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258373A239ECC1D00A9FD1B /* FBLoginButton.swift */; };
 		2262E05523CA25680090B2B8 /* ActivityEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2262E05423CA25680090B2B8 /* ActivityEntryView.swift */; };
 		2266C36A23A29BE700E6216A /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266C36923A29BE700E6216A /* ChallengesView.swift */; };
 		2266C36C23A29BF400E6216A /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266C36B23A29BF400E6216A /* ActivityView.swift */; };
@@ -29,7 +27,7 @@
 		228F068D239D8CBE001C0D7A /* talentoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F068C239D8CBE001C0D7A /* talentoUITests.swift */; };
 		22936AB723DCB7E0004802F7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22936AB623DCB7E0004802F7 /* ImagePicker.swift */; };
 		22936AB923DDE682004802F7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22936AB823DDE681004802F7 /* UserModel.swift */; };
-		66F25D05A15511E4C4469CD4 /* Pods_talento_talentoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25E808EE14980D0C9B8FB9F /* Pods_talento_talentoUITests.framework */; };
+		8856016ED96050524AF4E51B /* Pods_talento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2975E07C23EBB878F5D146 /* Pods_talento.framework */; };
 		8F3E6DC123DDBBFE00CF12E0 /* RegistrationImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E6DC023DDBBFD00CF12E0 /* RegistrationImagePicker.swift */; };
 		8F3E6DC423DDBCE000CF12E0 /* AuthenticationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E6DC323DDBCE000CF12E0 /* AuthenticationPage.swift */; };
 		8F3E6DC623DDBD0A00CF12E0 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E6DC523DDBD0A00CF12E0 /* LoginPage.swift */; };
@@ -37,12 +35,12 @@
 		8F3E6DCA23DDBD7B00CF12E0 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E6DC923DDBD7B00CF12E0 /* Indicator.swift */; };
 		8F3E6DCC23DDBDA600CF12E0 /* CreateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E6DCB23DDBDA600CF12E0 /* CreateUser.swift */; };
 		8F89364A23E09F6100FFFFDD /* SortedEntriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89364923E09F6100FFFFDD /* SortedEntriesData.swift */; };
+		9E7E881CE2DF015BCE637989 /* Pods_talento_talentoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00041D968222905AB0B6C993 /* Pods_talento_talentoUITests.framework */; };
+		9E7FB12BD191B954337A9345 /* Pods_talentoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28390F6D4E9F3346BC2DECA3 /* Pods_talentoTests.framework */; };
 		B909455123DDD09D002BFFA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B909455023DDD09D002BFFA1 /* GoogleService-Info.plist */; };
 		B9236F9323CF7FC10095CA9E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9236F9223CF7FC10095CA9E /* ImageLoader.swift */; };
 		B9FCBE8923DF5C0900DB265D /* MediaEntryPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FCBE8823DF5C0900DB265D /* MediaEntryPictureView.swift */; };
 		B9FCBE8B23DF61A700DB265D /* ImageLoaderCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FCBE8A23DF61A700DB265D /* ImageLoaderCache.swift */; };
-		D0464F79937DBD5D0D74A7ED /* Pods_talento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD79194C95BB7F620C0B23C /* Pods_talento.framework */; };
-		ED68C98A7615F4D2CB08FBCF /* Pods_talentoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D7A0623AB88B75C407B09B /* Pods_talentoTests.framework */; };
 		F30C3A9023C0EFDC00D663C9 /* ChallengeCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30C3A8F23C0EFDC00D663C9 /* ChallengeCreateView.swift */; };
 		F30DCA9823DB4E5900B9C4C5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30DCA9723DB4E5900B9C4C5 /* SettingsView.swift */; };
 		F332F3D923D61E8C00DF9848 /* EntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F332F3D823D61E8C00DF9848 /* EntryModel.swift */; };
@@ -77,14 +75,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00D7A0623AB88B75C407B09B /* Pods_talentoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talentoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		00041D968222905AB0B6C993 /* Pods_talento_talentoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talento_talentoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		223A10A523DF55EE00900461 /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 		223A10A723DF6C7E00900461 /* ProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureView.swift; sourceTree = "<group>"; };
 		223A10A923E0BBFD00900461 /* PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
 		22583735239D99EF00A9FD1B /* talento.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = talento.entitlements; sourceTree = "<group>"; };
 		22583736239EAEEB00A9FD1B /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
-		22583738239EB9E600A9FD1B /* LoginCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCheck.swift; sourceTree = "<group>"; };
-		2258373A239ECC1D00A9FD1B /* FBLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginButton.swift; sourceTree = "<group>"; };
 		2262E05423CA25680090B2B8 /* ActivityEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEntryView.swift; sourceTree = "<group>"; };
 		2266C36923A29BE700E6216A /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
 		2266C36B23A29BF400E6216A /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
@@ -107,8 +103,11 @@
 		228F068E239D8CBE001C0D7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22936AB623DCB7E0004802F7 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		22936AB823DDE681004802F7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		46A0C27DA15A4AB0DB179472 /* Pods-talento-talentoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento-talentoUITests.debug.xcconfig"; path = "Target Support Files/Pods-talento-talentoUITests/Pods-talento-talentoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		6BD65366CB93C821FCCEAB32 /* Pods-talento.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento.release.xcconfig"; path = "Target Support Files/Pods-talento/Pods-talento.release.xcconfig"; sourceTree = "<group>"; };
+		28390F6D4E9F3346BC2DECA3 /* Pods_talentoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talentoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4575448339C7C0A5B1DAB2D3 /* Pods-talento.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento.release.xcconfig"; path = "Target Support Files/Pods-talento/Pods-talento.release.xcconfig"; sourceTree = "<group>"; };
+		4595DBBC60DD0247D21AED67 /* Pods-talento-talentoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento-talentoUITests.release.xcconfig"; path = "Target Support Files/Pods-talento-talentoUITests/Pods-talento-talentoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		71407E316DBFBEBD6D24C3B2 /* Pods-talento.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento.debug.xcconfig"; path = "Target Support Files/Pods-talento/Pods-talento.debug.xcconfig"; sourceTree = "<group>"; };
+		78F46D88F45175A35D5902DF /* Pods-talentoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talentoTests.debug.xcconfig"; path = "Target Support Files/Pods-talentoTests/Pods-talentoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F3E6DC023DDBBFD00CF12E0 /* RegistrationImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationImagePicker.swift; sourceTree = "<group>"; };
 		8F3E6DC323DDBCE000CF12E0 /* AuthenticationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPage.swift; sourceTree = "<group>"; };
 		8F3E6DC523DDBD0A00CF12E0 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
@@ -116,16 +115,13 @@
 		8F3E6DC923DDBD7B00CF12E0 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		8F3E6DCB23DDBDA600CF12E0 /* CreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUser.swift; sourceTree = "<group>"; };
 		8F89364923E09F6100FFFFDD /* SortedEntriesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedEntriesData.swift; sourceTree = "<group>"; };
-		A90D7CD39EDF29E768585197 /* Pods-talentoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talentoTests.release.xcconfig"; path = "Target Support Files/Pods-talentoTests/Pods-talentoTests.release.xcconfig"; sourceTree = "<group>"; };
-		A96A7E1978FE0653D24AF0AB /* Pods-talento.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento.debug.xcconfig"; path = "Target Support Files/Pods-talento/Pods-talento.debug.xcconfig"; sourceTree = "<group>"; };
 		B909455023DDD09D002BFFA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B9236F9223CF7FC10095CA9E /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		B9FCBE8823DF5C0900DB265D /* MediaEntryPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEntryPictureView.swift; sourceTree = "<group>"; };
 		B9FCBE8A23DF61A700DB265D /* ImageLoaderCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderCache.swift; sourceTree = "<group>"; };
-		C043D2EB785BDD6A3E5A2CA6 /* Pods-talentoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talentoTests.debug.xcconfig"; path = "Target Support Files/Pods-talentoTests/Pods-talentoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DEF3124A38CAA398A595D333 /* Pods-talento-talentoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento-talentoUITests.release.xcconfig"; path = "Target Support Files/Pods-talento-talentoUITests/Pods-talento-talentoUITests.release.xcconfig"; sourceTree = "<group>"; };
-		EBD79194C95BB7F620C0B23C /* Pods_talento.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talento.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F25E808EE14980D0C9B8FB9F /* Pods_talento_talentoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talento_talentoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD976934488345134A05697F /* Pods-talentoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talentoTests.release.xcconfig"; path = "Target Support Files/Pods-talentoTests/Pods-talentoTests.release.xcconfig"; sourceTree = "<group>"; };
+		CD1C6A2C51D3D367F54BDDE0 /* Pods-talento-talentoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talento-talentoUITests.debug.xcconfig"; path = "Target Support Files/Pods-talento-talentoUITests/Pods-talento-talentoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DA2975E07C23EBB878F5D146 /* Pods_talento.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talento.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30C3A8F23C0EFDC00D663C9 /* ChallengeCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCreateView.swift; sourceTree = "<group>"; };
 		F30DCA9723DB4E5900B9C4C5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F332F3D823D61E8C00DF9848 /* EntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryModel.swift; sourceTree = "<group>"; };
@@ -147,7 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0464F79937DBD5D0D74A7ED /* Pods_talento.framework in Frameworks */,
+				8856016ED96050524AF4E51B /* Pods_talento.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED68C98A7615F4D2CB08FBCF /* Pods_talentoTests.framework in Frameworks */,
+				9E7FB12BD191B954337A9345 /* Pods_talentoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,32 +159,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66F25D05A15511E4C4469CD4 /* Pods_talento_talentoUITests.framework in Frameworks */,
+				9E7E881CE2DF015BCE637989 /* Pods_talento_talentoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		15753B1FCD184E4BDBFCB677 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EBD79194C95BB7F620C0B23C /* Pods_talento.framework */,
-				F25E808EE14980D0C9B8FB9F /* Pods_talento_talentoUITests.framework */,
-				00D7A0623AB88B75C407B09B /* Pods_talentoTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		2258373C239ECC9100A9FD1B /* FacebookLogin */ = {
-			isa = PBXGroup;
-			children = (
-				2258373A239ECC1D00A9FD1B /* FBLoginButton.swift */,
-				22583738239EB9E600A9FD1B /* LoginCheck.swift */,
-			);
-			path = FacebookLogin;
-			sourceTree = "<group>";
-		};
 		2262E05323CA24470090B2B8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,7 +201,7 @@
 				228F068B239D8CBE001C0D7A /* talentoUITests */,
 				228F0668239D8CBB001C0D7A /* Products */,
 				E6CB5CA67053636A3DA48633 /* Pods */,
-				15753B1FCD184E4BDBFCB677 /* Frameworks */,
+				D9CBE5B9CE7C0C0C47DE0A16 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -248,7 +225,6 @@
 				F35AACD123BFAB55005942EC /* View */,
 				F35AACCD23BFA83B005942EC /* Model */,
 				F35AACD023BFAB38005942EC /* Data */,
-				2258373C239ECC9100A9FD1B /* FacebookLogin */,
 				F3A63EA323DF673200B5F075 /* Extensions.swift */,
 				B9236F9223CF7FC10095CA9E /* ImageLoader.swift */,
 				B9FCBE8A23DF61A700DB265D /* ImageLoaderCache.swift */,
@@ -310,15 +286,25 @@
 			path = "UserLogin&Registration";
 			sourceTree = "<group>";
 		};
+		D9CBE5B9CE7C0C0C47DE0A16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA2975E07C23EBB878F5D146 /* Pods_talento.framework */,
+				00041D968222905AB0B6C993 /* Pods_talento_talentoUITests.framework */,
+				28390F6D4E9F3346BC2DECA3 /* Pods_talentoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E6CB5CA67053636A3DA48633 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A96A7E1978FE0653D24AF0AB /* Pods-talento.debug.xcconfig */,
-				6BD65366CB93C821FCCEAB32 /* Pods-talento.release.xcconfig */,
-				46A0C27DA15A4AB0DB179472 /* Pods-talento-talentoUITests.debug.xcconfig */,
-				DEF3124A38CAA398A595D333 /* Pods-talento-talentoUITests.release.xcconfig */,
-				C043D2EB785BDD6A3E5A2CA6 /* Pods-talentoTests.debug.xcconfig */,
-				A90D7CD39EDF29E768585197 /* Pods-talentoTests.release.xcconfig */,
+				71407E316DBFBEBD6D24C3B2 /* Pods-talento.debug.xcconfig */,
+				4575448339C7C0A5B1DAB2D3 /* Pods-talento.release.xcconfig */,
+				CD1C6A2C51D3D367F54BDDE0 /* Pods-talento-talentoUITests.debug.xcconfig */,
+				4595DBBC60DD0247D21AED67 /* Pods-talento-talentoUITests.release.xcconfig */,
+				78F46D88F45175A35D5902DF /* Pods-talentoTests.debug.xcconfig */,
+				BD976934488345134A05697F /* Pods-talentoTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -382,20 +368,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 228F0691239D8CBE001C0D7A /* Build configuration list for PBXNativeTarget "talento" */;
 			buildPhases = (
-				092794A562C1F28F5DF44811 /* [CP] Check Pods Manifest.lock */,
+				8E656C025CEE651C4F51C025 /* [CP] Check Pods Manifest.lock */,
 				228F0663239D8CBB001C0D7A /* Sources */,
 				228F0664239D8CBB001C0D7A /* Frameworks */,
 				228F0665239D8CBB001C0D7A /* Resources */,
-				E4E2CD10F0D453FBC3BC349E /* [CP] Embed Pods Frameworks */,
-				496E7D69883837874E1991BE /* [CP] Copy Pods Resources */,
+				3515C86A6A6B9035FC87C0AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = talento;
-			packageProductDependencies = (
-			);
 			productName = talento;
 			productReference = 228F0667239D8CBB001C0D7A /* talento.app */;
 			productType = "com.apple.product-type.application";
@@ -404,7 +387,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 228F0694239D8CBE001C0D7A /* Build configuration list for PBXNativeTarget "talentoTests" */;
 			buildPhases = (
-				6671FA23876B3004F342A814 /* [CP] Check Pods Manifest.lock */,
+				03C74A20A58776822FE977D3 /* [CP] Check Pods Manifest.lock */,
 				228F0679239D8CBE001C0D7A /* Sources */,
 				228F067A239D8CBE001C0D7A /* Frameworks */,
 				228F067B239D8CBE001C0D7A /* Resources */,
@@ -423,12 +406,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 228F0697239D8CBE001C0D7A /* Build configuration list for PBXNativeTarget "talentoUITests" */;
 			buildPhases = (
-				29AEE472F85B869ADF4E6DCB /* [CP] Check Pods Manifest.lock */,
+				2267B1ED4FFAC77982316899 /* [CP] Check Pods Manifest.lock */,
 				228F0684239D8CBE001C0D7A /* Sources */,
 				228F0685239D8CBE001C0D7A /* Frameworks */,
 				228F0686239D8CBE001C0D7A /* Resources */,
-				DD24B2C69314B841B3E05CDE /* [CP] Embed Pods Frameworks */,
-				B5AB4DAA566326B2573AD0C8 /* [CP] Copy Pods Resources */,
+				7980F9BF8824C5F07AD704AF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -472,8 +454,6 @@
 				Base,
 			);
 			mainGroup = 228F065E239D8CBB001C0D7A;
-			packageReferences = (
-			);
 			productRefGroup = 228F0668239D8CBB001C0D7A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -514,68 +494,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		092794A562C1F28F5DF44811 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-talento-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		29AEE472F85B869ADF4E6DCB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-talento-talentoUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		496E7D69883837874E1991BE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-talento/Pods-talento-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-talento/Pods-talento-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-talento/Pods-talento-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6671FA23876B3004F342A814 /* [CP] Check Pods Manifest.lock */ = {
+		03C74A20A58776822FE977D3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -597,24 +516,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B5AB4DAA566326B2573AD0C8 /* [CP] Copy Pods Resources */ = {
+		2267B1ED4FFAC77982316899 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-talento-talentoUITests/Pods-talento-talentoUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-talento-talentoUITests/Pods-talento-talentoUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-talento-talentoUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-talento-talentoUITests/Pods-talento-talentoUITests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DD24B2C69314B841B3E05CDE /* [CP] Embed Pods Frameworks */ = {
+		3515C86A6A6B9035FC87C0AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-talento/Pods-talento-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-talento/Pods-talento-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-talento/Pods-talento-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7980F9BF8824C5F07AD704AF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -631,21 +572,26 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-talento-talentoUITests/Pods-talento-talentoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E4E2CD10F0D453FBC3BC349E /* [CP] Embed Pods Frameworks */ = {
+		8E656C025CEE651C4F51C025 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-talento/Pods-talento-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-talento/Pods-talento-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-talento-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-talento/Pods-talento-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -664,7 +610,6 @@
 				F39CC38F23D782C500C8C9DA /* GeneralView.swift in Sources */,
 				2262E05523CA25680090B2B8 /* ActivityEntryView.swift in Sources */,
 				F39CC38D23D7733A00C8C9DA /* RankingEntryView.swift in Sources */,
-				2258373B239ECC1D00A9FD1B /* FBLoginButton.swift in Sources */,
 				F35AACCF23BFA86D005942EC /* ChallengeModel.swift in Sources */,
 				22936AB923DDE682004802F7 /* UserModel.swift in Sources */,
 				F35AACD323BFABBF005942EC /* ChallengeData.swift in Sources */,
@@ -692,7 +637,6 @@
 				B9236F9323CF7FC10095CA9E /* ImageLoader.swift in Sources */,
 				B9FCBE8B23DF61A700DB265D /* ImageLoaderCache.swift in Sources */,
 				2266C36C23A29BF400E6216A /* ActivityView.swift in Sources */,
-				22583739239EB9E600A9FD1B /* LoginCheck.swift in Sources */,
 				8F3E6DCC23DDBDA600CF12E0 /* CreateUser.swift in Sources */,
 				228F066F239D8CBB001C0D7A /* ContentView.swift in Sources */,
 				8F89364A23E09F6100FFFFDD /* SortedEntriesData.swift in Sources */,
@@ -858,7 +802,7 @@
 		};
 		228F0692239D8CBE001C0D7A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A96A7E1978FE0653D24AF0AB /* Pods-talento.debug.xcconfig */;
+			baseConfigurationReference = 71407E316DBFBEBD6D24C3B2 /* Pods-talento.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
@@ -880,7 +824,7 @@
 		};
 		228F0693239D8CBE001C0D7A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BD65366CB93C821FCCEAB32 /* Pods-talento.release.xcconfig */;
+			baseConfigurationReference = 4575448339C7C0A5B1DAB2D3 /* Pods-talento.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = talento/talento.entitlements;
@@ -902,7 +846,7 @@
 		};
 		228F0695239D8CBE001C0D7A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C043D2EB785BDD6A3E5A2CA6 /* Pods-talentoTests.debug.xcconfig */;
+			baseConfigurationReference = 78F46D88F45175A35D5902DF /* Pods-talentoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -925,7 +869,7 @@
 		};
 		228F0696239D8CBE001C0D7A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A90D7CD39EDF29E768585197 /* Pods-talentoTests.release.xcconfig */;
+			baseConfigurationReference = BD976934488345134A05697F /* Pods-talentoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -948,7 +892,7 @@
 		};
 		228F0698239D8CBE001C0D7A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46A0C27DA15A4AB0DB179472 /* Pods-talento-talentoUITests.debug.xcconfig */;
+			baseConfigurationReference = CD1C6A2C51D3D367F54BDDE0 /* Pods-talento-talentoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -971,7 +915,7 @@
 		};
 		228F0699239D8CBE001C0D7A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DEF3124A38CAA398A595D333 /* Pods-talento-talentoUITests.release.xcconfig */;
+			baseConfigurationReference = 4595DBBC60DD0247D21AED67 /* Pods-talento-talentoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";

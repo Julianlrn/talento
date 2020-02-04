@@ -9,9 +9,6 @@
 import Foundation
 import SwiftUI
 import Firebase
-import FirebaseUI
-
-
 
 
 struct ChallengeCreateView: View {
@@ -59,9 +56,10 @@ struct ChallengeCreateView: View {
          
             if let currentUser = userList.getCurrentUser(){
                     return AnyView(
+                        GeometryReader { geo in
                         Background{
                         NavigationView{
-                            VStack {
+                            VStack(spacing: 16) {
                                 
                                 TextField("Title", text: self.$name)
                                     .font(.system(size: 16))
@@ -72,6 +70,7 @@ struct ChallengeCreateView: View {
                                             .stroke(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), lineWidth: 2)
                                     )
                                     .clipShape(RoundedRectangle(cornerRadius: 16))
+                                    .frame(width: geo.size.width-32)
                                 
                                 TextField("Instructions", text: self.$description)
                                     .font(.system(size: 16))
@@ -82,6 +81,7 @@ struct ChallengeCreateView: View {
                                             .stroke(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), lineWidth: 2)
                                     )
                                     .clipShape(RoundedRectangle(cornerRadius: 16))
+                                    .frame(width: geo.size.width-32)
                                 
                                 TextField("Duration in minutes", text: self.$duration)
                                     .font(.system(size: 16))
@@ -93,19 +93,22 @@ struct ChallengeCreateView: View {
                                             .stroke(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), lineWidth: 2)
                                     )
                                     .clipShape(RoundedRectangle(cornerRadius: 16))
+                                    .frame(width: geo.size.width-32)
                                 
                                 Toggle(isOn: self.$isPublic) {
                                     Text("Public")
                                         .font(.system(size: 16))
                                 }
+                                .frame(width: geo.size.width-32)
 
                                 // TODO: Image aus DB lesen und hochladen
-                                GeometryReader { geo in
-                                    self.image?
+                                
+                                self.image?
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: geo.size.width)
-                                }
+                                    .cornerRadius(16)
+                                    .frame(width: geo.size.width-32)
+                                
                                 
                                   Button(action: {
                                       withAnimation {
@@ -118,11 +121,10 @@ struct ChallengeCreateView: View {
                                             .foregroundColor(Color.white)
                                             .padding(16)
                                     }
-                                    .frame(width: UIScreen.main.bounds.width - 32)
+                                    .frame(width: geo.size.width-32)
                                     .background(Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16))
                                     .cornerRadius(16)
                                     .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
-                                    .padding(.bottom, 12)
                                   }
 
                                 Button(action: {
@@ -135,31 +137,27 @@ struct ChallengeCreateView: View {
                                             .foregroundColor(Color.white)
                                             .padding(16)
                                     }
-                                    .frame(width: UIScreen.main.bounds.width - 32)
+                                    .frame(width: geo.size.width-32)
                                     .background(Color.init(red:0.96, green:0.11, blue:0.34))
                                     .cornerRadius(16)
                                     .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
-                                    .padding(.bottom, 24)
                                 }
+                                Spacer()
                             }
-                            .sheet(isPresented: self.$isShowPicker){ ImagePicker(image: self.$image, imageUrl: self.$imageUrl, sourceTypeforPicker: self.$isSourceTypeforPicker)}
-                            .padding()
+                            .padding(.horizontal, 16)
                             .font(.title)
+                            .sheet(isPresented: self.$isShowPicker){ ImagePicker(image: self.$image, imageUrl: self.$imageUrl, sourceTypeforPicker: self.$isSourceTypeforPicker)}
                             .navigationBarTitle("Create Challenge")
                             }
                             
                         }.onTapGesture {
                             self.endEditing(true)
                         }
+                    }
                 )
                 }
             else{
-                return AnyView(
-                    VStack{
-                        Text("Loading")
-                        Spacer()
-                    }.padding(.top, 120)
-                )
+                return AnyView(VStack(alignment: .leading){Spacer();Text("Loading").font(.title);Spacer()}.frame(width: UIScreen.main.bounds.width))
             }
         
     

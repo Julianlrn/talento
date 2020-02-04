@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUI
 import Firebase
-import FirebaseUI
 
 struct User: Identifiable {
     var id : String

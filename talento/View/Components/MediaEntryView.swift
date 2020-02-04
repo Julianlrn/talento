@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SDWebImage
+
 
 struct MediaEntryView: View {
 
@@ -22,18 +22,13 @@ struct MediaEntryView: View {
     var body: some View {
         
         if self.userList.getCurrentUser() == nil{
-            return AnyView(
-                VStack{
-                    Text("Loading...")
-                    Spacer()
-                }.padding(.top, 120)
-            )
+            return AnyView(VStack(alignment: .leading){Spacer();Text("Loading").font(.title);Spacer()}.frame(width: UIScreen.main.bounds.width))
         } else {
         let filteredEntries1 = self.obser.entries.filter({!$0.author.contains(self.userList.getCurrentUser()!.id)})
             let filteredEntries = filteredEntries1.filter({!$0.ratedUser.contains(self.userList.getCurrentUser()!.id)})
             
-            print("da entries")
-            print(filteredEntries)
+            //print("da entries")
+            //print(filteredEntries)
         
         if filteredEntries.count != 0 {
         return AnyView(
@@ -46,12 +41,11 @@ struct MediaEntryView: View {
                     
                     ForEach(filteredEntries) { item in
                         MediaEntryPictureView(entry: item)
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 343, height: geo.size.height)
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: geo.size.width-32, height: geo.size.height)
                             .cornerRadius(16)
                             .overlay(Rectangle().frame(width: 343, height: geo.size.height).foregroundColor(self.liked == 1 ? Color.init(red:0.27, green:0.62, blue:0.27, opacity: 0.65) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0)).cornerRadius(16))
                             .overlay(Rectangle().frame(width: 343, height: geo.size.height).foregroundColor(self.disliked == 1 ? Color.init(red:0.96, green:0.11, blue:0.34, opacity: 0.65) : Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0)).cornerRadius(16))
-                            .padding(.horizontal, 16)
                             .gesture(DragGesture()
                                 .onChanged({ (value) in
                                     if value.translation.width > 0 {
@@ -103,14 +97,7 @@ struct MediaEntryView: View {
             })
         }
     else {
-                           return AnyView(
-                    VStack{
-                        Spacer()
-                        Text("No Entrys to Rate")
-                            .font(.title)
-                        Spacer()
-                    }.padding(.top, 120)
-                )
+               return AnyView(VStack(alignment: .leading){Spacer();Text("No entries to rate").font(.title);Spacer()}.frame(width: UIScreen.main.bounds.width))
             }
     }
     }

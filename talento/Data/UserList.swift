@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUI
 import Firebase
-import FirebaseUI
 import FirebaseFirestore
 import MapKit
 
@@ -33,7 +32,7 @@ class UserList:NSObject, ObservableObject {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
+                    //print("\(document.documentID) => \(document.data())")
                     let data: User =
                         User(id: document.get("uid")as! String,
                          name: document.get("name")as! String,
@@ -46,8 +45,8 @@ class UserList:NSObject, ObservableObject {
                          longitude: document.get("longitude")as! Double,
                          talentPoints: document.get("talentPoints")as! Double)
                     
-                    print("append")
-                    print(data)
+                    //print("append")
+                    //print(data)
                     self.userData.append(data)
                 }
             }
@@ -91,7 +90,7 @@ class UserList:NSObject, ObservableObject {
                 currentUser = User
                 currentUser!.latitude = loadCurrentLocation().latitude
                 currentUser!.longitude = loadCurrentLocation().longitude
-                print("\(currentUser!.latitude)")
+                //print("\(currentUser!.latitude)")
             }
         }
         return currentUser
@@ -124,7 +123,7 @@ extension UserList : CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations.first != nil {
-            print("location:: (location)")
+            //print("location:: (location)")
         }
 
     }

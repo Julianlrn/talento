@@ -8,7 +8,6 @@
 
 import SwiftUI
 import Firebase
-import FirebaseUI
 import FirebaseFirestore
 import FirebaseStorage
 

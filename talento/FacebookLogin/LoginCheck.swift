@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUI
 import Combine
-import FBSDKLoginKit
 
 
 class LoginCheck: ObservableObject{

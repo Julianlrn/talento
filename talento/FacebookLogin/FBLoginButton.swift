@@ -9,9 +9,7 @@
 
 import Foundation
 import SwiftUI
-import FBSDKLoginKit
 import Firebase
-import FirebaseUI
 
 struct login : UIViewRepresentable{
  

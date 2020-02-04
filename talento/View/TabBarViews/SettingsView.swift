@@ -8,7 +8,6 @@
 
 import SwiftUI
 import Firebase
-import FirebaseUI
 
 
 struct SettingsView: View {
@@ -55,13 +54,8 @@ struct SettingsView: View {
                 
             })
         }
-        else {
-            return AnyView(
-                VStack{
-                    Text("Loading")
-                    Spacer()
-                }.padding(.top, 120)
-            )
+        else{
+            return AnyView(VStack(alignment: .leading){Spacer();Text("Loading").font(.title);Spacer()}.frame(width: UIScreen.main.bounds.width))
         }
     }
 }

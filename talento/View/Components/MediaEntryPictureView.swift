@@ -28,8 +28,6 @@ struct MediaEntryPictureView: View {
         GeometryReader { geo in
             Image(uiImage: self.imageLoader.data != nil ? UIImage(data: self.imageLoader.data!)! : UIImage())
             .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: geo.size.width)
         }
     }
 }

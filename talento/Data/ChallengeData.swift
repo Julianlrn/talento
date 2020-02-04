@@ -3,7 +3,6 @@
 
 import SwiftUI
 import Firebase
-import FirebaseUI
 
 
 var uids: [String] = []
@@ -24,7 +23,7 @@ class ChallengeData: ObservableObject{
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
+                    //print("\(document.documentID) => \(document.data())")
                     /*let data: Challenge =
                         Challenge(
                            // id: document.documentID,
@@ -56,8 +55,8 @@ class ChallengeData: ObservableObject{
                             longitude: document.get("longitude") as! Double,
                             isEnded: document.get("isEnded") as! Bool)
                     
-                    print("append")
-                    print(data)
+                    //print("append")
+                    //print(data)
                     self.challengeData.append(data)
                 }
             }

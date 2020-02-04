@@ -20,9 +20,9 @@ struct RankingView: View {
         let filteredData  = self.data.sortedEntriesData.filter{$0.idFromChallenge.contains(challenge.fbId)}
         
         if(filteredData.count == 0){
-            return AnyView(Text("Loading"))
+            return AnyView(VStack(alignment: .leading){Spacer();Text("Loading").font(.title);Spacer()}.frame(width: UIScreen.main.bounds.width))
         } else if (filteredData.count < 3) {
-            return AnyView(VStack{Spacer();Text("Not enough participants").font(.title);Spacer()})
+            return AnyView(VStack(alignment: .leading){Spacer();Text("Not enough participants!").font(.title);Spacer()}.frame(width: UIScreen.main.bounds.width))
         }
         else {
             let count = filteredData.count
@@ -46,7 +46,7 @@ struct RankingView: View {
                                         .cornerRadius(16)
                                         .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24), radius: 12, x: 0, y: 6)
                                 }
-                                .padding(.top, 60)
+                                .padding(.top, 80)
                             }
                             Text(userList.getUserwithId(id: filteredData[1].author))
                                 .font(.system(size: 16, weight: .bold))
@@ -70,7 +70,7 @@ struct RankingView: View {
                                         .cornerRadius(16)
                                         .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24), radius: 12, x: 0, y: 6)
                                 }
-                                .padding(.top, 80)
+                                .padding(.top, 120)
                             }
                             Text(userList.getUserwithId(id: filteredData[0].author))
                                 .font(.system(size: 16, weight: .bold))
@@ -96,7 +96,7 @@ struct RankingView: View {
                                         .cornerRadius(16)
                                         .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.24), radius: 12, x: 0, y: 6)
                                 }
-                                .padding(.top, 60)
+                                .padding(.top, 80)
                             }
                             Text(userList.getUserwithId(id: filteredData[2].author))
                                 .font(.system(size: 16, weight: .bold))

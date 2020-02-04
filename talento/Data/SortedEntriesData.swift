@@ -8,7 +8,6 @@
 
 import SwiftUI
 import Firebase
-import FirebaseUI
 
 public class SortedEntriesData: ObservableObject{
     
@@ -31,7 +30,7 @@ public class SortedEntriesData: ObservableObject{
                 let likes = item.get("likes") as! Double
                 let idFromChallenge = item.get("id") as! String
                 self.sortedEntriesData.append(entry(id: id, idFromChallenge: idFromChallenge, author: author, image: image, likes: likes, swipe: 0, degree: 0, ratedUser: []))
-                print(item)
+                //print(item)
             }
         }
     }

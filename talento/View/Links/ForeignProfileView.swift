@@ -10,9 +10,7 @@
 
 import Foundation
 import SwiftUI
-import FBSDKLoginKit
 import Firebase
-import FirebaseUI
 
 struct ForeignProfileView: View {
 
@@ -288,13 +286,8 @@ struct ForeignProfileView: View {
                         }
                     }.edgesIgnoringSafeArea(.all)})
         }
-        else {
-            return AnyView(
-                VStack{
-                    Text("Loading")
-                    Spacer()
-                }.padding(.top, 120)
-            )
+        else{
+            return AnyView(VStack(alignment: .leading){Spacer();Text("Loading").font(.title);Spacer()}.frame(width: UIScreen.main.bounds.width))
         }
          
         

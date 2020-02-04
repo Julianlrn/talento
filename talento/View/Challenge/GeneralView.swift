@@ -8,7 +8,6 @@
 
 import SwiftUI
 import Firebase
-import FirebaseUI
 
 
 
@@ -24,8 +23,6 @@ struct GeneralView: View {
     @State var buttonText = "Participate"
     @State var uploadLabel = ""
     @State var entryID = ""
-    
-    var buttonColor = Color.init(red:0.96, green:0.11, blue:0.34)
 
     
     
@@ -61,17 +58,16 @@ struct GeneralView: View {
     var body:  some View {
         if let author: User = getAuthor(), let currentUser = userList.getCurrentUser(){
             return AnyView(
-                
+                GeometryReader { geo in
                     ScrollView(.vertical, showsIndicators: true) {
                         VStack(alignment: .leading) {
                              //MARK: - CARD
                              VStack {
                                  //MARK: - IMAGE
-                                 Image(uiImage: imageLoader.data != nil ? UIImage(data: imageLoader.data!)! :UIImage())
+                                Image(uiImage: self.imageLoader.data != nil ? UIImage(data: self.imageLoader.data!)! :UIImage())
                                  .resizable()
-                                 .aspectRatio(contentMode: .fill)
-                                 .frame(height: 230)
-                                 .clipShape(Rectangle())
+                                 .aspectRatio(contentMode: .fit)
+                                 .frame(width: geo.size.width)
                                  .overlay(
                                      HStack {
                                          Spacer()
@@ -92,24 +88,23 @@ struct GeneralView: View {
                                          .padding(.trailing, 16)
                                      }
                                  )
-                                 .frame(maxHeight: 220)
                                  
                                  //MARK: - CONTENT
                                  VStack(alignment: .leading, spacing: 24) {
                                      
                                      //MARK: - PARTICIPANTS
-                                    Text("Participants: \(challenge.participants.count)")
+                                    Text("Participants: \(self.challenge.participants.count)")
                                          .font(.system(size: 16))
                                          .padding(.top, 16)
                                      
                                      //MARK: - TITLE
-                                     Text(challenge.title)
+                                    Text(self.challenge.title)
                                          .font(.system(size: 20, weight: .bold))
                                      //MARK: - PROPERTIES
                                      HStack {
                                          HStack {
                                              Image(systemName: "globe")
-                                            if challenge.isPublic ?? false {
+                                            if self.challenge.isPublic ?? false {
                                                 Text("Public")
                                             }
                                             else { Text("Local") }
@@ -156,16 +151,26 @@ struct GeneralView: View {
                                  
                                  Text("Instructions")
                                      .font(.title)
-                                 Text(challenge.instructions)
+                                Text(self.challenge.instructions)
                                      .font(.system(size: 20))
-                                image?.resizable().scaledToFit().frame(height: CGFloat(320))
-                                Text(self.uploadLabel)
-                                .font(.system(size: 20))
+                                
+                                
                                 if self.challenge.challengeEnded() {
                                     Text("No participation possible")
                                         .font(.title)
                                         .padding()
                                 } else {
+                                    
+                                    self.image?
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .cornerRadius(16)
+                                        .frame(width: geo.size.width-32)
+                                    
+                                    
+                                    Text(self.uploadLabel)
+                                        .font(.system(size: 20))
+                                    
                                     Button(action: {
                                         if (self.isShowPicker2){
                                             
@@ -191,7 +196,7 @@ struct GeneralView: View {
                                                 .foregroundColor(Color.white)
                                                 .padding(16)
                                         }
-                                        .frame(width: 343)
+                                        .frame(width: geo.size.width-32)
                                         .background(self.isShowPicker2 == true ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.05, green:0.68, blue:0.41))
                                         .cornerRadius(16)
                                         .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
@@ -203,19 +208,14 @@ struct GeneralView: View {
                                                                 
                                                                 .padding(.horizontal, 16)
                                                             }
-                                                                 .sheet(isPresented: $isShowPicker){ ImagePicker(image: self.$image, imageUrl: self.$imageUrl, sourceTypeforPicker: self.$isSourceTypeforPicker)}
+                        .sheet(isPresented: self.$isShowPicker){ ImagePicker(image: self.$image, imageUrl: self.$imageUrl, sourceTypeforPicker: self.$isSourceTypeforPicker)}
                                                                  .padding(.top, 16).navigationBarTitle("Challenge")
                                                         }
+                    }
                                                     )
                                             }
                                             else {
-                                                return AnyView (
-                                                    VStack{
-                                                        Text("Loading")
-                                                        Spacer()
-                                                        
-                                                    }.padding(.top, 120)
-                                                )
+                                                return AnyView(VStack(alignment: .leading){Spacer();Text("Loading").font(.title);Spacer()}.frame(width: UIScreen.main.bounds.width))
                                             }
                                         }
 
