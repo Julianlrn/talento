@@ -105,7 +105,9 @@ struct MediaEntryView: View {
     else {
                            return AnyView(
                     VStack{
+                        Spacer()
                         Text("No Entrys to Rate")
+                            .font(.title)
                         Spacer()
                     }.padding(.top, 120)
                 )

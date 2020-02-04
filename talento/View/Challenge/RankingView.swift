@@ -107,9 +107,9 @@ struct RankingView: View {
                     }
                     .padding(.top, 16)
 
-                    if count > 3 {
-                        ForEach(3..<count-1) { number in
-                            RankingEntryView(entry: filteredData[number], rank: number+1)
+                    if count > 2 {
+                        ForEach(2..<count-1) { number in
+                            RankingEntryView(entry: filteredData[number], rank: number+2)
                         }
                     }
 
