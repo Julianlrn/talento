@@ -25,6 +25,9 @@ struct GeneralView: View {
     @State var uploadLabel = ""
     @State var entryID = ""
     
+    var buttonColor = Color.init(red:0.96, green:0.11, blue:0.34)
+
+    
     
     @ObservedObject var userList = UserList()
      let db = Firestore.firestore()
@@ -178,7 +181,6 @@ struct GeneralView: View {
                                             var challenge2: Challenge = self.challenge
                                             challenge2.participants.append(currentUser.id)
                                             self.db.collection("challenges").document(self.challenge.id).updateData(["participants" : challenge2.participants])
-                                            
                                         
                                         return
                                         }
@@ -190,7 +192,7 @@ struct GeneralView: View {
                                                 .padding(16)
                                         }
                                         .frame(width: 343)
-                                        .background(Color.init(red:0.96, green:0.11, blue:0.34))
+                                        .background(self.isShowPicker2 == true ? Color.init(red:0.96, green:0.11, blue:0.34) : Color.init(red:0.05, green:0.68, blue:0.41))
                                         .cornerRadius(16)
                                         .shadow(color: Color.init(red:0.00, green:0.00, blue:0.00, opacity: 0.16), radius: 8, x: 0, y: 4)
                                         .padding(.bottom, 24)
