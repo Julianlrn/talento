@@ -20,7 +20,7 @@ struct RankingView: View {
         let filteredData  = self.data.sortedEntriesData.filter{$0.idFromChallenge.contains(challenge.fbId)}
         
         if(filteredData.count == 0){
-            return AnyView(Text("Not enough participants"))
+            return AnyView(Text("Loading"))
         } else if (filteredData.count < 3) {
             return AnyView(Text("Not enough participants").font(.title))
         }
