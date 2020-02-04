@@ -49,8 +49,7 @@ struct AuthenticationPage : View {
                 
                 Image("logo") //doesn't work, why?
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 343, height: 200)
+                    .frame(width: 200, height: 200)
                 
                 Text("Login with your Number").font(.largeTitle).fontWeight(.heavy)
                 
